@@ -94,12 +94,7 @@ export function ContactHubBlock({
             viewport={{ once: true }}
             className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 flex flex-col items-center text-center shadow-2xl hover:bg-white/10 transition-colors"
           >
-            <div className="w-20 h-20 bg-[var(--primary)]/20 rounded-full flex items-center justify-center mb-6 relative">
-              <motion.div
-                animate={{ scale: [1, 1.5, 2], opacity: [0.8, 0, 0] }}
-                transition={{ duration: 2, repeat: Infinity }}
-                className="absolute inset-0 rounded-full border-2 border-[var(--primary)]"
-              />
+            <div className="w-20 h-20 bg-[var(--primary)]/10 rounded-full flex items-center justify-center mb-6 relative">
               <PhoneCall className="w-10 h-10 text-[var(--primary)] relative z-10" />
             </div>
             <h3 className="text-2xl font-bold text-white mb-2 font-heading">Direktanruf</h3>
@@ -117,19 +112,15 @@ export function ContactHubBlock({
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="bg-gradient-to-b from-[#25D366]/20 to-white/5 backdrop-blur-xl border border-[#25D366]/30 rounded-3xl p-8 flex flex-col items-center text-center shadow-2xl relative transform md:-translate-y-4"
+            className="bg-white/5 backdrop-blur-xl border border-[#25D366]/20 rounded-3xl p-8 flex flex-col items-center text-center shadow-2xl relative transform md:-translate-y-4 hover:bg-white/10 transition-colors"
           >
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#25D366] text-white text-xs font-bold px-4 py-1 rounded-full shadow-lg">
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 border border-[#25D366]/30 bg-[#111122] text-[#25D366] text-xs font-semibold px-4 py-1.5 rounded-full shadow-lg tracking-wide uppercase">
               Am beliebtesten
             </div>
             
-            <motion.div 
-              animate={{ y: [0, -8, 0] }}
-              transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-              className="w-20 h-20 bg-[#25D366]/20 rounded-full flex items-center justify-center mb-6"
-            >
+            <div className="w-20 h-20 bg-[#25D366]/10 rounded-full flex items-center justify-center mb-6">
               <MessageCircle className="w-10 h-10 text-[#25D366]" />
-            </motion.div>
+            </div>
             
             <h3 className="text-2xl font-bold text-white mb-2 font-heading">WhatsApp</h3>
             <p className="text-gray-400 text-sm mb-6 flex-grow">Schreiben Sie uns unkompliziert. Antwort in unter 1 Stunde!</p>
