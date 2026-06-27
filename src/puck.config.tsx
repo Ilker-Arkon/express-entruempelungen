@@ -130,8 +130,7 @@ export const config: Config<PuckConfigProps> = {
         title: "Unsere Ergebnisse",
         subtitle: "Sehen Sie selbst, wie wir Räume verwandeln",
         items: [
-          { beforeImage: "/gallery/before1.jpg", afterImage: "/gallery/after1.jpg", label: "Wohnungsauflösung Messie" },
-          { beforeImage: "/gallery/before2.jpg", afterImage: "/gallery/after2.jpg", label: "Kellerentrümpelung" }
+          { beforeImage: "/gallery/before1.jpg", afterImage: "/gallery/after1.jpg", label: "Vorher / Nachher" }
         ]
       },
       render: (props: any) => <BeforeAfterBlock {...props} />

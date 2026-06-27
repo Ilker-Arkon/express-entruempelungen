@@ -22,12 +22,7 @@ export function BeforeAfterBlock({
     {
       beforeImage: "/gallery/before1.jpg",
       afterImage: "/gallery/after1.jpg",
-      label: "Wohnungsauflösung komplett"
-    },
-    {
-      beforeImage: "/gallery/before2.jpg",
-      afterImage: "/gallery/after2.jpg",
-      label: "Büroentrümpelung"
+      label: "Vorher / Nachher"
     }
   ]
 }: BeforeAfterProps) {
