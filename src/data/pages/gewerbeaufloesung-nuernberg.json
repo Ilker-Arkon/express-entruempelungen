@@ -1,0 +1,82 @@
+{
+    "content":  [
+                    {
+                        "type":  "Hero",
+                        "props":  {
+                                      "id":  "hero",
+                                      "title":  "Gewerbeauflösung Nürnberg",
+                                      "subtitle":  "Professionelle Räumung von Büros, Hallen, Lagern und Gewerbeflächen zum Festpreis."
+                                  }
+                    },
+                    {
+                        "type":  "TrustBar",
+                        "props":  {
+                                      "id":  "trust"
+                                  }
+                    },
+                    {
+                        "type":  "Services",
+                        "props":  {
+                                      "id":  "services"
+                                  }
+                    },
+                    {
+                        "type":  "BeforeAfter",
+                        "props":  {
+                                      "id":  "beforeafter"
+                                  }
+                    },
+                    {
+                        "type":  "Timeline",
+                        "props":  {
+                                      "id":  "timeline"
+                                  }
+                    },
+                    {
+                        "type":  "PriceCalculator",
+                        "props":  {
+                                      "id":  "calculator"
+                                  }
+                    },
+                    {
+                        "type":  "Reviews",
+                        "props":  {
+                                      "id":  "reviews"
+                                  }
+                    },
+                    {
+                        "type":  "ServiceAreas",
+                        "props":  {
+                                      "id":  "areas"
+                                  }
+                    },
+                    {
+                        "type":  "FAQ",
+                        "props":  {
+                                      "id":  "faq"
+                                  }
+                    },
+                    {
+                        "type":  "Environment",
+                        "props":  {
+                                      "id":  "environment"
+                                  }
+                    },
+                    {
+                        "type":  "ContactHub",
+                        "props":  {
+                                      "id":  "contact"
+                                  }
+                    }
+                ],
+    "root":  {
+                 "props":  {
+                               "title":  "Gewerbeauflösung Nürnberg",
+                               "seo":  {
+                                           "title":  "Gewerbeauflösung Nürnberg | Express Entrümpelungen",
+                                           "description":  "Professionelle Gewerbeauflösung & Firmenauflösung in Nürnberg. Schnell, zuverlässig & besenrein. Jetzt unverbindliches Angebot anfordern!",
+                                           "canonical":  "https://www.express-entruempelungen.de/gewerbeaufloesung-nuernberg"
+                                       }
+                           }
+             }
+}

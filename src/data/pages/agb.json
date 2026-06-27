@@ -1,0 +1,35 @@
+{
+    "content": [
+        {
+            "type": "Hero",
+            "props": {
+                "id": "agb-hero",
+                "title": "Allgemeine Geschäftsbedingungen",
+                "subtitle": "AGB der Express Entrümpelungen & Wohnungsauflösungen",
+                "badges": ["Festpreisgarantie", "Kostenlose Besichtigung", "Besenreine Übergabe"],
+                "phoneLabel": "0172 80 83 459",
+                "whatsappLabel": "WhatsApp (0176...)",
+                "phoneUrl": "tel:+491728083459",
+                "whatsappUrl": "https://wa.me/4917655122781"
+            }
+        },
+        {
+            "type": "Services",
+            "props": {
+                "id": "agb-content",
+                "title": "AGB – Express Entrümpelungen",
+                "subtitle": "",
+                "services": []
+            }
+        }
+    ],
+    "root": {
+        "props": {
+            "title": "AGB | Express Entrümpelungen",
+            "seo": {
+                "title": "AGB | Express Entrümpelungen",
+                "description": "Allgemeine Geschäftsbedingungen der Express Entrümpelungen & Wohnungsauflösungen in Nürnberg."
+            }
+        }
+    }
+}

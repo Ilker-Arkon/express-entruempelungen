@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+:root {
+  --primary: #FFC107;
+  --primary-dark: #E0A800;
+  --dark: #0D1B4B;
+  --dark-secondary: #1A237E;
+  --white: #FFFFFF;
+  --gray-light: #F8FAFC;
+  --gray: #6C757D;
+  --success: #25D366;
+  --danger: #DC3545;
+  --background: #ffffff;
+  --foreground: var(--dark);
+}
+
+@theme inline {
+  --color-primary: #FFC107;
+  --color-primary-dark: #E0A800;
+  --color-dark: #0D1B4B;
+  --color-dark-secondary: #1A237E;
+  --color-success: #25D366;
+  --color-danger: #DC3545;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter);
+  --font-heading: var(--font-montserrat);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: var(--dark);
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter), sans-serif;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-montserrat), sans-serif;
+}
+
+/* Custom Utilities for Shadows and Animations */
+@layer utilities {
+  .shadow-card {
+    box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+  }
+  .shadow-button {
+    box-shadow: 0 5px 20px rgba(255,193,7,0.4);
+  }
+  .text-gradient {
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(to right, var(--primary), #FFD54F);
+  }
+}

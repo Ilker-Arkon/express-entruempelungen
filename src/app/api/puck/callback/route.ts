@@ -1,0 +1,46 @@
+import { NextResponse } from "next/server";
+import fs from "fs/promises";
+import path from "path";
+
+const CALLBACK_DIR = path.join(process.cwd(), "src/data/callbacks");
+
+export async function POST(request: Request) {
+  try {
+    const body = await request.json();
+    const { name, phone, time } = body;
+
+    if (!name || !phone) {
+      return NextResponse.json(
+        { error: "Name und Telefonnummer sind erforderlich." },
+        { status: 400 }
+      );
+    }
+
+    // Save callback request to a JSON file
+    await fs.mkdir(CALLBACK_DIR, { recursive: true });
+    const timestamp = new Date().toISOString().replace(/[:.]/g, "-");
+    const filename = `callback-${timestamp}.json`;
+    await fs.writeFile(
+      path.join(CALLBACK_DIR, filename),
+      JSON.stringify(
+        {
+          name,
+          phone,
+          time: time || "Keine Präferenz",
+          requestedAt: new Date().toISOString(),
+        },
+        null,
+        2
+      ),
+      "utf-8"
+    );
+
+    return NextResponse.json({ success: true, message: "Rückruf wird vorbereitet." });
+  } catch (error) {
+    console.error("Callback save error:", error);
+    return NextResponse.json(
+      { error: "Fehler beim Speichern der Rückrufanfrage." },
+      { status: 500 }
+    );
+  }
+}

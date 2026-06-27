@@ -1,0 +1,75 @@
+{
+  "content": [
+    {
+      "type": "Hero",
+      "props": {
+        "id": "hero"
+      }
+    },
+    {
+      "type": "TrustBar",
+      "props": {
+        "id": "trust"
+      }
+    },
+    {
+      "type": "Services",
+      "props": {
+        "id": "leistungen"
+      }
+    },
+    {
+      "type": "BeforeAfter",
+      "props": {
+        "id": "beforeafter"
+      }
+    },
+    {
+      "type": "Timeline",
+      "props": {
+        "id": "ablauf"
+      }
+    },
+    {
+      "type": "PriceCalculator",
+      "props": {
+        "id": "preise"
+      }
+    },
+    {
+      "type": "Reviews",
+      "props": {
+        "id": "reviews"
+      }
+    },
+    {
+      "type": "ServiceAreas",
+      "props": {
+        "id": "areas"
+      }
+    },
+    {
+      "type": "FAQ",
+      "props": {
+        "id": "faq"
+      }
+    },
+    {
+      "type": "Environment",
+      "props": {
+        "id": "environment"
+      }
+    },
+    {
+      "type": "ContactHub",
+      "props": {
+        "id": "kontakt"
+      }
+    }
+  ],
+  "root": {
+    "props": {
+      "title": "Entrümpelung Webseite (Premium One-Pager)"
+    }
+  }
+}
