@@ -214,20 +214,22 @@ export function Header({ config }: { config?: HeaderConfig }) {
                {c.phonePrimaryDisplay}
              </a>
 
-             {/* Admin Dropdown */}
-             <div className="relative group">
-               <button aria-label="Admin Tools" className="flex items-center justify-center w-10 h-10 bg-zinc-100 hover:bg-zinc-200 text-zinc-600 rounded-full transition-colors focus:outline-none">
-                 <Wrench className="w-4 h-4" />
-               </button>
-               <div className="absolute right-0 top-full mt-2 w-48 bg-white border border-zinc-200 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 py-2">
-                 <Link href="/edit" className="flex items-center gap-2 px-4 py-2 hover:bg-zinc-100 hover:text-[var(--primary)] transition-colors text-sm font-semibold text-zinc-700">
-                   <Edit className="w-4 h-4" /> Baukasten
-                 </Link>
-                 <Link href="/edit/site-config" className="flex items-center gap-2 px-4 py-2 hover:bg-zinc-100 hover:text-[var(--primary)] transition-colors text-sm font-semibold text-zinc-700">
-                   ⚙️ Einstellungen
-                 </Link>
+             {/* Admin Dropdown - Only visible in development mode */}
+             {process.env.NODE_ENV === 'development' && (
+               <div className="relative group">
+                 <button aria-label="Admin Tools" className="flex items-center justify-center w-10 h-10 bg-zinc-100 hover:bg-zinc-200 text-zinc-600 rounded-full transition-colors focus:outline-none">
+                   <Wrench className="w-4 h-4" />
+                 </button>
+                 <div className="absolute right-0 top-full mt-2 w-48 bg-white border border-zinc-200 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 py-2">
+                   <Link href="/edit" className="flex items-center gap-2 px-4 py-2 hover:bg-zinc-100 hover:text-[var(--primary)] transition-colors text-sm font-semibold text-zinc-700">
+                     <Edit className="w-4 h-4" /> Baukasten
+                   </Link>
+                   <Link href="/edit/site-config" className="flex items-center gap-2 px-4 py-2 hover:bg-zinc-100 hover:text-[var(--primary)] transition-colors text-sm font-semibold text-zinc-700">
+                     ⚙️ Einstellungen
+                   </Link>
+                 </div>
                </div>
-             </div>
+             )}
            </div>
 
            {/* Mobile Menu Toggle */}
