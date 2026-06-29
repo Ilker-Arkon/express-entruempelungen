@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Montserrat } from "next/font/google";
 import { CookieBanner } from "@/ux/CookieBanner";
+import { getSiteConfig } from "@/lib/site-config";
 import "./globals.css";
 
 const inter = Inter({
@@ -19,56 +20,61 @@ export const viewport: Viewport = {
   themeColor: "#FFC107",
 };
 
-export const metadata: Metadata = {
-  title: {
-    default: "Express Entrümpelungen Nürnberg | Festpreis | Kostenlose Besichtigung",
-    template: "%s | Express Entrümpelungen",
-  },
-  description: "Professionelle Entrümpelung in Nürnberg ✓ Festpreisgarantie ✓ Kostenlose Besichtigung ☎ 0172 8083459",
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
+export async function generateMetadata(): Promise<Metadata> {
+  const config = await getSiteConfig();
+  return {
+    title: {
+      default: config.seoTitle,
+      template: "%s | Express Entrümpelungen",
+    },
+    description: config.seoDescription,
+    robots: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
     },
-  },
-  openGraph: {
-    title: "Express Entrümpelungen Nürnberg | Festpreis",
-    description: "Professionelle Entrümpelung in Nürnberg ✓ Festpreisgarantie ✓ Kostenlose Besichtigung ☎ 0172 8083459",
-    locale: "de_DE",
-    type: "website",
-  },
-};
+    openGraph: {
+      title: config.seoOgTitle,
+      description: config.seoOgDescription,
+      locale: "de_DE",
+      type: "website",
+    },
+  };
+}
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const config = await getSiteConfig();
+
   const schemaMarkup = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": "Express Entrümpelungen",
-    "image": "https://www.express-entruempelungen.de/gallery/logo.png",
+    "name": config.companyName,
+    "image": `https://www.express-entruempelungen.de${config.logoPath}`,
     "@id": "https://www.express-entruempelungen.de",
     "url": "https://www.express-entruempelungen.de",
-    "telephone": "+491728083459",
-    "priceRange": "$$",
+    "telephone": config.phonePrimary,
+    "priceRange": config.schemaPriceRange,
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Friesenstraße 25",
-      "addressLocality": "Nürnberg",
-      "postalCode": "90441",
+      "streetAddress": config.street,
+      "addressLocality": config.city,
+      "postalCode": config.postalCode,
       "addressCountry": "DE"
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": 49.4319,
-      "longitude": 11.0664
+      "latitude": config.schemaGeoLat,
+      "longitude": config.schemaGeoLng
     },
     "openingHoursSpecification": {
       "@type": "OpeningHoursSpecification",
@@ -96,7 +102,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }}
         />
       </head>
-      <body className="min-h-full flex flex-col bg-white dark:bg-[#1A1A2E] text-[#1A1A2E] dark:text-white">
+      <body className="min-h-full flex flex-col bg-white text-[#1A1A2E]">
         {children}
         <CookieBanner />
       </body>

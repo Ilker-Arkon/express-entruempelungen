@@ -15,9 +15,9 @@ export default function DatenschutzPage() {
 
       <h1 className="text-4xl font-heading font-black mb-8">Datenschutzerklärung</h1>
       
-      <div className="space-y-8 text-gray-700 dark:text-gray-300">
+      <div className="space-y-8 text-gray-700">
         <section>
-          <h2 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">1. Datenschutz auf einen Blick</h2>
+          <h2 className="text-2xl font-bold mb-4 text-gray-900">1. Datenschutz auf einen Blick</h2>
           <h3 className="text-xl font-bold mt-4 mb-2">Allgemeine Hinweise</h3>
           <p>
             Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen.
@@ -25,7 +25,7 @@ export default function DatenschutzPage() {
         </section>
 
         <section>
-          <h2 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">2. Allgemeine Hinweise und Pflichtinformationen</h2>
+          <h2 className="text-2xl font-bold mb-4 text-gray-900">2. Allgemeine Hinweise und Pflichtinformationen</h2>
           <h3 className="text-xl font-bold mt-4 mb-2">Datenschutz</h3>
           <p>
             Die Betreiber dieser Seiten nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend der gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerklärung.
@@ -42,7 +42,7 @@ export default function DatenschutzPage() {
         </section>
 
         <section>
-          <h2 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">3. Datenerfassung auf dieser Website</h2>
+          <h2 className="text-2xl font-bold mb-4 text-gray-900">3. Datenerfassung auf dieser Website</h2>
           <h3 className="text-xl font-bold mt-4 mb-2">Cookies</h3>
           <p>
             Unsere Internetseiten verwenden so genannte „Cookies“. Cookies sind kleine Textdateien und richten auf Ihrem Endgerät keinen Schaden an. Sie werden entweder vorübergehend für die Dauer einer Sitzung (Session-Cookies) oder dauerhaft (permanente Cookies) auf Ihrem Endgerät gespeichert.

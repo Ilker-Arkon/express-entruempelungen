@@ -31,18 +31,18 @@ export function FAQBlock({
   const [openIndex, setOpenIndex] = useState<number | null>(0); // First one open by default
 
   return (
-    <section id={id || "faq"} className="py-24 bg-white dark:bg-[var(--dark)]">
+    <section id={id || "faq"} className="py-24 bg-white">
       <div className="container mx-auto px-6 max-w-4xl">
         <div className="text-center mb-16">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-5xl font-heading font-bold text-gray-900 dark:text-white mb-4"
+            className="text-3xl md:text-5xl font-heading font-bold text-gray-900 mb-4"
           >
             {title}
           </motion.h2>
-          <p className="text-gray-600 dark:text-gray-400 font-body text-lg">{subtitle}</p>
+          <p className="text-gray-600 font-body text-lg">{subtitle}</p>
         </div>
 
         <div className="space-y-4">
@@ -56,19 +56,19 @@ export function FAQBlock({
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className={`border rounded-2xl overflow-hidden transition-all duration-300 ${isOpen ? 'bg-white dark:bg-[var(--dark-secondary)] border-[var(--primary)]/30 shadow-card' : 'bg-gray-50 dark:bg-zinc-900/50 border-gray-200 dark:border-zinc-800'}`}
+                className={`border rounded-2xl overflow-hidden transition-all duration-300 ${isOpen ? 'bg-white border-[var(--primary)]/30 shadow-card' : 'bg-gray-50 border-gray-200'}`}
               >
                 <button
                   onClick={() => setOpenIndex(isOpen ? null : index)}
                   className="w-full flex items-center justify-between p-6 text-left focus:outline-none"
                 >
-                  <span className={`font-heading font-bold text-lg md:text-xl pr-8 transition-colors ${isOpen ? 'text-[var(--primary)]' : 'text-gray-900 dark:text-white'}`}>
+                  <span className={`font-heading font-bold text-lg md:text-xl pr-8 transition-colors ${isOpen ? 'text-[var(--primary)]' : 'text-gray-900'}`}>
                     {faq.question}
                   </span>
                   <motion.div 
                     animate={{ rotate: isOpen ? 45 : 0 }}
                     transition={{ type: "spring", stiffness: 200, damping: 15 }}
-                    className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-colors ${isOpen ? 'bg-[var(--primary)] text-white' : 'bg-gray-200 dark:bg-zinc-800 text-gray-500'}`}
+                    className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-colors ${isOpen ? 'bg-[var(--primary)] text-white' : 'bg-gray-200 text-gray-500'}`}
                   >
                     <Plus className="w-5 h-5" />
                   </motion.div>
@@ -82,7 +82,7 @@ export function FAQBlock({
                       exit={{ height: 0, opacity: 0 }}
                       transition={{ duration: 0.3, ease: "easeInOut" }}
                     >
-                      <div className="p-6 pt-0 text-gray-600 dark:text-gray-400 font-body text-base md:text-lg leading-relaxed">
+                      <div className="p-6 pt-0 text-gray-600 font-body text-base md:text-lg leading-relaxed">
                         {faq.answer}
                       </div>
                     </motion.div>
@@ -99,7 +99,7 @@ export function FAQBlock({
           viewport={{ once: true }}
           className="mt-12 text-center"
         >
-          <p className="text-gray-600 dark:text-gray-400 mb-4">Noch Fragen? Rufen Sie uns an!</p>
+          <p className="text-gray-600 mb-4">Noch Fragen? Rufen Sie uns an!</p>
           <a href="tel:+491728083459" className="inline-flex items-center gap-2 text-[var(--primary)] font-bold text-xl">
             <Phone className="w-5 h-5" /> 0172 80 83 459
           </a>

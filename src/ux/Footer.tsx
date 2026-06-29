@@ -2,7 +2,55 @@ import Link from "next/link";
 import Image from "next/image";
 import { MapPin, Phone, Mail, Clock, CheckCircle2, ArrowRight } from "lucide-react";
 
-export function Footer() {
+export interface FooterConfig {
+  companyName?: string;
+  companySubtitle?: string;
+  companyDescription?: string;
+  logoPath?: string;
+  logoAlt?: string;
+  phonePrimary?: string;
+  phonePrimaryDisplay?: string;
+  phoneSecondary?: string;
+  email?: string;
+  street?: string;
+  city?: string;
+  postalCode?: string;
+  openingHoursText?: string;
+  openingHoursNote?: string;
+  vatId?: string;
+  copyrightText?: string;
+  serviceDropdownLinks?: { href: string; label: string }[];
+}
+
+const DEFAULT_FOOTER: Required<FooterConfig> = {
+  companyName: "Express",
+  companySubtitle: "Entrümpelungen",
+  companyDescription:
+    "Ihr zuverlässiger Partner für besenreine Wohnungsauflösungen, Entrümpelungen und diskrete Nachlassabwicklungen in Nürnberg und 50km Umkreis.",
+  logoPath: "/gallery/logo.png",
+  logoAlt: "Express Entrümpelungen Logo",
+  phonePrimary: "+491728083459",
+  phonePrimaryDisplay: "0172 80 83 459",
+  phoneSecondary: "+4917655122781",
+  email: "info@express-entruempelungen.de",
+  street: "Friesenstraße 25",
+  city: "Nürnberg",
+  postalCode: "90441",
+  openingHoursText: "Mo - Sa: 08:00 - 20:00 Uhr",
+  openingHoursNote: "Notdienst: 24/7 über WhatsApp",
+  vatId: "DE462122010",
+  copyrightText: "Express Entrümpelungen & Wohnungsauflösungen. Alle Rechte vorbehalten.",
+  serviceDropdownLinks: [
+    { href: "/wohnungsaufloesung-nuernberg", label: "Wohnungsauflösung" },
+    { href: "/entruempelung-nuernberg", label: "Entrümpelung" },
+    { href: "/gewerbeaufloesung-nuernberg", label: "Gewerbeauflösung" },
+    { href: "/nachlassaufloesung-nuernberg", label: "Nachlassauflösung" },
+    { href: "/sperrmuellentsorgung-nuernberg", label: "Sperrmüllentsorgung" },
+  ],
+};
+
+export function Footer({ config }: { config?: FooterConfig }) {
+  const c = { ...DEFAULT_FOOTER, ...config };
   return (
     <footer className="bg-[var(--dark)] border-t border-zinc-800 pt-20 pb-10 text-zinc-400 text-sm font-body relative overflow-hidden">
       
@@ -16,18 +64,18 @@ export function Footer() {
           <div className="flex flex-col">
             <Link href="/" className="flex items-center gap-3 mb-6">
               <Image
-                src="/gallery/logo.png"
-                alt="Express Entrümpelungen Logo"
+                src={c.logoPath}
+                alt={c.logoAlt}
                 width={48}
                 height={48}
                 className="w-12 h-12 object-contain bg-white rounded-xl p-1"
               />
               <div className="font-heading font-black text-xl text-white leading-tight">
-                Express<br/><span className="text-[var(--primary)] text-sm">Entrümpelungen</span>
+                {c.companyName}<br/><span className="text-[var(--primary)] text-sm">{c.companySubtitle}</span>
               </div>
             </Link>
             <p className="mb-6 leading-relaxed">
-              Ihr zuverlässiger Partner für besenreine Wohnungsauflösungen, Entrümpelungen und diskrete Nachlassabwicklungen in Nürnberg und 50km Umkreis.
+              {c.companyDescription}
             </p>
             <div className="flex flex-col gap-2">
               <div className="flex items-center gap-2 text-white/90">
@@ -48,11 +96,9 @@ export function Footer() {
               Leistungen
             </h4>
             <ul className="space-y-3">
-              <li><Link href="/wohnungsaufloesung-nuernberg" className="hover:text-[var(--primary)] transition-colors flex items-center gap-2 group"><ArrowRight className="w-3 h-3 text-zinc-600 group-hover:text-[var(--primary)]" /> Wohnungsauflösung</Link></li>
-              <li><Link href="/entruempelung-nuernberg" className="hover:text-[var(--primary)] transition-colors flex items-center gap-2 group"><ArrowRight className="w-3 h-3 text-zinc-600 group-hover:text-[var(--primary)]" /> Entrümpelung</Link></li>
-              <li><Link href="/gewerbeaufloesung-nuernberg" className="hover:text-[var(--primary)] transition-colors flex items-center gap-2 group"><ArrowRight className="w-3 h-3 text-zinc-600 group-hover:text-[var(--primary)]" /> Gewerbeauflösung</Link></li>
-              <li><Link href="/nachlassaufloesung-nuernberg" className="hover:text-[var(--primary)] transition-colors flex items-center gap-2 group"><ArrowRight className="w-3 h-3 text-zinc-600 group-hover:text-[var(--primary)]" /> Nachlassauflösung</Link></li>
-              <li><Link href="/sperrmuellentsorgung-nuernberg" className="hover:text-[var(--primary)] transition-colors flex items-center gap-2 group"><ArrowRight className="w-3 h-3 text-zinc-600 group-hover:text-[var(--primary)]" /> Sperrmüllentsorgung</Link></li>
+              {c.serviceDropdownLinks.map((link) => (
+                <li key={link.href}><Link href={link.href} className="hover:text-[var(--primary)] transition-colors flex items-center gap-2 group"><ArrowRight className="w-3 h-3 text-zinc-600 group-hover:text-[var(--primary)]" /> {link.label}</Link></li>
+              ))}
             </ul>
           </div>
 
@@ -66,21 +112,21 @@ export function Footer() {
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-[var(--primary)] shrink-0 mt-0.5" />
                 <div>
-                  <strong className="block text-white font-medium mb-1">Zentrale Nürnberg</strong>
-                  Friesenstraße 25<br/>90441 Nürnberg
+                  <strong className="block text-white font-medium mb-1">Zentrale {c.city}</strong>
+                  {c.street}<br/>{c.postalCode} {c.city}
                 </div>
               </li>
               <li className="flex items-start gap-3">
                 <Phone className="w-5 h-5 text-[var(--primary)] shrink-0 mt-0.5" />
                 <div>
-                  <a href="tel:+491728083459" className="block hover:text-white transition-colors">+49 172 80 83 459</a>
-                  <a href="tel:+4917655122781" className="block hover:text-white transition-colors">+49 176 55 12 27 81</a>
+                  <a href={`tel:${c.phonePrimary}`} className="block hover:text-white transition-colors">{c.phonePrimaryDisplay}</a>
+                  {c.phoneSecondary && <a href={`tel:${c.phoneSecondary}`} className="block hover:text-white transition-colors">{c.phoneSecondary}</a>}
                 </div>
               </li>
               <li className="flex items-start gap-3">
                 <Mail className="w-5 h-5 text-[var(--primary)] shrink-0 mt-0.5" />
-                <a href="mailto:info@express-entruempelungen.de" className="hover:text-white transition-colors">
-                  info@express-entruempelungen.de
+                <a href={`mailto:${c.email}`} className="hover:text-white transition-colors">
+                  {c.email}
                 </a>
               </li>
             </ul>
@@ -96,8 +142,8 @@ export function Footer() {
               <li className="flex items-center gap-3">
                 <Clock className="w-5 h-5 text-[var(--primary)] shrink-0" />
                 <div>
-                  <span className="block text-white">Mo - Sa: 08:00 - 20:00 Uhr</span>
-                  <span>Notdienst: 24/7 über WhatsApp</span>
+                  <span className="block text-white">{c.openingHoursText}</span>
+                  <span>{c.openingHoursNote}</span>
                 </div>
               </li>
             </ul>
@@ -116,10 +162,10 @@ export function Footer() {
       <div className="border-t border-zinc-800/50 bg-black/20">
         <div className="container mx-auto px-6 py-6 flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="text-center md:text-left">
-            &copy; {new Date().getFullYear()} Express Entrümpelungen & Wohnungsauflösungen. Alle Rechte vorbehalten.
+            &copy; {new Date().getFullYear()} {c.copyrightText}
           </div>
           <div className="text-center md:text-right text-zinc-500">
-            USt-IdNr.: DE462122010
+            USt-IdNr.: {c.vatId}
           </div>
         </div>
       </div>

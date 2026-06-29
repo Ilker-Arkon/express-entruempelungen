@@ -3,10 +3,23 @@
 import { MessageCircle, Phone } from "lucide-react";
 import { motion } from "framer-motion";
 
-export function FloatingContact() {
-  const phoneUrl = "tel:+491728083459";
-  const whatsappText = encodeURIComponent("Hallo, ich interessiere mich für eine kostenlose Besichtigung. Bitte kontaktieren Sie mich.");
-  const whatsappUrl = `https://wa.me/491728083459?text=${whatsappText}`;
+export interface FloatingContactConfig {
+  phonePrimary?: string;
+  whatsappNumber?: string;
+  whatsappDefaultMessage?: string;
+}
+
+const DEFAULT_FC: Required<FloatingContactConfig> = {
+  phonePrimary: "+491728083459",
+  whatsappNumber: "491728083459",
+  whatsappDefaultMessage: "Hallo, ich interessiere mich für eine kostenlose Besichtigung. Bitte kontaktieren Sie mich.",
+};
+
+export function FloatingContact({ config }: { config?: FloatingContactConfig }) {
+  const c = { ...DEFAULT_FC, ...config };
+  const phoneUrl = `tel:${c.phonePrimary}`;
+  const whatsappText = encodeURIComponent(c.whatsappDefaultMessage);
+  const whatsappUrl = `https://wa.me/${c.whatsappNumber}?text=${whatsappText}`;
 
   return (
     <>
@@ -40,7 +53,7 @@ export function FloatingContact() {
       </div>
 
       {/* Mobile Sticky Bottom Bar */}
-      <div className="fixed bottom-0 left-0 w-full z-50 md:hidden bg-white dark:bg-[#1A1A2E] border-t border-zinc-200 dark:border-zinc-800 shadow-[0_-10px_20px_rgba(0,0,0,0.1)] flex p-2 gap-2 pb-[env(safe-area-inset-bottom)]">
+      <div className="fixed bottom-0 left-0 w-full z-50 md:hidden bg-white border-t border-zinc-200 shadow-[0_-10px_20px_rgba(0,0,0,0.1)] flex p-2 gap-2 pb-[env(safe-area-inset-bottom)]">
         <a 
           href={phoneUrl}
           className="flex-1 bg-[var(--primary)] text-[#0D1B4B] py-3 rounded-lg flex items-center justify-center gap-2 font-bold text-sm"

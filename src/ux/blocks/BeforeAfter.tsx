@@ -32,14 +32,14 @@ export function BeforeAfterBlock({
   }, []);
 
   return (
-    <section className="py-24 bg-[var(--gray-light)] dark:bg-[var(--dark)] overflow-hidden">
+    <section className="py-24 bg-[var(--gray-light)] overflow-hidden">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-5xl font-heading font-bold text-gray-900 dark:text-white mb-4"
+            className="text-3xl md:text-5xl font-heading font-bold text-gray-900 mb-4"
           >
             {title}
           </motion.h2>
@@ -48,7 +48,7 @@ export function BeforeAfterBlock({
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-lg text-gray-600 dark:text-gray-400 font-body"
+            className="text-lg text-gray-600 font-body"
           >
             {subtitle}
           </motion.p>
@@ -64,7 +64,7 @@ export function BeforeAfterBlock({
               transition={{ delay: index * 0.2, duration: 0.6 }}
               className="flex flex-col gap-4 w-full max-w-3xl"
             >
-              <div className="rounded-2xl overflow-hidden shadow-card border border-gray-200 dark:border-zinc-800 aspect-video bg-zinc-100 dark:bg-zinc-900 relative">
+              <div className="rounded-2xl overflow-hidden shadow-card border border-gray-200 aspect-video bg-zinc-100 relative">
                 {mounted ? (
                   <ReactCompareSlider
                     itemOne={<ReactCompareSliderImage src={item.beforeImage} alt="Vorher" />}
@@ -75,7 +75,7 @@ export function BeforeAfterBlock({
                   <Image src={item.beforeImage} alt="Vorher" width={800} height={450} className="aspect-video w-full h-full object-cover" />
                 )}
               </div>
-              <p className="text-center font-heading font-semibold text-gray-800 dark:text-gray-200">
+              <p className="text-center font-heading font-semibold text-gray-800">
                 {item.label}
               </p>
             </motion.div>

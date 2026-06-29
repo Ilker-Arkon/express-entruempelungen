@@ -1,0 +1,30 @@
+export interface SiteConfig {
+  companyName: string;
+  companySubtitle: string;
+  companyDescription: string;
+  phonePrimary: string;
+  phonePrimaryDisplay: string;
+  phoneSecondary: string;
+  email: string;
+  street: string;
+  city: string;
+  postalCode: string;
+  logoPath: string;
+  logoAlt: string;
+  topBarBadges: { text: string }[];
+  mainNavLinks: { href: string; label: string }[];
+  serviceDropdownLinks: { href: string; label: string }[];
+  openingHoursText: string;
+  openingHoursNote: string;
+  whatsappNumber: string;
+  whatsappDefaultMessage: string;
+  schemaGeoLat: number;
+  schemaGeoLng: number;
+  schemaPriceRange: string;
+  vatId: string;
+  copyrightText: string;
+  seoTitle: string;
+  seoDescription: string;
+  seoOgTitle: string;
+  seoOgDescription: string;
+}

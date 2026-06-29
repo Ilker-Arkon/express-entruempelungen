@@ -58,7 +58,7 @@ export function PriceCalculatorBlock({
   }, [propertyType, size, fillLevel, floor, hasElevator, basePricePerSqm]);
 
   return (
-    <section id={id || "preise"} className="py-24 bg-[var(--gray-light)] dark:bg-[var(--dark)] relative">
+    <section id={id || "preise"} className="py-24 bg-[var(--gray-light)] relative">
       <div className="container mx-auto px-6 max-w-4xl">
         
         <div className="text-center mb-12">
@@ -69,18 +69,18 @@ export function PriceCalculatorBlock({
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-5xl font-heading font-bold text-gray-900 dark:text-white mb-4"
+            className="text-3xl md:text-5xl font-heading font-bold text-gray-900 mb-4"
           >
             {title}
           </motion.h2>
-          <p className="text-gray-600 dark:text-gray-400 font-body text-lg">{subtitle}</p>
+          <p className="text-gray-600 font-body text-lg">{subtitle}</p>
         </div>
 
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="bg-white dark:bg-[var(--dark-secondary)] rounded-3xl p-8 md:p-12 shadow-card border border-gray-100 dark:border-zinc-800"
+          className="bg-white rounded-3xl p-8 md:p-12 shadow-card border border-gray-100"
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             
@@ -88,11 +88,11 @@ export function PriceCalculatorBlock({
             <div className="space-y-8">
               {/* Art der Immobilie */}
               <div>
-                <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">Art der Immobilie</label>
+                <label className="block text-sm font-semibold text-gray-700 mb-3">Art der Immobilie</label>
                 <select 
                   value={propertyType}
                   onChange={(e) => setPropertyType(e.target.value)}
-                  className="w-full bg-gray-50 dark:bg-zinc-900 border border-gray-200 dark:border-zinc-700 rounded-xl px-4 py-3 text-gray-900 dark:text-white focus:ring-2 focus:ring-[var(--primary)] focus:border-transparent outline-none"
+                  className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-gray-900 focus:ring-2 focus:ring-[var(--primary)] focus:border-transparent outline-none"
                 >
                   <option>Wohnung</option>
                   <option>Haus</option>
@@ -104,7 +104,7 @@ export function PriceCalculatorBlock({
               {/* Größe */}
               <div>
                 <div className="flex justify-between mb-3">
-                  <label className="text-sm font-semibold text-gray-700 dark:text-gray-300">Größe in m²</label>
+                  <label className="text-sm font-semibold text-gray-700">Größe in m²</label>
                   <span className="font-bold text-[var(--primary)]">{size} m²</span>
                 </div>
                 <input 
@@ -112,19 +112,19 @@ export function PriceCalculatorBlock({
                   min="10" max="300" step="5"
                   value={size}
                   onChange={(e) => setSize(parseInt(e.target.value))}
-                  className="w-full h-2 bg-gray-200 dark:bg-zinc-700 rounded-lg appearance-none cursor-pointer accent-[var(--primary)]"
+                  className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-[var(--primary)]"
                 />
               </div>
 
               {/* Füllgrad */}
               <div>
-                <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">Füllgrad / Menge</label>
+                <label className="block text-sm font-semibold text-gray-700 mb-3">Füllgrad / Menge</label>
                 <div className="grid grid-cols-4 gap-2">
                   {["Wenig", "Mittel", "Viel", "Extrem"].map((level, idx) => (
                     <button
                       key={idx}
                       onClick={() => setFillLevel(idx + 1)}
-                      className={`py-2 text-xs md:text-sm font-medium rounded-lg transition-colors ${fillLevel === idx + 1 ? 'bg-[var(--primary)] text-white' : 'bg-gray-100 dark:bg-zinc-800 text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-zinc-700'}`}
+                      className={`py-2 text-xs md:text-sm font-medium rounded-lg transition-colors ${fillLevel === idx + 1 ? 'bg-[var(--primary)] text-white' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'}`}
                     >
                       {level}
                     </button>
@@ -135,11 +135,11 @@ export function PriceCalculatorBlock({
               <div className="grid grid-cols-2 gap-4">
                 {/* Etage */}
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">Etage</label>
+                  <label className="block text-sm font-semibold text-gray-700 mb-3">Etage</label>
                   <select 
                     value={floor}
                     onChange={(e) => setFloor(parseInt(e.target.value))}
-                    className="w-full bg-gray-50 dark:bg-zinc-900 border border-gray-200 dark:border-zinc-700 rounded-xl px-4 py-3 text-gray-900 dark:text-white outline-none"
+                    className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-gray-900 outline-none"
                   >
                     <option value={0}>Erdgeschoss</option>
                     <option value={1}>1. Etage</option>
@@ -152,10 +152,10 @@ export function PriceCalculatorBlock({
 
                 {/* Aufzug */}
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">Aufzug?</label>
+                  <label className="block text-sm font-semibold text-gray-700 mb-3">Aufzug?</label>
                   <button 
                     onClick={() => setHasElevator(!hasElevator)}
-                    className={`w-full py-3 rounded-xl font-medium transition-colors border ${hasElevator ? 'bg-green-50 dark:bg-green-900/20 text-green-600 dark:text-green-400 border-green-200 dark:border-green-800' : 'bg-gray-50 dark:bg-zinc-900 text-gray-600 dark:text-gray-400 border-gray-200 dark:border-zinc-700'}`}
+                    className={`w-full py-3 rounded-xl font-medium transition-colors border ${hasElevator ? 'bg-green-50 text-green-600 border-green-200' : 'bg-gray-50 text-gray-600 border-gray-200'}`}
                   >
                     {hasElevator ? 'Ja, vorhanden' : 'Nein'}
                   </button>
@@ -164,18 +164,18 @@ export function PriceCalculatorBlock({
             </div>
 
             {/* Results Panel */}
-            <div className="bg-gray-50 dark:bg-zinc-900 rounded-2xl p-8 flex flex-col justify-center items-center text-center relative overflow-hidden">
+            <div className="bg-gray-50 rounded-2xl p-8 flex flex-col justify-center items-center text-center relative overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-[var(--primary)]/5 rounded-full blur-3xl" />
               <div className="absolute bottom-0 left-0 w-32 h-32 bg-blue-500/5 rounded-full blur-3xl" />
               
               <div className="relative z-10 w-full">
-                <h4 className="text-gray-500 dark:text-gray-400 font-medium mb-4">Ihre geschätzte Preisspanne*</h4>
+                <h4 className="text-gray-500 font-medium mb-4">Ihre geschätzte Preisspanne*</h4>
                 
-                <div className="text-4xl md:text-5xl font-black font-heading text-gray-900 dark:text-white mb-6">
+                <div className="text-4xl md:text-5xl font-black font-heading text-gray-900 mb-6">
                   {priceRange.min}€ <span className="text-2xl text-gray-400 font-normal mx-2">–</span> {priceRange.max}€
                 </div>
 
-                <p className="text-xs text-gray-400 dark:text-gray-500 mb-8 px-4">
+                <p className="text-xs text-gray-400 mb-8 px-4">
                   *Dies ist eine unverbindliche Kostenschätzung. Für einen exakten Festpreis buchen Sie bitte unsere kostenlose Besichtigung.
                 </p>
 

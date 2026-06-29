@@ -92,16 +92,21 @@ export function ContactHubBlock({
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 flex flex-col items-center text-center shadow-2xl hover:bg-white/10 transition-colors"
+            className="group relative bg-[#1A1A24]/60 backdrop-blur-xl border border-white/5 rounded-3xl p-8 flex flex-col items-center text-center shadow-2xl hover:bg-[#1A1A24]/80 transition-all duration-500 overflow-hidden"
           >
-            <div className="w-20 h-20 bg-[var(--primary)]/10 rounded-full flex items-center justify-center mb-6 relative">
-              <PhoneCall className="w-10 h-10 text-[var(--primary)] relative z-10" />
+            {/* Subtle top highlight */}
+            <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[var(--primary)]/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            
+            <div className="w-16 h-16 bg-gradient-to-b from-white/10 to-transparent border border-white/10 rounded-2xl flex items-center justify-center mb-6 shadow-[0_0_30px_rgba(255,193,7,0.1)] group-hover:shadow-[0_0_40px_rgba(255,193,7,0.2)] transition-shadow duration-500">
+              <PhoneCall className="w-7 h-7 text-[var(--primary)]" />
             </div>
-            <h3 className="text-2xl font-bold text-white mb-2 font-heading">Direktanruf</h3>
-            <p className="text-gray-400 text-sm mb-6 flex-grow">Wir sind für Sie erreichbar. Sofortige Beratung!</p>
+            
+            <h3 className="text-2xl font-bold text-white mb-2 font-heading tracking-wide">Direktanruf</h3>
+            <p className="text-zinc-400 text-sm mb-8 flex-grow leading-relaxed">Wir sind für Sie erreichbar.<br/>Sofortige Beratung!</p>
+            
             <a href={`tel:${phone.replace(/[^0-9]/g, "")}`} className="w-full">
-              <button className="w-full py-4 bg-[var(--primary)] hover:bg-[var(--primary-dark)] text-white rounded-xl font-bold tracking-wide transition-colors flex items-center justify-center gap-2">
-                <PhoneCall className="w-5 h-5" /> JETZT ANRUFEN
+              <button className="w-full py-3.5 bg-gradient-to-r from-[var(--primary)] to-amber-500 hover:from-amber-400 hover:to-amber-500 text-black rounded-xl font-bold tracking-wider text-sm transition-all shadow-[0_0_20px_rgba(255,193,7,0.2)] hover:shadow-[0_0_30px_rgba(255,193,7,0.4)] flex items-center justify-center gap-2">
+                <PhoneCall className="w-4 h-4" /> JETZT ANRUFEN
               </button>
             </a>
           </motion.div>
@@ -112,22 +117,25 @@ export function ContactHubBlock({
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="bg-white/5 backdrop-blur-xl border border-[#25D366]/20 rounded-3xl p-8 flex flex-col items-center text-center shadow-2xl relative transform md:-translate-y-4 hover:bg-white/10 transition-colors"
+            className="group relative bg-[#1A1A24]/60 backdrop-blur-xl border border-white/5 rounded-3xl p-8 flex flex-col items-center text-center shadow-2xl transform md:-translate-y-4 hover:bg-[#1A1A24]/80 transition-all duration-500 overflow-hidden"
           >
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 border border-[#25D366]/30 bg-[#111122] text-[#25D366] text-xs font-semibold px-4 py-1.5 rounded-full shadow-lg tracking-wide uppercase">
-              Am beliebtesten
+            {/* Subtle top highlight */}
+            <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#25D366]/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#25D366] text-black text-[10px] font-bold px-4 py-1.5 rounded-full shadow-[0_0_15px_rgba(37,211,102,0.4)] tracking-widest uppercase">
+              Am Beliebtesten
             </div>
             
-            <div className="w-20 h-20 bg-[#25D366]/10 rounded-full flex items-center justify-center mb-6">
-              <MessageCircle className="w-10 h-10 text-[#25D366]" />
+            <div className="w-16 h-16 bg-gradient-to-b from-white/10 to-transparent border border-white/10 rounded-2xl flex items-center justify-center mb-6 shadow-[0_0_30px_rgba(37,211,102,0.1)] group-hover:shadow-[0_0_40px_rgba(37,211,102,0.2)] transition-shadow duration-500">
+              <MessageCircle className="w-7 h-7 text-[#25D366]" />
             </div>
             
-            <h3 className="text-2xl font-bold text-white mb-2 font-heading">WhatsApp</h3>
-            <p className="text-gray-400 text-sm mb-6 flex-grow">Schreiben Sie uns unkompliziert. Antwort in unter 1 Stunde!</p>
+            <h3 className="text-2xl font-bold text-white mb-2 font-heading tracking-wide">WhatsApp</h3>
+            <p className="text-zinc-400 text-sm mb-8 flex-grow leading-relaxed">Schreiben Sie uns unkompliziert.<br/>Antwort in unter 1 Stunde!</p>
             
             <a href={whatsappLink} target="_blank" rel="noreferrer" className="w-full">
-              <button className="w-full py-4 bg-[#25D366] hover:bg-[#20bd5a] text-white rounded-xl font-bold tracking-wide transition-colors flex items-center justify-center gap-2">
-                <MessageCircle className="w-5 h-5" /> WHATSAPP SENDEN
+              <button className="w-full py-3.5 bg-gradient-to-r from-[#25D366] to-[#1da851] hover:from-[#1da851] hover:to-[#168a41] text-white rounded-xl font-bold tracking-wider text-sm transition-all shadow-[0_0_20px_rgba(37,211,102,0.2)] hover:shadow-[0_0_30px_rgba(37,211,102,0.4)] flex items-center justify-center gap-2">
+                <MessageCircle className="w-4 h-4" /> WHATSAPP SENDEN
               </button>
             </a>
           </motion.div>
@@ -138,13 +146,17 @@ export function ContactHubBlock({
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.4 }}
-            className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 flex flex-col items-center text-center shadow-2xl hover:bg-white/10 transition-colors"
+            className="group relative bg-[#1A1A24]/60 backdrop-blur-xl border border-white/5 rounded-3xl p-8 flex flex-col items-center text-center shadow-2xl hover:bg-[#1A1A24]/80 transition-all duration-500 overflow-hidden"
           >
-            <div className="w-20 h-20 bg-blue-500/20 rounded-full flex items-center justify-center mb-6">
-              <Clock className="w-10 h-10 text-blue-400" />
+            {/* Subtle top highlight */}
+            <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-blue-500/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+            <div className="w-16 h-16 bg-gradient-to-b from-white/10 to-transparent border border-white/10 rounded-2xl flex items-center justify-center mb-6 shadow-[0_0_30px_rgba(59,130,246,0.1)] group-hover:shadow-[0_0_40px_rgba(59,130,246,0.2)] transition-shadow duration-500">
+              <Clock className="w-7 h-7 text-blue-400" />
             </div>
-            <h3 className="text-2xl font-bold text-white mb-2 font-heading">Rückruf-Service</h3>
-            <p className="text-gray-400 text-sm mb-6">Garantierter Rückruf in 30 Min.</p>
+            
+            <h3 className="text-2xl font-bold text-white mb-2 font-heading tracking-wide">Rückruf-Service</h3>
+            <p className="text-zinc-400 text-sm mb-8 leading-relaxed">Garantierter Rückruf<br/>in 30 Min.</p>
             
             <form ref={formRef} onSubmit={handleCallbackSubmit} className="w-full flex flex-col gap-3">
               {formState !== "success" && (
@@ -196,11 +208,11 @@ export function ContactHubBlock({
                 <button
                   type="submit"
                   disabled={formState === "submitting"}
-                  className="w-full py-4 bg-white/10 hover:bg-white/20 text-white border border-white/20 rounded-xl font-bold tracking-wide transition-colors mt-2 disabled:opacity-50 flex items-center justify-center gap-2"
+                  className="w-full py-3.5 bg-white/5 hover:bg-white/10 text-white border border-white/10 rounded-xl font-bold tracking-wider text-sm transition-all mt-2 disabled:opacity-50 flex items-center justify-center gap-2 hover:shadow-[0_0_20px_rgba(255,255,255,0.05)]"
                 >
                   {formState === "submitting" ? (
                     <>
-                      <Loader2 className="w-5 h-5 animate-spin" />
+                      <Loader2 className="w-4 h-4 animate-spin" />
                       WIRD GESENDET...
                     </>
                   ) : (

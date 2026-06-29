@@ -3,18 +3,58 @@
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Edit, Menu, X, Phone, Mail, MapPin, CheckCircle2, ChevronDown } from "lucide-react";
+import { Edit, Menu, X, Phone, Mail, MapPin, CheckCircle2, ChevronDown, Wrench } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const leistungenLinks = [
-  { href: "/entruempelung-nuernberg", label: "Entrümpelung Nürnberg" },
-  { href: "/wohnungsaufloesung-nuernberg", label: "Wohnungsauflösung Nürnberg" },
-  { href: "/gewerbeaufloesung-nuernberg", label: "Gewerbeentrümpelung" },
-  { href: "/nachlassaufloesung-nuernberg", label: "Nachlassauflösung" },
-  { href: "/sperrmuellentsorgung-nuernberg", label: "Sperrmüllentsorgung" },
-];
+export interface HeaderConfig {
+  companyName?: string;
+  companySubtitle?: string;
+  logoPath?: string;
+  logoAlt?: string;
+  phonePrimary?: string;
+  phonePrimaryDisplay?: string;
+  street?: string;
+  city?: string;
+  postalCode?: string;
+  topBarBadges?: { text: string }[];
+  mainNavLinks?: { href: string; label: string }[];
+  serviceDropdownLinks?: { href: string; label: string }[];
+}
 
-export function Header() {
+const DEFAULT_HEADER: Required<HeaderConfig> = {
+  companyName: "Express",
+  companySubtitle: "Entrümpelungen",
+  logoPath: "/gallery/logo.png",
+  logoAlt: "Express Entrümpelungen Logo",
+  phonePrimary: "+491728083459",
+  phonePrimaryDisplay: "0172 80 83 459",
+  street: "Friesenstraße 25",
+  city: "Nürnberg",
+  postalCode: "90441",
+  topBarBadges: [
+    { text: "Betriebshaftpflicht" },
+    { text: "IHK Zertifiziert" },
+    { text: "Festpreisgarantie" },
+    { text: "Besenrein" },
+  ],
+  mainNavLinks: [
+    { href: "/", label: "Startseite" },
+    { href: "/#ablauf", label: "Ablauf" },
+    { href: "/#preise", label: "Preise" },
+    { href: "/#faq", label: "FAQ" },
+    { href: "/#kontakt", label: "Kontakt" },
+  ],
+  serviceDropdownLinks: [
+    { href: "/entruempelung-nuernberg", label: "Entrümpelung Nürnberg" },
+    { href: "/wohnungsaufloesung-nuernberg", label: "Wohnungsauflösung Nürnberg" },
+    { href: "/gewerbeaufloesung-nuernberg", label: "Gewerbeentrümpelung" },
+    { href: "/nachlassaufloesung-nuernberg", label: "Nachlassauflösung" },
+    { href: "/sperrmuellentsorgung-nuernberg", label: "Sperrmüllentsorgung" },
+  ],
+};
+
+export function Header({ config }: { config?: HeaderConfig }) {
+  const c = { ...DEFAULT_HEADER, ...config };
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -64,119 +104,135 @@ export function Header() {
           <div className="flex gap-6">
             <span className="flex items-center gap-1.5 text-[var(--primary)] font-bold tracking-wide">
               <CheckCircle2 className="w-3.5 h-3.5 text-[var(--primary)]" />
-              Betriebshaftpflicht
+              {c.topBarBadges[0]?.text}
             </span>
             <span className="flex items-center gap-1.5 text-[var(--primary)] font-bold tracking-wide">
               <CheckCircle2 className="w-3.5 h-3.5 text-[var(--primary)]" />
-              IHK Zertifiziert
+              {c.topBarBadges[1]?.text}
             </span>
-            <a href="https://maps.google.com/?q=Friesenstraße+25,+90441+Nürnberg" target="_blank" rel="noreferrer" className="flex items-center gap-2 hover:text-[var(--primary)] transition-colors text-white/60">
+            <a href={`https://maps.google.com/?q=${encodeURIComponent(c.street + ", " + c.postalCode + " " + c.city)}`} target="_blank" rel="noreferrer" className="flex items-center gap-2 hover:text-[var(--primary)] transition-colors text-white/60">
               <MapPin className="w-3.5 h-3.5 text-zinc-500" />
-              Friesenstraße 25, 90441 Nürnberg
+              {c.street}, {c.postalCode} {c.city}
             </a>
           </div>
           <div className="flex items-center gap-4 text-[var(--primary)] font-bold tracking-wider">
-            <span className="flex items-center gap-1 text-white/80"><CheckCircle2 className="w-3.5 h-3.5 text-[var(--primary)]" /> Festpreisgarantie</span>
-            <span className="flex items-center gap-1 text-white/80"><CheckCircle2 className="w-3.5 h-3.5 text-[var(--primary)]" /> Besenrein</span>
+            {c.topBarBadges[2] && <span className="flex items-center gap-1 text-white/80"><CheckCircle2 className="w-3.5 h-3.5 text-[var(--primary)]" /> {c.topBarBadges[2].text}</span>}
+            {c.topBarBadges[3] && <span className="flex items-center gap-1 text-white/80"><CheckCircle2 className="w-3.5 h-3.5 text-[var(--primary)]" /> {c.topBarBadges[3].text}</span>}
           </div>
         </div>
       </div>
 
       {/* Main Header */}
-      <header className="w-full bg-white dark:bg-zinc-950 border-b border-zinc-200 dark:border-zinc-800 sticky top-0 z-50 shadow-sm">
+      <header className="w-full bg-white border-b border-zinc-200 sticky top-0 z-50 shadow-sm">
         <div className="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
 
           {/* Logo Section */}
           <Link href="/" className="flex items-center gap-3 group">
             <Image
-              src="/gallery/logo.png"
-              alt="Express Entrümpelungen Logo"
-              width={56}
-              height={56}
-              className="w-14 h-14 object-contain group-hover:scale-105 transition-transform"
+              src={c.logoPath}
+              alt={c.logoAlt}
+              width={96}
+              height={96}
+              priority
+              className="w-24 h-24 object-contain group-hover:scale-105 transition-transform"
             />
             <div className="flex flex-col">
-              <span className="font-heading font-black text-xl text-[var(--dark)] dark:text-white leading-tight">
-                Express
+              <span className="font-heading font-black text-xl text-[var(--dark)] leading-tight">
+                {c.companyName}
               </span>
-              <span className="font-heading font-bold text-sm text-zinc-500 dark:text-zinc-400 leading-tight">
-                Entrümpelungen
+              <span className="font-heading font-bold text-sm text-zinc-500 leading-tight">
+                {c.companySubtitle}
               </span>
             </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-6 font-medium text-zinc-700 dark:text-zinc-300">
-            <Link href="/" className="hover:text-[var(--primary)] transition-colors">Startseite</Link>
+          <nav className="hidden lg:flex items-center gap-6 font-medium text-zinc-700">
+            {/* First link is always Startseite */}
+            {c.mainNavLinks.length > 0 && (
+              <Link href={c.mainNavLinks[0].href} className="hover:text-[var(--primary)] transition-colors">{c.mainNavLinks[0].label}</Link>
+            )}
 
-            {/* Dropdown for Leistungen — accessible via hover + focus */}
-            <div
-              ref={dropdownRef}
-              className="relative"
-              onMouseEnter={openDropdown}
-              onMouseLeave={closeDropdown}
-            >
-              <button
-                onClick={() => setDropdownOpen(!dropdownOpen)}
-                onFocus={openDropdown}
-                onBlur={(e) => {
-                  // Only close if focus leaves the entire dropdown
-                  if (!dropdownRef.current?.contains(e.relatedTarget as Node)) {
-                    closeDropdown();
-                  }
-                }}
-                aria-expanded={dropdownOpen}
-                aria-haspopup="true"
-                className="flex items-center gap-1 hover:text-[var(--primary)] transition-colors py-2 cursor-pointer"
-              >
-                Leistungen
-                <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${dropdownOpen ? "rotate-180" : ""}`} />
-              </button>
+            {/* Dropdown for Leistungen */}
+            {c.serviceDropdownLinks.length > 0 && (
               <div
-                className={`absolute top-full left-0 mt-1 w-64 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl shadow-xl transition-all duration-200 z-50 py-2 ${
-                  dropdownOpen ? "opacity-100 visible" : "opacity-0 invisible"
-                }`}
+                ref={dropdownRef}
+                className="relative"
                 onMouseEnter={openDropdown}
                 onMouseLeave={closeDropdown}
               >
-                {leistungenLinks.map((link) => (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    onClick={() => setDropdownOpen(false)}
-                    onFocus={openDropdown}
-                    className="block px-4 py-2 hover:bg-zinc-100 dark:hover:bg-zinc-800 hover:text-[var(--primary)] transition-colors text-sm font-semibold focus:outline-none focus:bg-zinc-100 dark:focus:bg-zinc-800"
-                  >
-                    {link.label}
-                  </Link>
-                ))}
+                <button
+                  onClick={() => setDropdownOpen(!dropdownOpen)}
+                  onFocus={openDropdown}
+                  onBlur={(e) => {
+                    if (!dropdownRef.current?.contains(e.relatedTarget as Node)) {
+                      closeDropdown();
+                    }
+                  }}
+                  aria-expanded={dropdownOpen}
+                  aria-haspopup="true"
+                  className="flex items-center gap-1 hover:text-[var(--primary)] transition-colors py-2 cursor-pointer"
+                >
+                  Leistungen
+                  <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${dropdownOpen ? "rotate-180" : ""}`} />
+                </button>
+                <div
+                  className={`absolute top-full left-0 mt-1 w-64 bg-white border border-zinc-200 rounded-xl shadow-xl transition-all duration-200 z-50 py-2 ${
+                    dropdownOpen ? "opacity-100 visible" : "opacity-0 invisible"
+                  }`}
+                  onMouseEnter={openDropdown}
+                  onMouseLeave={closeDropdown}
+                >
+                  {c.serviceDropdownLinks.map((link) => (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      onClick={() => setDropdownOpen(false)}
+                      onFocus={openDropdown}
+                      className="block px-4 py-2 hover:bg-zinc-100 hover:text-[var(--primary)] transition-colors text-sm font-semibold focus:outline-none focus:bg-zinc-100"
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                </div>
               </div>
-            </div>
+            )}
 
-            <Link href="/#ablauf" className="hover:text-[var(--primary)] transition-colors">Ablauf</Link>
-            <Link href="/#preise" className="hover:text-[var(--primary)] transition-colors">Preise</Link>
-            <Link href="/#faq" className="hover:text-[var(--primary)] transition-colors">FAQ</Link>
-            <Link href="/#kontakt" className="hover:text-[var(--primary)] transition-colors">Kontakt</Link>
+            {/* Remaining main nav links (skip first) */}
+            {c.mainNavLinks.slice(1).map((link) => (
+              <Link key={link.href} href={link.href} className="hover:text-[var(--primary)] transition-colors">{link.label}</Link>
+            ))}
           </nav>
 
            {/* CTA & Admin */}
            <div className="hidden lg:flex items-center gap-4">
              <a
-               href="tel:+491728083459"
+               href={`tel:${c.phonePrimary}`}
                className="flex items-center gap-2 px-5 py-2.5 bg-[var(--dark)] hover:bg-[var(--dark-secondary)] text-white rounded-full font-bold transition-all hover:shadow-lg"
              >
                <Phone className="w-4 h-4 text-[var(--primary)]" />
-               0172 80 83 459
+               {c.phonePrimaryDisplay}
              </a>
 
-             <Link href="/edit" className="flex items-center gap-2 px-3 py-2 bg-zinc-100 hover:bg-zinc-200 dark:bg-zinc-900 dark:hover:bg-zinc-800 text-zinc-600 dark:text-zinc-300 rounded-md text-xs font-bold transition-colors">
-               <Edit className="w-3.5 h-3.5" /> Editor
-             </Link>
+             {/* Admin Dropdown */}
+             <div className="relative group">
+               <button aria-label="Admin Tools" className="flex items-center justify-center w-10 h-10 bg-zinc-100 hover:bg-zinc-200 text-zinc-600 rounded-full transition-colors focus:outline-none">
+                 <Wrench className="w-4 h-4" />
+               </button>
+               <div className="absolute right-0 top-full mt-2 w-48 bg-white border border-zinc-200 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 py-2">
+                 <Link href="/edit" className="flex items-center gap-2 px-4 py-2 hover:bg-zinc-100 hover:text-[var(--primary)] transition-colors text-sm font-semibold text-zinc-700">
+                   <Edit className="w-4 h-4" /> Baukasten
+                 </Link>
+                 <Link href="/edit/site-config" className="flex items-center gap-2 px-4 py-2 hover:bg-zinc-100 hover:text-[var(--primary)] transition-colors text-sm font-semibold text-zinc-700">
+                   ⚙️ Einstellungen
+                 </Link>
+               </div>
+             </div>
            </div>
 
            {/* Mobile Menu Toggle */}
            <button
-             className="lg:hidden p-2 text-zinc-600 dark:text-zinc-300"
+             className="lg:hidden p-2 text-zinc-600"
              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
              aria-expanded={mobileMenuOpen}
              aria-label={mobileMenuOpen ? "Menü schließen" : "Menü öffnen"}
@@ -193,37 +249,35 @@ export function Header() {
              initial={{ height: 0, opacity: 0 }}
              animate={{ height: "auto", opacity: 1 }}
              exit={{ height: 0, opacity: 0 }}
-             className="lg:hidden bg-white dark:bg-zinc-950 border-b border-zinc-200 dark:border-zinc-800 overflow-hidden"
+             className="lg:hidden bg-white border-b border-zinc-200 overflow-hidden"
            >
              <div className="px-6 py-4 flex flex-col gap-3 font-medium">
-               <Link href="/" onClick={() => setMobileMenuOpen(false)} className="py-2 border-b border-zinc-100 dark:border-zinc-900">Startseite</Link>
+               {c.mainNavLinks.length > 0 && (
+                 <Link href={c.mainNavLinks[0].href} onClick={() => setMobileMenuOpen(false)} className="py-2 border-b border-zinc-100">{c.mainNavLinks[0].label}</Link>
+               )}
 
                <div className="flex flex-col gap-2 pl-3 border-l-2 border-[var(--primary)] my-2">
                  <span className="text-[10px] uppercase tracking-wider text-zinc-400 font-bold block mb-1">Leistungen (Seiten)</span>
-                 {leistungenLinks.map((link) => (
+                 {c.serviceDropdownLinks.map((link) => (
                    <Link
                      key={link.href}
                      href={link.href}
                      onClick={() => setMobileMenuOpen(false)}
-                     className="py-1 text-sm text-zinc-700 dark:text-zinc-300 hover:text-[var(--primary)]"
+                     className="py-1 text-sm text-zinc-700 hover:text-[var(--primary)]"
                    >
                      {link.label}
                    </Link>
                  ))}
                </div>
 
-               <Link href="/#ablauf" onClick={() => setMobileMenuOpen(false)} className="py-2 border-b border-zinc-100 dark:border-zinc-900">Ablauf</Link>
-               <Link href="/#preise" onClick={() => setMobileMenuOpen(false)} className="py-2 border-b border-zinc-100 dark:border-zinc-900">Preise</Link>
-               <Link href="/#faq" onClick={() => setMobileMenuOpen(false)} className="py-2 border-b border-zinc-100 dark:border-zinc-900">FAQ</Link>
-               <Link href="/#kontakt" onClick={() => setMobileMenuOpen(false)} className="py-2 border-b border-zinc-100 dark:border-zinc-900">Kontakt</Link>
+               {c.mainNavLinks.slice(1).map((link) => (
+                 <Link key={link.href} href={link.href} onClick={() => setMobileMenuOpen(false)} className="py-2 border-b border-zinc-100">{link.label}</Link>
+               ))}
 
-               <a href="tel:+491728083459" className="mt-4 flex justify-center items-center gap-2 px-5 py-3 bg-[var(--primary)] text-[#0D1B4B] rounded-full font-bold">
+               <a href={`tel:${c.phonePrimary}`} className="mt-4 flex justify-center items-center gap-2 px-5 py-3 bg-[var(--primary)] text-[#0D1B4B] rounded-full font-bold">
                  <Phone className="w-5 h-5" />
-                 0172 80 83 459
+                 {c.phonePrimaryDisplay}
                </a>
-               <Link href="/edit" className="flex justify-center items-center gap-2 py-2 text-zinc-500 text-sm mt-2" onClick={() => setMobileMenuOpen(false)}>
-                 <Edit className="w-4 h-4" /> Baukasten öffnen
-               </Link>
              </div>
            </motion.div>
         )}

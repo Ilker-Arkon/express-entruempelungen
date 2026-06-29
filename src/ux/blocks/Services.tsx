@@ -87,7 +87,7 @@ export function ServicesBlock({
   return (
     <section
       id={id || "leistungen"}
-      className="py-24 bg-white dark:bg-[#1A1A2E] overflow-hidden"
+      className="py-24 bg-white overflow-hidden"
       onClick={() => setFlippedIndex(null)}
     >
       <div className="container mx-auto px-6" onClick={(e) => e.stopPropagation()}>
@@ -96,7 +96,7 @@ export function ServicesBlock({
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
-            className="text-3xl md:text-5xl font-heading font-bold text-gray-900 dark:text-white mb-4"
+            className="text-3xl md:text-5xl font-heading font-bold text-gray-900 mb-4"
           >
             {title}
           </motion.h2>
@@ -105,7 +105,7 @@ export function ServicesBlock({
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ delay: 0.2 }}
-            className="text-lg text-gray-600 dark:text-gray-400 font-body"
+            className="text-lg text-gray-600 font-body"
           >
             {subtitle}
           </motion.p>
@@ -137,16 +137,16 @@ export function ServicesBlock({
                 >
                   {/* Vorderseite */}
                   <div
-                    className="absolute inset-0 rounded-2xl bg-gray-50 dark:bg-[var(--dark-secondary)] border border-gray-100 dark:border-white/[0.08] shadow-sm p-10 flex flex-col h-full"
+                    className="absolute inset-0 rounded-2xl bg-gray-50 border border-gray-100 shadow-sm p-10 flex flex-col h-full"
                     style={{ backfaceVisibility: "hidden" }}
                   >
                     <div className="mb-6">
                       {iconMap[service.icon] || <Home className="w-8 h-8 text-[var(--primary)]" strokeWidth={1.5} />}
                     </div>
-                    <h3 className="text-xl font-bold font-heading text-gray-900 dark:text-white mb-3">
+                    <h3 className="text-xl font-bold font-heading text-gray-900 mb-3">
                       {service.title}
                     </h3>
-                    <p className="text-gray-600 dark:text-gray-400 font-body mb-6 flex-grow">
+                    <p className="text-gray-600 font-body mb-6 flex-grow">
                       {service.description}
                     </p>
 
@@ -161,7 +161,7 @@ export function ServicesBlock({
 
                   {/* Rückseite */}
                   <div
-                    className="absolute inset-0 rounded-2xl bg-[var(--dark-secondary)] dark:bg-[var(--dark)] border border-[var(--primary)]/20 shadow-xl p-10 flex flex-col h-full"
+                    className="absolute inset-0 rounded-2xl bg-[var(--dark-secondary)] border border-[var(--primary)]/20 shadow-xl p-10 flex flex-col h-full"
                     style={{
                       backfaceVisibility: "hidden",
                       transform: "rotateY(180deg)",
@@ -171,7 +171,7 @@ export function ServicesBlock({
                       {service.title}
                     </h3>
 
-                    <p className="text-gray-300 dark:text-gray-400 font-body text-sm leading-relaxed mb-6 flex-grow">
+                    <p className="text-gray-300 font-body text-sm leading-relaxed mb-6 flex-grow">
                       {rueckseite}
                     </p>
 

@@ -17,6 +17,13 @@ import { EnvironmentBlock } from "./ux/blocks/Environment";
 import { TeamBlock } from "./ux/blocks/Team";
 import { ServiceAreasBlock } from "./ux/blocks/ServiceAreas";
 import { GalleryBlock } from "./ux/blocks/Gallery";
+import { ImageField } from "./ux/fields/ImageField";
+
+// Helper: Puck custom field for image upload with preview
+const imageField = {
+  type: "custom" as const,
+  render: (ctx: any) => <ImageField {...ctx} />,
+};
 
 export type PuckConfigProps = {
   Hero: any;
@@ -40,7 +47,7 @@ export const config: Config<PuckConfigProps> = {
       fields: {
         title: { type: "text" },
         subtitle: { type: "textarea" },
-        backgroundImage: { type: "text" },
+        backgroundImage: imageField,
         badges: { type: "array", getItemSummary: (item) => item.text || "Badge", arrayFields: { text: { type: "text" } } },
         phoneLabel: { type: "text" },
         whatsappLabel: { type: "text" },
@@ -120,8 +127,8 @@ export const config: Config<PuckConfigProps> = {
           type: "array",
           getItemSummary: (item) => item.label || "Slide",
           arrayFields: {
-            beforeImage: { type: "text" },
-            afterImage: { type: "text" },
+            beforeImage: imageField,
+            afterImage: imageField,
             label: { type: "text" }
           }
         }
@@ -185,7 +192,7 @@ export const config: Config<PuckConfigProps> = {
             text: { type: "textarea" },
             date: { type: "text" },
             rating: { type: "number" },
-            avatar: { type: "text" }
+            avatar: imageField
           }
         }
       },
@@ -237,20 +244,63 @@ export const config: Config<PuckConfigProps> = {
     Environment: {
       fields: {
         title: { type: "text" },
-        subtitle: { type: "textarea" }
+        subtitle: { type: "textarea" },
+        features: {
+          type: "array",
+          getItemSummary: (item) => item.title || "Feature",
+          arrayFields: {
+            icon: { type: "select", options: [
+              { label: "Recycle", value: "Recycle" },
+              { label: "TreePine", value: "TreePine" },
+              { label: "FileCheck", value: "FileCheck" },
+              { label: "HeartHandshake", value: "HeartHandshake" },
+              { label: "ShieldCheck", value: "ShieldCheck" },
+              { label: "Leaf", value: "Leaf" },
+              { label: "Globe", value: "Globe" },
+              { label: "Award", value: "Award" },
+            ]},
+            title: { type: "text" },
+            description: { type: "textarea" },
+          }
+        }
       },
       defaultProps: {
         title: "Unser Versprechen für die Umwelt",
-        subtitle: "Wir entsorgen nicht einfach alles auf den Müll."
+        subtitle: "Wir entsorgen nicht einfach alles auf den Müll.",
+        features: [
+          { icon: "Recycle", title: "Fachgerechte Trennung", description: "Wir trennen Müll strikt nach Werkstoffen für optimales Recycling." },
+          { icon: "TreePine", title: "Wiederverwendung", description: "Gut erhaltene Möbel spenden wir an lokale soziale Einrichtungen." },
+          { icon: "FileCheck", title: "Entsorgungsnachweise", description: "Sie erhalten auf Wunsch offizielle Nachweise für kritische Abfälle." },
+          { icon: "HeartHandshake", title: "Soziales Engagement", description: "Zusammenarbeit mit lokalen Spenden-Centern und Tafeln." },
+          { icon: "ShieldCheck", title: "Zertifiziert", description: "Wir arbeiten ausschließlich mit zertifizierten Entsorgungsfachbetrieben." },
+        ]
       },
       render: (props: any) => <EnvironmentBlock {...props} />
     },
     Team: {
       fields: {
-        title: { type: "text" }
+        title: { type: "text" },
+        description: { type: "textarea" },
+        ownerQuote: { type: "textarea" },
+        members: {
+          type: "array",
+          getItemSummary: (item) => item.name || "Teammitglied",
+          arrayFields: {
+            name: { type: "text" },
+            role: { type: "text" },
+            image: imageField,
+          }
+        },
       },
       defaultProps: {
-        title: "Das Team"
+        title: "Das Team",
+        description: "Seit über 10 Jahren sind wir Ihr verlässlicher Partner für schnelle, diskrete und saubere Entrümpelungen. Als familiengeführtes Unternehmen wissen wir, dass eine Haushaltsauflösung oft mehr ist als nur Möbel zu bewegen – es geht um Vertrauen.",
+        ownerQuote: "Mein Wort an Sie: Wir verlassen keinen Einsatzort, bevor Sie nicht 100% zufrieden sind. Ihr Vertrauen ist unser höchstes Gut.",
+        members: [
+          { name: "Markus Richter", role: "Inhaber & Experte", image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" },
+          { name: "Sarah Keller", role: "Dispo & Kundenbetreuung", image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" },
+          { name: "Lukas Wagner", role: "Teamleiter Räumung", image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" },
+        ]
       },
       render: (props: any) => <TeamBlock {...props} />
     },
@@ -275,7 +325,7 @@ export const config: Config<PuckConfigProps> = {
           type: "array",
           getItemSummary: (item) => item.alt || "Bild",
           arrayFields: {
-            url: { type: "text" },
+            url: imageField,
             alt: { type: "text" }
           }
         }
@@ -284,10 +334,9 @@ export const config: Config<PuckConfigProps> = {
         title: "Unsere Galerie",
         subtitle: "Einblicke in unsere Arbeit",
         images: [
-          { url: "/gallery/before1.jpg", alt: "Galerie Bild 1" },
-          { url: "/gallery/after1.jpg", alt: "Galerie Bild 2" },
-          { url: "/gallery/before2.jpg", alt: "Galerie Bild 3" },
-          { url: "/gallery/after2.jpg", alt: "Galerie Bild 4" },
+          { url: "/gallery/before1.jpg", alt: "Vorher – Entrümpelung" },
+          { url: "/gallery/after1.jpg", alt: "Nachher – Besenrein" },
+          { url: "/gallery/flyer.jpg", alt: "Flyer Express Entrümpelungen" },
         ]
       },
       render: (props: any) => <GalleryBlock {...props} />

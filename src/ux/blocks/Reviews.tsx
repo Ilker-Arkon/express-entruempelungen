@@ -32,7 +32,7 @@ export function ReviewsBlock({
 }: ReviewsProps) {
 
   return (
-    <section className="py-24 bg-white dark:bg-[#1A1A2E] overflow-hidden">
+    <section className="py-24 bg-white overflow-hidden">
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
           <div>
@@ -40,7 +40,7 @@ export function ReviewsBlock({
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-heading font-bold text-gray-900 dark:text-white mb-4"
+              className="text-3xl md:text-5xl font-heading font-bold text-gray-900 mb-4"
             >
               {title}
             </motion.h2>
@@ -56,8 +56,8 @@ export function ReviewsBlock({
                   <Star key={i} className="w-6 h-6 fill-current" />
                 ))}
               </div>
-              <p className="text-lg text-gray-600 dark:text-gray-400 font-medium">
-                <span className="font-bold text-gray-900 dark:text-white">{rating}/5</span> basierend auf {totalReviews} Google-Bewertungen
+              <p className="text-lg text-gray-600 font-medium">
+                <span className="font-bold text-gray-900">{rating}/5</span> basierend auf {totalReviews} Google-Bewertungen
               </p>
             </motion.div>
           </div>
@@ -68,7 +68,7 @@ export function ReviewsBlock({
             viewport={{ once: true }}
             href="https://google.com" 
             target="_blank"
-            className="flex items-center gap-2 px-6 py-3 border-2 border-gray-200 dark:border-zinc-800 rounded-full font-semibold text-gray-700 dark:text-gray-300 hover:border-[var(--primary)] hover:text-[var(--primary)] transition-colors"
+            className="flex items-center gap-2 px-6 py-3 border-2 border-gray-200 rounded-full font-semibold text-gray-700 hover:border-[var(--primary)] hover:text-[var(--primary)] transition-colors"
           >
             Alle Bewertungen ansehen
           </motion.a>
@@ -85,7 +85,7 @@ export function ReviewsBlock({
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ delay: i * 0.15 }}
-              className="min-w-[320px] max-w-[350px] flex-shrink-0 snap-start bg-gray-50 dark:bg-[var(--dark-secondary)] p-8 rounded-2xl border border-gray-100 dark:border-zinc-800 shadow-sm"
+              className="min-w-[320px] max-w-[350px] flex-shrink-0 snap-start bg-gray-50 p-8 rounded-2xl border border-gray-100 shadow-sm"
             >
               <div className="flex justify-between items-start mb-6">
                 <div className="flex items-center gap-3">
@@ -93,7 +93,7 @@ export function ReviewsBlock({
                     {review.avatar}
                   </div>
                   <div>
-                    <h4 className="font-bold text-gray-900 dark:text-white">{review.name}</h4>
+                    <h4 className="font-bold text-gray-900">{review.name}</h4>
                     <p className="text-xs text-gray-500">{review.city} • {review.date}</p>
                   </div>
                 </div>
@@ -118,7 +118,7 @@ export function ReviewsBlock({
                 ))}
               </div>
 
-              <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed line-clamp-4">
+              <p className="text-gray-600 text-sm leading-relaxed line-clamp-4">
                 "{review.text}"
               </p>
             </motion.div>

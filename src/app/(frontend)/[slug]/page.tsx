@@ -42,7 +42,7 @@ export default async function LandingPage({ params }: { params: Promise<{ slug: 
   }
 
   return (
-    <main className="min-h-screen bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-50 font-sans">
+    <main className="min-h-screen bg-white text-zinc-900 font-sans">
       <div className="w-full">
         <PuckRenderer data={data} />
       </div>

@@ -1,0 +1,85 @@
+{
+  "companyName": "Express Entrümpelungen",
+  "companySubtitle": "Entrümpelungen",
+  "companyDescription": "Ihr zuverlässiger Partner für besenreine Wohnungsauflösungen, Entrümpelungen und diskrete Nachlassabwicklungen in Nürnberg und 50km Umkreis.",
+  "phonePrimary": "+491728083459",
+  "phonePrimaryDisplay": "0172 80 83 459",
+  "phoneSecondary": "+4917655122781",
+  "email": "info@express-entruempelungen.de",
+  "street": "Friesenstraße 25",
+  "city": "Nürnberg",
+  "postalCode": "90441",
+  "logoPath": "/gallery/logo.png",
+  "logoAlt": "Express Entrümpelungen Logo",
+  "topBarBadges": [
+    {
+      "text": "Betriebshaftpflicht"
+    },
+    {
+      "text": "IHK Zertifiziert"
+    },
+    {
+      "text": "Festpreisgarantie"
+    },
+    {
+      "text": "Besenrein"
+    }
+  ],
+  "mainNavLinks": [
+    {
+      "href": "/",
+      "label": "Startseite"
+    },
+    {
+      "href": "/#ablauf",
+      "label": "Ablauf"
+    },
+    {
+      "href": "/#preise",
+      "label": "Preise test"
+    },
+    {
+      "href": "/#faq",
+      "label": "FAQ"
+    },
+    {
+      "href": "/#kontakt",
+      "label": "Kontakt"
+    }
+  ],
+  "serviceDropdownLinks": [
+    {
+      "href": "/entruempelung-nuernberg",
+      "label": "Entrümpelung Nürnberg"
+    },
+    {
+      "href": "/wohnungsaufloesung-nuernberg",
+      "label": "Wohnungsauflösung Nürnberg"
+    },
+    {
+      "href": "/gewerbeaufloesung-nuernberg",
+      "label": "Gewerbeentrümpelung"
+    },
+    {
+      "href": "/nachlassaufloesung-nuernberg",
+      "label": "Nachlassauflösung"
+    },
+    {
+      "href": "/sperrmuellentsorgung-nuernberg",
+      "label": "Sperrmüllentsorgung"
+    }
+  ],
+  "openingHoursText": "Mo - Sa: 08:00 - 20:00 Uhr",
+  "openingHoursNote": "Notdienst: 24/7 über WhatsApp",
+  "whatsappNumber": "491728083459",
+  "whatsappDefaultMessage": "Hallo, ich interessiere mich für eine kostenlose Besichtigung. Bitte kontaktieren Sie mich.",
+  "schemaGeoLat": 49.4319,
+  "schemaGeoLng": 11.0664,
+  "schemaPriceRange": "$$",
+  "vatId": "DE462122010",
+  "copyrightText": "Express Entrümpelungen & Wohnungsauflösungen. Alle Rechte vorbehalten.",
+  "seoTitle": "Express Entrümpelungen Nürnberg | Festpreis | Kostenlose Besichtigung",
+  "seoDescription": "Professionelle Entrümpelung in Nürnberg ✓ Festpreisgarantie ✓ Kostenlose Besichtigung ☎ 0172 8083459",
+  "seoOgTitle": "Express Entrümpelungen Nürnberg | Festpreis",
+  "seoOgDescription": "Professionelle Entrümpelung in Nürnberg ✓ Festpreisgarantie ✓ Kostenlose Besichtigung ☎ 0172 8083459"
+}

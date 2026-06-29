@@ -34,14 +34,14 @@ export function TimelineBlock({
   ]
 }: TimelineProps) {
   return (
-    <section id={id || "ablauf"} className="py-24 bg-white dark:bg-[var(--dark)] overflow-hidden">
+    <section id={id || "ablauf"} className="py-24 bg-white overflow-hidden">
       <div className="container mx-auto px-6 max-w-5xl">
         <div className="text-center mb-20">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-5xl font-heading font-bold text-gray-900 dark:text-white"
+            className="text-3xl md:text-5xl font-heading font-bold text-gray-900"
           >
             {title}
           </motion.h2>
@@ -49,7 +49,7 @@ export function TimelineBlock({
 
         <div className="relative">
           {/* Vertical Line Background */}
-          <div className="absolute left-[28px] md:left-1/2 top-0 bottom-0 w-1 bg-gray-200 dark:bg-zinc-800 -translate-x-1/2 rounded-full" />
+          <div className="absolute left-[28px] md:left-1/2 top-0 bottom-0 w-1 bg-gray-200 -translate-x-1/2 rounded-full" />
           
           {/* Animated Vertical Line Foreground */}
           <motion.div 
@@ -74,8 +74,8 @@ export function TimelineBlock({
                     transition={{ delay: index * 0.4, duration: 0.6 }}
                     className={`w-full pl-16 md:pl-0 md:w-5/12 ${isEven ? 'md:text-right' : 'md:order-3 md:text-left'} order-2`}
                   >
-                    <h3 className="text-xl md:text-2xl font-bold font-heading text-gray-900 dark:text-white mb-2">{step.title}</h3>
-                    <p className="text-gray-600 dark:text-gray-400 font-body">{step.description}</p>
+                    <h3 className="text-xl md:text-2xl font-bold font-heading text-gray-900 mb-2">{step.title}</h3>
+                    <p className="text-gray-600 font-body">{step.description}</p>
                   </motion.div>
 
                   {/* Center Node */}
@@ -92,7 +92,7 @@ export function TimelineBlock({
                     whileHover={{ scale: 1.2, rotate: 360, transition: { duration: 0.5 } }}
                     className="absolute left-[12px] md:left-1/2 md:relative md:w-2/12 order-1 md:order-2 flex justify-center items-center z-20"
                   >
-                    <div className="w-10 h-10 md:w-16 md:h-16 rounded-full bg-[var(--primary)] border-4 border-white dark:border-[var(--dark)] flex items-center justify-center text-white shadow-lg cursor-pointer">
+                    <div className="w-10 h-10 md:w-16 md:h-16 rounded-full bg-[var(--primary)] border-4 border-white flex items-center justify-center text-white shadow-lg cursor-pointer">
                       {iconMap[step.icon] || <span className="text-lg font-bold">{index + 1}</span>}
                     </div>
                   </motion.div>
