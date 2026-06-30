@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Recycle, TreePine, FileCheck, HeartHandshake, ShieldCheck, Leaf, Globe, Award } from "lucide-react";
 import React from "react";
+import Image from "next/image";
 
 const iconMap: Record<string, React.ReactNode> = {
   Recycle: <Recycle className="w-8 h-8" />,
@@ -42,7 +43,17 @@ export function EnvironmentBlock({
 }: EnvironmentProps) {
 
   return (
-    <section className="py-24 bg-gradient-to-br from-green-900 to-[#0A1A12] relative overflow-hidden text-white">
+    <section className="py-24 bg-[var(--dark)] relative overflow-hidden text-white">
+      {/* User Uploaded Background Image */}
+      <div className="absolute inset-0 z-0 opacity-25 mix-blend-overlay">
+        <Image 
+          src="/gallery/hintergrund 1 .png.jpeg" 
+          alt="Hintergrund" 
+          fill 
+          className="object-cover"
+          quality={70}
+        />
+      </div>
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16">

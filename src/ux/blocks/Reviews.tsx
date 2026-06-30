@@ -57,7 +57,7 @@ export function ReviewsBlock({
                 ))}
               </div>
               <p className="text-lg text-gray-600 font-medium">
-                <span className="font-bold text-gray-900">{rating}/5</span> basierend auf {totalReviews} Google-Bewertungen
+                100% Fokus auf Diskretion, Schnelligkeit und <span className="font-bold text-gray-900">Kundenzufriedenheit</span>.
               </p>
             </motion.div>
           </div>
@@ -66,11 +66,10 @@ export function ReviewsBlock({
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            href="https://google.com" 
-            target="_blank"
+            href="#kontakt" 
             className="flex items-center gap-2 px-6 py-3 border-2 border-gray-200 rounded-full font-semibold text-gray-700 hover:border-[var(--primary)] hover:text-[var(--primary)] transition-colors"
           >
-            Alle Bewertungen ansehen
+            Angebot anfordern
           </motion.a>
         </div>
 
@@ -96,10 +95,6 @@ export function ReviewsBlock({
                     <h4 className="font-bold text-gray-900">{review.name}</h4>
                     <p className="text-xs text-gray-500">{review.city} • {review.date}</p>
                   </div>
-                </div>
-                {/* Google G Logo mockup */}
-                <div className="w-6 h-6 rounded-full bg-white flex items-center justify-center shadow-sm">
-                  <span className="text-blue-500 font-bold text-sm font-sans">G</span>
                 </div>
               </div>
 

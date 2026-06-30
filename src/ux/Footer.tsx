@@ -24,14 +24,14 @@ export interface FooterConfig {
 
 const DEFAULT_FOOTER: Required<FooterConfig> = {
   companyName: "Express",
-  companySubtitle: "Entrümpelungen",
+  companySubtitle: "Ihre Profis für Nürnberg",
   companyDescription:
     "Ihr zuverlässiger Partner für besenreine Wohnungsauflösungen, Entrümpelungen und diskrete Nachlassabwicklungen in Nürnberg und 50km Umkreis.",
   logoPath: "/gallery/logo.png",
   logoAlt: "Express Entrümpelungen Logo",
   phonePrimary: "+491728083459",
   phonePrimaryDisplay: "0172 80 83 459",
-  phoneSecondary: "+4917655122781",
+  phoneSecondary: "",
   email: "info@express-entruempelungen.de",
   street: "Friesenstraße 25",
   city: "Nürnberg",
@@ -149,7 +149,7 @@ export function Footer({ config }: { config?: FooterConfig }) {
             </ul>
 
             <h4 className="text-white font-heading font-bold text-lg mb-4">Rechtliches</h4>
-            <ul className="flex flex-wrap gap-4">
+            <ul className="flex flex-col gap-3">
               <li><Link href="/impressum" className="hover:text-[var(--primary)] transition-colors underline decoration-zinc-700 underline-offset-4">Impressum</Link></li>
               <li><Link href="/datenschutz" className="hover:text-[var(--primary)] transition-colors underline decoration-zinc-700 underline-offset-4">Datenschutz</Link></li>
               <li><Link href="/agb" className="hover:text-[var(--primary)] transition-colors underline decoration-zinc-700 underline-offset-4">AGB</Link></li>
@@ -164,7 +164,7 @@ export function Footer({ config }: { config?: FooterConfig }) {
           <div className="text-center md:text-left">
             &copy; {new Date().getFullYear()} {c.copyrightText}
           </div>
-          <div className="text-center md:text-right text-zinc-500">
+          <div className="text-center md:text-right text-zinc-300">
             USt-IdNr.: {c.vatId}
           </div>
         </div>
