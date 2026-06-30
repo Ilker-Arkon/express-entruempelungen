@@ -87,7 +87,7 @@ export function ServicesBlock({
   return (
     <section
       id={id || "leistungen"}
-      className="py-24 bg-white overflow-hidden"
+      className="py-24 bg-black overflow-hidden"
       onClick={() => setFlippedIndex(null)}
     >
       <div className="container mx-auto px-6" onClick={(e) => e.stopPropagation()}>
@@ -96,7 +96,7 @@ export function ServicesBlock({
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
-            className="text-3xl md:text-5xl font-heading font-bold text-gray-900 mb-4"
+            className="text-3xl md:text-5xl font-heading font-bold text-white mb-4"
           >
             {title}
           </motion.h2>
@@ -105,7 +105,7 @@ export function ServicesBlock({
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ delay: 0.2 }}
-            className="text-lg text-gray-600 font-body"
+            className="text-lg text-gray-400 font-body"
           >
             {subtitle}
           </motion.p>
@@ -137,16 +137,16 @@ export function ServicesBlock({
                 >
                   {/* Vorderseite */}
                   <div
-                    className="absolute inset-0 rounded-2xl bg-gray-50 border border-gray-100 shadow-sm p-10 flex flex-col h-full"
+                    className="absolute inset-0 rounded-2xl bg-zinc-900 border border-zinc-800 shadow-sm p-10 flex flex-col h-full"
                     style={{ backfaceVisibility: "hidden" }}
                   >
                     <div className="mb-6">
                       {iconMap[service.icon] || <Home className="w-8 h-8 text-[var(--primary)]" strokeWidth={1.5} />}
                     </div>
-                    <h3 className="text-xl font-bold font-heading text-gray-900 mb-3">
+                    <h3 className="text-xl font-bold font-heading text-white mb-3">
                       {service.title}
                     </h3>
-                    <p className="text-gray-600 font-body mb-6 flex-grow">
+                    <p className="text-gray-400 font-body mb-6 flex-grow">
                       {service.description}
                     </p>
 

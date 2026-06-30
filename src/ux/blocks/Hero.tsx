@@ -17,11 +17,11 @@ export interface HeroProps {
 }
 
 export function HeroBlock({
-  title = "Wir kümmern uns – Sie entspannen",
+  title = "Wir kümmern uns um das Chaos – Sie entspannen",
   subtitle = "Express Entrümpelungen: Besenreine Übergabe für Wohnungs- und Gewerbeauflösungen in Ihrer Nähe.",
   backgroundImage = "/gallery/flyer.jpg",
   badges = ["Besenreine Übergabe", "Festpreisgarantie", "Kostenlose Besichtigung"],
-  phoneLabel = "0172 80 83 459",
+  phoneLabel = "Kostenloses Angebot anfordern",
   whatsappLabel = "WhatsApp (0176...)",
   phoneUrl = "tel:+491728083459",
   whatsappUrl = "https://wa.me/4917655122781",

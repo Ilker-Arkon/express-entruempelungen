@@ -34,8 +34,8 @@ export function PriceCalculatorBlock({
   const priceRange = useMemo(() => {
     let base = size * basePricePerSqm;
     
-    // Fill level multiplier (1: 0.8, 2: 1.0, 3: 1.3, 4: 1.6)
-    const fillMultipliers = [0.8, 1.0, 1.3, 1.6];
+    // Fill level multiplier (1: 0.8, 2: 1.0, 3: 1.4, 4: 2.2)
+    const fillMultipliers = [0.8, 1.0, 1.4, 2.2];
     base *= fillMultipliers[fillLevel - 1];
 
     // Property type adjustment
@@ -48,7 +48,7 @@ export function PriceCalculatorBlock({
     }
 
     const minPrice = Math.round(base * 0.9 / 10) * 10;
-    const maxPrice = Math.round(base * 1.2 / 10) * 10;
+    const maxPrice = Math.round(base * 1.1 / 10) * 10;
     
     // Minimum price cap
     return { 
@@ -175,7 +175,7 @@ export function PriceCalculatorBlock({
                   {priceRange.min}€ <span className="text-2xl text-gray-400 font-normal mx-2">–</span> {priceRange.max}€
                 </div>
 
-                <p className="text-xs text-gray-400 mb-8 px-4">
+                <p className="text-xs text-gray-600 mb-8 px-4">
                   *Dies ist eine unverbindliche Kostenschätzung. Für einen exakten Festpreis buchen Sie bitte unsere kostenlose Besichtigung.
                 </p>
 

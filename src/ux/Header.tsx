@@ -134,14 +134,14 @@ export function Header({ config }: { config?: HeaderConfig }) {
               width={96}
               height={96}
               priority
-              className="w-24 h-24 object-contain group-hover:scale-105 transition-transform"
+              className="w-24 h-24 object-contain group-hover:scale-105 transition-transform translate-y-1"
             />
-            <div className="flex flex-col">
-              <span className="font-heading font-black text-xl text-[var(--dark)] leading-tight">
-                {c.companyName}
+            <div className="flex flex-col pt-1">
+              <span className="font-heading font-black text-2xl bg-gradient-to-r from-[var(--dark)] via-[var(--dark-secondary)] to-zinc-400 text-transparent bg-clip-text leading-none tracking-tight">
+                Express
               </span>
-              <span className="font-heading font-bold text-sm text-zinc-500 leading-tight">
-                {c.companySubtitle}
+              <span className="font-sans font-bold text-xs text-[var(--primary)] uppercase tracking-[0.15em] mt-0.5">
+                Entrümpelungen
               </span>
             </div>
           </Link>

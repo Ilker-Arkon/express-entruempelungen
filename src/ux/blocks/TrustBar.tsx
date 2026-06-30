@@ -24,10 +24,10 @@ export interface TrustBarProps {
 
 export function TrustBarBlock({
   stats = [
-    { icon: "Home", number: 2500, suffix: "+", label: "Entrümpelungen" },
-    { icon: "Star", number: 4.9, suffix: "/5", label: "Kundenbewertung" },
+    { icon: "Home", number: 100, suffix: "%", label: "Besenrein" },
+    { icon: "Star", number: 100, suffix: "%", label: "Zufriedenheit" },
     { icon: "Truck", number: 50, suffix: "km", label: "Umkreis" },
-    { icon: "Clock", number: 24, suffix: "h", label: "Einsatz möglich" },
+    { icon: "Clock", number: 100, suffix: "%", label: "Diskretion" },
     { icon: "Euro", number: 100, suffix: "%", label: "Festpreisgarantie" },
   ]
 }: TrustBarProps) {

@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --primary: #FFC107;
-  --primary-dark: #E0A800;
+  --primary: #D3A25D;
+  --primary-dark: #B88A4C;
   --dark: #0D1B4B;
   --dark-secondary: #1A237E;
   --white: #FFFFFF;
@@ -15,8 +15,8 @@
 }
 
 @theme inline {
-  --color-primary: #FFC107;
-  --color-primary-dark: #E0A800;
+  --color-primary: #D3A25D;
+  --color-primary-dark: #B88A4C;
   --color-dark: #0D1B4B;
   --color-dark-secondary: #1A237E;
   --color-success: #25D366;
@@ -51,12 +51,12 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 0 10px 40px rgba(0,0,0,0.15);
   }
   .shadow-button {
-    box-shadow: 0 5px 20px rgba(255,193,7,0.4);
+    box-shadow: 0 5px 20px rgba(211,162,93,0.4);
   }
   .text-gradient {
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    background-image: linear-gradient(to right, var(--primary), #FFD54F);
+    background-image: linear-gradient(to right, var(--primary), #E5BE83);
   }
 }
