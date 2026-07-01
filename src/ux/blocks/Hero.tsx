@@ -85,12 +85,7 @@ export function HeroBlock({
               whileTap={{ scale: 0.95 }}
               className="flex items-center justify-center gap-3 bg-[var(--success)] hover:bg-[#20bd5a] text-white px-8 py-4 rounded-full font-bold text-lg transition-colors shadow-card group"
             >
-              <motion.div
-                animate={{ y: [0, -5, 0] }}
-                transition={{ duration: 1, repeat: Infinity, repeatDelay: 2 }}
-              >
-                <MessageCircle className="w-6 h-6" />
-              </motion.div>
+              <MessageCircle className="w-6 h-6" />
               {whatsappLabel}
             </motion.a>
           </div>
