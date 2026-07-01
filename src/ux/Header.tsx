@@ -56,6 +56,7 @@ export function Header({ config }: { config?: HeaderConfig }) {
   const c = { ...DEFAULT_HEADER, ...config };
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [isPhoneModalOpen, setIsPhoneModalOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const closeTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -205,13 +206,13 @@ export function Header({ config }: { config?: HeaderConfig }) {
 
            {/* CTA & Admin */}
            <div className="hidden lg:flex items-center gap-4">
-             <a
-               href={`tel:${c.phonePrimary}`}
-               className="flex items-center gap-2 px-5 py-2.5 bg-[var(--dark)] hover:bg-[var(--dark-secondary)] text-white rounded-full font-bold transition-all hover:shadow-lg"
-             >
-               <Phone className="w-4 h-4 text-[var(--primary)]" />
-               {c.phonePrimaryDisplay}
-             </a>
+              <button
+                onClick={() => setIsPhoneModalOpen(true)}
+                className="flex items-center gap-2 px-5 py-2.5 bg-[var(--dark)] hover:bg-[var(--dark-secondary)] text-white rounded-full font-bold transition-all hover:shadow-lg"
+              >
+                <Phone className="w-4 h-4 text-[var(--primary)]" />
+                Jetzt anrufen
+              </button>
 
              {/* Admin Dropdown - Only visible in development mode */}
              {process.env.NODE_ENV === 'development' && (
@@ -275,12 +276,59 @@ export function Header({ config }: { config?: HeaderConfig }) {
                  <Link key={link.href} href={link.href} onClick={() => setMobileMenuOpen(false)} className="py-2 border-b border-zinc-100">{link.label}</Link>
                ))}
 
-               <a href={`tel:${c.phonePrimary}`} className="mt-4 flex justify-center items-center gap-2 px-5 py-3 bg-[var(--primary)] text-[#0D1B4B] rounded-full font-bold">
-                 <Phone className="w-5 h-5" />
-                 {c.phonePrimaryDisplay}
-               </a>
+                <div className="mt-4 flex flex-col gap-2">
+                  <a href="tel:01728083459" className="flex justify-center items-center gap-2 px-5 py-3 bg-[var(--primary)] text-[#0D1B4B] rounded-full font-bold">
+                    <Phone className="w-5 h-5" />
+                    FERIT (0172 80 83 459)
+                  </a>
+                  <a href="tel:017855122781" className="flex justify-center items-center gap-2 px-5 py-3 bg-zinc-100 text-zinc-900 border border-zinc-200 rounded-full font-bold">
+                    <Phone className="w-5 h-5" />
+                    AHMET (0178 55 12 27 81)
+                  </a>
+                </div>
              </div>
            </motion.div>
+        )}
+      </AnimatePresence>
+
+      <AnimatePresence>
+        {isPhoneModalOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4"
+            onClick={() => setIsPhoneModalOpen(false)}
+          >
+            <motion.div
+              initial={{ scale: 0.95, y: 20 }}
+              animate={{ scale: 1, y: 0 }}
+              exit={{ scale: 0.95, y: 20 }}
+              className="bg-white border border-zinc-200 p-8 rounded-3xl max-w-sm w-full shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <h3 className="text-2xl font-heading font-bold text-zinc-900 mb-2">Ansprechpartner wählen</h3>
+              <p className="text-zinc-600 text-sm mb-6">Bitte wählen Sie, wen Sie anrufen möchten:</p>
+              <div className="flex flex-col gap-3">
+                <a href="tel:01728083459" className="w-full">
+                  <button className="w-full py-3 bg-[var(--primary)] hover:bg-[var(--primary-dark)] text-[#0D1B4B] rounded-xl font-bold tracking-wider text-sm transition-all flex items-center justify-center gap-2">
+                    <Phone className="w-4 h-4" /> FERIT (0172 80 83 459)
+                  </button>
+                </a>
+                <a href="tel:017855122781" className="w-full">
+                  <button className="w-full py-3 bg-zinc-100 hover:bg-zinc-200 border border-zinc-300 text-zinc-900 rounded-xl font-bold tracking-wider text-sm transition-all flex items-center justify-center gap-2">
+                    <Phone className="w-4 h-4" /> AHMET (0178 55 12 27 81)
+                  </button>
+                </a>
+              </div>
+              <button 
+                onClick={() => setIsPhoneModalOpen(false)}
+                className="mt-6 w-full text-center text-sm text-zinc-500 hover:text-zinc-900 transition-colors"
+              >
+                Abbrechen
+              </button>
+            </motion.div>
+          </motion.div>
         )}
       </AnimatePresence>
     </>

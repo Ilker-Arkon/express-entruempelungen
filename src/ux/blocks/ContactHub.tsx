@@ -88,13 +88,20 @@ export function ContactHubBlock({
             </div>
             
             <h3 className="text-2xl font-bold text-white mb-2 font-heading tracking-wide">Direktanruf</h3>
-            <p className="text-gray-400 text-sm mb-8 flex-grow leading-relaxed">Wir sind für Sie erreichbar.<br/>Sofortige Beratung!</p>
+            <p className="text-gray-400 text-sm mb-8 flex-grow leading-relaxed">Wir sind für Sie erreichbar.<br/>Wählen Sie Ihren Ansprechpartner:</p>
             
-            <a href={`tel:${phone.replace(/[^0-9]/g, "")}`} className="w-full mt-auto">
-              <button className="w-full py-4 bg-[var(--primary)] hover:bg-[var(--primary-dark)] text-[#0D1B4B] rounded-xl font-bold tracking-wider text-sm transition-all flex items-center justify-center gap-2">
-                <PhoneCall className="w-4 h-4" /> JETZT ANRUFEN
-              </button>
-            </a>
+            <div className="w-full mt-auto flex flex-col gap-3">
+              <a href="tel:01728083459" className="w-full">
+                <button className="w-full py-3 bg-[var(--primary)] hover:bg-[var(--primary-dark)] text-[#0D1B4B] rounded-xl font-bold tracking-wider text-xs transition-all flex items-center justify-center gap-2">
+                  <PhoneCall className="w-4 h-4" /> FERIT (0172 80 83 459)
+                </button>
+              </a>
+              <a href="tel:017855122781" className="w-full">
+                <button className="w-full py-3 bg-white/10 hover:bg-white/20 border border-[var(--primary)]/30 text-white rounded-xl font-bold tracking-wider text-xs transition-all flex items-center justify-center gap-2">
+                  <PhoneCall className="w-4 h-4" /> AHMET (0178 55 12 27 81)
+                </button>
+              </a>
+            </div>
           </motion.div>
 
           {/* Column 2: WhatsApp */}
