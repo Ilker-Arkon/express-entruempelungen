@@ -124,7 +124,7 @@ export function ContactHubBlock({
             </div>
             
             <h3 className="text-2xl font-bold text-white mb-2 font-heading tracking-wide">WhatsApp</h3>
-            <p className="text-gray-400 text-sm mb-8 flex-grow leading-relaxed">Schreiben Sie uns unkompliziert.<br/>Antwort in unter 1 Stunde!</p>
+            <p className="text-gray-400 text-sm mb-8 flex-grow leading-relaxed">Schreiben Sie uns unkompliziert.<br/>Antwort so schnell wie möglich!</p>
             
             <a href={whatsappLink} target="_blank" rel="noreferrer" className="w-full mt-auto">
               <button className="w-full py-4 bg-[var(--primary)] hover:bg-[var(--primary-dark)] text-[#0D1B4B] rounded-xl font-bold tracking-wider text-sm transition-all flex items-center justify-center gap-2">
@@ -146,7 +146,7 @@ export function ContactHubBlock({
             </div>
             
             <h3 className="text-2xl font-bold text-white mb-2 font-heading tracking-wide">Rückruf-Service</h3>
-            <p className="text-gray-400 text-sm mb-6 leading-relaxed">Garantierter Rückruf<br/>in 30 Min.</p>
+            <p className="text-gray-400 text-sm mb-6 leading-relaxed">Garantierter Rückruf<br/>so schnell wie möglich</p>
             
             <form ref={formRef} onSubmit={handleCallbackSubmit} className="w-full flex flex-col gap-3 mt-auto">
               {formState !== "success" && (
