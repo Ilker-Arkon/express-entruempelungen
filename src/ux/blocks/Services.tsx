@@ -23,9 +23,7 @@ const rueckseitenTexte: Record<string, string> = {
   Nachlassauflösung:
     "Einfühlsame Haushaltsauflösung nach Todesfall. Wir prüfen auf Wertsachen, dokumentieren und rechnen an. Diskrete Abwicklung in enger Abstimmung mit Angehörigen und Nachlassverwaltern.",
   "Sperrmüll & Entsorgung":
-    "Sperrige Einzelstücke, Elektroschrott oder Grünschnitt: Wir holen ab und entsorgen umweltgerecht inkl. sortenreiner Trennung. Sie erhalten einen offiziellen Entsorgungsnachweis.",
-  Wertstoffankauf:
-    "Gut erhaltene Möbel, Antiquitäten, Markenkleidung oder Elektrogeräte kaufen wir an. Der ermittelte Wert wird direkt von Ihrer Endrechnung abgezogen – das senkt Ihre Kosten spürbar.",
+    "Sperrige Einzelstücke, Elektroschrott oder Grünschnitt: Wir holen ab und entsorgen umweltgerecht inkl. sortenreiner Trennung.",
 };
 
 export interface ServicesProps {
@@ -50,7 +48,6 @@ export function ServicesBlock({
     { title: "Kellerentrümpelung", description: "Befreiung von Nebenräumen von angesammeltem Ballast.", icon: "Package", link: "/entruempelung-nuernberg" },
     { title: "Nachlassauflösung", description: "Einfühlsame und diskrete Abwicklung von Nachlässen.", icon: "Bird", link: "/nachlassaufloesung-nuernberg" },
     { title: "Sperrmüll & Entsorgung", description: "Fachgerechte Trennung und umweltfreundliche Entsorgung.", icon: "Recycle", link: "/sperrmuellentsorgung-nuernberg" },
-    { title: "Wertstoffankauf", description: "Wertanrechnung auf den Endpreis bei verwertbaren Gegenständen.", icon: "Euro", link: "/#kontakt" },
   ],
 }: ServicesProps) {
   const [flippedIndex, setFlippedIndex] = useState<number | null>(null);

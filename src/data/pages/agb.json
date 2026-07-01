@@ -5,12 +5,12 @@
             "props": {
                 "id": "agb-hero",
                 "title": "Allgemeine Geschäftsbedingungen",
-                "subtitle": "AGB der Express Entrümpelungen & Wohnungsauflösungen",
+                "subtitle": "AGB der Express Entrümpelungen GbR",
                 "badges": ["Festpreisgarantie", "Kostenlose Besichtigung", "Besenreine Übergabe"],
                 "phoneLabel": "0172 80 83 459",
-                "whatsappLabel": "WhatsApp (0176...)",
-                "phoneUrl": "tel:+491728083459",
-                "whatsappUrl": "https://wa.me/4917655122781"
+                "whatsappLabel": "WhatsApp",
+                "phoneUrl": "tel:01728083459",
+                "whatsappUrl": "https://wa.me/491728083459"
             }
         },
         {

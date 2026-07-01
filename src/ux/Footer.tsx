@@ -11,6 +11,7 @@ export interface FooterConfig {
   phonePrimary?: string;
   phonePrimaryDisplay?: string;
   phoneSecondary?: string;
+  phoneSecondaryDisplay?: string;
   email?: string;
   street?: string;
   city?: string;
@@ -26,18 +27,19 @@ const DEFAULT_FOOTER: Required<FooterConfig> = {
   companyName: "Express",
   companySubtitle: "Ihre Profis für Nürnberg",
   companyDescription:
-    "Ihr zuverlässiger Partner für besenreine Wohnungsauflösungen, Entrümpelungen und diskrete Nachlassabwicklungen in Nürnberg und 50km Umkreis.",
+    "Ihr zuverlässiger Partner für besenreine Wohnungsauflösungen, Entrümpelungen und diskrete Nachlassabwicklungen in Nürnberg und 100km Umkreis.",
   logoPath: "/gallery/logo.png",
   logoAlt: "Express Entrümpelungen Logo",
-  phonePrimary: "+491728083459",
+  phonePrimary: "01728083459",
   phonePrimaryDisplay: "0172 80 83 459",
-  phoneSecondary: "",
+  phoneSecondary: "017855122781",
+  phoneSecondaryDisplay: "0178 55 12 27 81",
   email: "info@express-entruempelungen.de",
   street: "Friesenstraße 25",
   city: "Nürnberg",
   postalCode: "90441",
-  openingHoursText: "Mo - Sa: 08:00 - 20:00 Uhr",
-  openingHoursNote: "Notdienst: 24/7 über WhatsApp",
+  openingHoursText: "Mo - So: 07:00 - 22:00 Uhr",
+  openingHoursNote: "",
   vatId: "DE462122010",
   copyrightText: "Express Entrümpelungen & Wohnungsauflösungen. Alle Rechte vorbehalten.",
   serviceDropdownLinks: [
@@ -120,7 +122,7 @@ export function Footer({ config }: { config?: FooterConfig }) {
                 <Phone className="w-5 h-5 text-[var(--primary)] shrink-0 mt-0.5" />
                 <div>
                   <a href={`tel:${c.phonePrimary}`} className="block hover:text-white transition-colors">{c.phonePrimaryDisplay}</a>
-                  {c.phoneSecondary && <a href={`tel:${c.phoneSecondary}`} className="block hover:text-white transition-colors">{c.phoneSecondary}</a>}
+                  {c.phoneSecondary && <a href={`tel:${c.phoneSecondary}`} className="block hover:text-white transition-colors">{c.phoneSecondaryDisplay || c.phoneSecondary}</a>}
                 </div>
               </li>
               <li className="flex items-start gap-3">

@@ -1,10 +1,10 @@
 {
   "companyName": "Express Entrümpelungen",
   "companySubtitle": "Entrümpelungen",
-  "companyDescription": "Ihr zuverlässiger Partner für besenreine Wohnungsauflösungen, Entrümpelungen und diskrete Nachlassabwicklungen in Nürnberg und 50km Umkreis.",
-  "phonePrimary": "+491728083459",
+  "companyDescription": "Ihr zuverlässiger Partner für besenreine Wohnungsauflösungen, Entrümpelungen und diskrete Nachlassabwicklungen in Nürnberg und 100km Umkreis.",
+  "phonePrimary": "01728083459",
   "phonePrimaryDisplay": "0172 80 83 459",
-  "phoneSecondary": "+4917655122781",
+  "phoneSecondary": "017855122781",
   "email": "info@express-entruempelungen.de",
   "street": "Friesenstraße 25",
   "city": "Nürnberg",
@@ -69,8 +69,8 @@
       "label": "Sperrmüllentsorgung"
     }
   ],
-  "openingHoursText": "Mo - Sa: 08:00 - 20:00 Uhr",
-  "openingHoursNote": "Notdienst: 24/7 über WhatsApp",
+  "openingHoursText": "Mo - So: 07:00 - 22:00 Uhr",
+  "openingHoursNote": "",
   "whatsappNumber": "491728083459",
   "whatsappDefaultMessage": "Hallo, ich interessiere mich für eine kostenlose Besichtigung. Bitte kontaktieren Sie mich.",
   "schemaGeoLat": 49.4319,

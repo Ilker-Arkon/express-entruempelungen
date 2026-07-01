@@ -10,11 +10,11 @@ export default function ImpressumPage() {
     <div className="container mx-auto px-6 py-24 max-w-3xl font-body">
       <h1 className="text-4xl font-heading font-black mb-8">Impressum</h1>
       
-      <div className="space-y-8 text-gray-700">
+      <div className="space-y-8 text-gray-900">
         <section>
           <h2 className="text-2xl font-bold mb-4 text-gray-900">Angaben gemäß § 5 TMG</h2>
           <p>
-            <strong>Express Entrümpelungen & Wohnungsauflösungen</strong><br />
+            <strong>Express Entrümpelungen GbR</strong><br />
             Friesenstraße 25<br />
             90441 Nürnberg
           </p>
@@ -22,13 +22,13 @@ export default function ImpressumPage() {
 
         <section>
           <h2 className="text-2xl font-bold mb-4 text-gray-900">Vertreten durch:</h2>
-          <p>Geschäftsführung der Express Entrümpelungen (Inh. wird nachgereicht)</p>
+          <p>Ferit Uzun & Ahmet Onur Camaslioglu</p>
         </section>
 
         <section>
           <h2 className="text-2xl font-bold mb-4 text-gray-900">Kontakt</h2>
           <p>
-            Telefon: +49 (0) 172 80 83 459<br />
+            Telefon: 0172 80 83 459 & 0178 55 12 27 81<br />
             E-Mail: info@express-entruempelungen.de
           </p>
         </section>

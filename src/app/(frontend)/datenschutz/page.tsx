@@ -15,7 +15,7 @@ export default function DatenschutzPage() {
 
       <h1 className="text-4xl font-heading font-black mb-8">Datenschutzerklärung</h1>
       
-      <div className="space-y-8 text-gray-700">
+      <div className="space-y-8 text-gray-900">
         <section>
           <h2 className="text-2xl font-bold mb-4 text-gray-900">1. Datenschutz auf einen Blick</h2>
           <h3 className="text-xl font-bold mt-4 mb-2">Allgemeine Hinweise</h3>
@@ -33,10 +33,10 @@ export default function DatenschutzPage() {
           <h3 className="text-xl font-bold mt-4 mb-2">Hinweis zur verantwortlichen Stelle</h3>
           <p>
             Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:<br /><br />
-            <strong>Express Entrümpelungen & Wohnungsauflösungen</strong><br />
+            <strong>Express Entrümpelungen GbR</strong><br />
             Friesenstraße 25<br />
             90441 Nürnberg<br /><br />
-            Telefon: +49 (0) 172 80 83 459<br />
+            Telefon: 0172 80 83 459 & 0178 55 12 27 81<br />
             E-Mail: info@express-entruempelungen.de
           </p>
         </section>

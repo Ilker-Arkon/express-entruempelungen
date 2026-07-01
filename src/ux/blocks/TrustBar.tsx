@@ -26,7 +26,7 @@ export function TrustBarBlock({
   stats = [
     { icon: "Home", number: 100, suffix: "%", label: "Besenrein" },
     { icon: "Star", number: 100, suffix: "%", label: "Zufriedenheit" },
-    { icon: "Truck", number: 50, suffix: "km", label: "Umkreis" },
+    { icon: "Truck", number: 100, suffix: "km", label: "Umkreis" },
     { icon: "Clock", number: 100, suffix: "%", label: "Diskretion" },
     { icon: "Euro", number: 100, suffix: "%", label: "Festpreisgarantie" },
   ]

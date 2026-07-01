@@ -31,6 +31,8 @@ export function ReviewsBlock({
   reviews = mockReviews
 }: ReviewsProps) {
 
+  return null;
+  
   return (
     <section className="py-24 bg-white overflow-hidden">
       <div className="container mx-auto px-6">

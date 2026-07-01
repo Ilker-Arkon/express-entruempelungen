@@ -26,7 +26,7 @@ const mockPins = [
 
 export function ServiceAreasBlock({
   title = "Unsere Service-Gebiete",
-  subtitle = "Wir sind in einem Umkreis von 50km für Sie im Einsatz.",
+  subtitle = "Wir sind in einem Umkreis von 100km für Sie im Einsatz.",
   cities = defaultCities
 }: ServiceAreasProps) {
   const [activePin, setActivePin] = useState<number | null>(null);

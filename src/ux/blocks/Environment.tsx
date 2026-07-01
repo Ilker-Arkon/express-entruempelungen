@@ -31,7 +31,6 @@ export interface EnvironmentProps {
 const defaultFeatures: EnvironmentFeature[] = [
   { icon: "Recycle", title: "Fachgerechte Trennung", description: "Wir trennen Müll strikt nach Werkstoffen für optimales Recycling." },
   { icon: "TreePine", title: "Wiederverwendung", description: "Gut erhaltene Möbel spenden wir an lokale soziale Einrichtungen." },
-  { icon: "FileCheck", title: "Entsorgungsnachweise", description: "Sie erhalten auf Wunsch offizielle Nachweise für kritische Abfälle." },
   { icon: "HeartHandshake", title: "Soziales Engagement", description: "Zusammenarbeit mit lokalen Spenden-Centern und Tafeln." },
   { icon: "ShieldCheck", title: "Zertifiziert", description: "Wir arbeiten ausschließlich mit zertifizierten Entsorgungsfachbetrieben." },
 ];

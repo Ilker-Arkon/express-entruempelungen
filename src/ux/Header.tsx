@@ -26,7 +26,7 @@ const DEFAULT_HEADER: Required<HeaderConfig> = {
   companySubtitle: "Entrümpelungen",
   logoPath: "/gallery/logo.png",
   logoAlt: "Express Entrümpelungen Logo",
-  phonePrimary: "+491728083459",
+  phonePrimary: "01728083459",
   phonePrimaryDisplay: "0172 80 83 459",
   street: "Friesenstraße 25",
   city: "Nürnberg",
