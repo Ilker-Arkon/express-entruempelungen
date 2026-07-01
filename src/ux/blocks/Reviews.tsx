@@ -32,7 +32,7 @@ export function ReviewsBlock({
 }: ReviewsProps) {
 
   return null;
-  /*
+
   return (
     <section className="py-24 bg-white overflow-hidden">
       <div className="container mx-auto px-6">
@@ -122,5 +122,4 @@ export function ReviewsBlock({
       </div>
     </section>
   );
-  */
 }
