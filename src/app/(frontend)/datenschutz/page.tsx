@@ -7,7 +7,8 @@ export const metadata: Metadata = {
 
 export default function DatenschutzPage() {
   return (
-    <div className="container mx-auto px-6 py-24 max-w-3xl font-body">
+    <div className="min-h-screen bg-white text-zinc-900 pb-24">
+      <div className="container mx-auto px-6 py-24 max-w-3xl font-body">
       <div className="bg-amber-100 border-l-4 border-amber-500 text-amber-700 p-4 mb-8" role="alert">
         <p className="font-bold">Rechtlicher Hinweis</p>
         <p>Dies ist ein Template. Bitte lassen Sie diese Standard-Erklärung rechtlich von einem Anwalt prüfen, insbesondere bezüglich Tracking, Google Fonts und Kontaktformularen.</p>
@@ -48,6 +49,7 @@ export default function DatenschutzPage() {
             Unsere Internetseiten verwenden so genannte „Cookies“. Cookies sind kleine Textdateien und richten auf Ihrem Endgerät keinen Schaden an. Sie werden entweder vorübergehend für die Dauer einer Sitzung (Session-Cookies) oder dauerhaft (permanente Cookies) auf Ihrem Endgerät gespeichert.
           </p>
         </section>
+      </div>
       </div>
     </div>
   );

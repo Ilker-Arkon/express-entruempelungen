@@ -7,7 +7,8 @@ export const metadata: Metadata = {
 
 export default function ImpressumPage() {
   return (
-    <div className="container mx-auto px-6 py-24 max-w-3xl font-body">
+    <div className="min-h-screen bg-white text-zinc-900 pb-24">
+      <div className="container mx-auto px-6 py-24 max-w-3xl font-body">
       <h1 className="text-4xl font-heading font-black mb-8">Impressum</h1>
       
       <div className="space-y-8 text-gray-900">
@@ -58,6 +59,7 @@ export default function ImpressumPage() {
             Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
           </p>
         </section>
+      </div>
       </div>
     </div>
   );
