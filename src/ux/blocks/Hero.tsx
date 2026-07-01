@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { TypeAnimation } from "react-type-animation";
 import { motion, AnimatePresence } from "framer-motion";
 import { CheckCircle2, Phone, MessageCircle } from "lucide-react";
 
@@ -45,13 +44,7 @@ export function HeroBlock({
         >
           {/* Title */}
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-black text-white mb-6 leading-tight drop-shadow-lg">
-            <TypeAnimation
-              sequence={[title, 2000]}
-              wrapper="span"
-              speed={50}
-              cursor={false}
-              repeat={Infinity}
-            />
+            {title}
           </h1>
 
           <p className="text-xl md:text-2xl text-gray-200 mb-10 font-body drop-shadow-md">
