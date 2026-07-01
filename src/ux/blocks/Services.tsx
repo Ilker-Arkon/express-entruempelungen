@@ -124,7 +124,6 @@ export function ServicesBlock({
                 key={index}
                 variants={cardVariants}
                 className="perspective-[1000px] h-[340px]"
-                style={{ perspective: "1000px" }}
               >
                 <motion.div
                   className="relative w-full h-full"

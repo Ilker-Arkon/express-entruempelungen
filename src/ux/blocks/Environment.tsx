@@ -46,7 +46,7 @@ export function EnvironmentBlock({
       {/* User Uploaded Background Image */}
       <div className="absolute inset-0 z-0 opacity-25 mix-blend-overlay">
         <Image 
-          src="/gallery/hintergrund 1 .png.jpeg" 
+          src="/gallery/hintergrund-1.png" 
           alt="Hintergrund" 
           fill 
           className="object-cover"

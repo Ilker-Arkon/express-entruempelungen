@@ -32,7 +32,7 @@ export function ReviewsBlock({
 }: ReviewsProps) {
 
   return null;
-  
+  /*
   return (
     <section className="py-24 bg-white overflow-hidden">
       <div className="container mx-auto px-6">
@@ -76,9 +76,7 @@ export function ReviewsBlock({
         </div>
 
         {/* Slider */}
-        <div className="flex overflow-x-auto gap-6 pb-12 snap-x snap-mandatory hide-scrollbar"
-          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-        >
+        <div className="flex overflow-x-auto gap-6 pb-12 snap-x snap-mandatory hide-scrollbar">
           {reviews.map((review, i) => (
             <motion.div 
               key={i}
@@ -124,4 +122,5 @@ export function ReviewsBlock({
       </div>
     </section>
   );
+  */
 }

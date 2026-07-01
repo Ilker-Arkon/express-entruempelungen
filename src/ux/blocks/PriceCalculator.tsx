@@ -58,7 +58,7 @@ export function PriceCalculatorBlock({
   }, [propertyType, size, fillLevel, floor, hasElevator, basePricePerSqm]);
 
   return null;
-  
+  /*
   return (
     <section id={id || "preise"} className="py-24 bg-[var(--gray-light)] relative">
       <div className="container mx-auto px-6 max-w-4xl">
@@ -205,4 +205,5 @@ export function PriceCalculatorBlock({
       </div>
     </section>
   );
+  */
 }

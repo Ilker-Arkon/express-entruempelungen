@@ -25,6 +25,7 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-inter);
   --font-heading: var(--font-montserrat);
+  --font-body: var(--font-inter);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -52,6 +53,13 @@ h1, h2, h3, h4, h5, h6 {
   }
   .shadow-button {
     box-shadow: 0 5px 20px rgba(211,162,93,0.4);
+  }
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
   }
   .text-gradient {
     background-clip: text;
