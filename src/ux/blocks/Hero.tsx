@@ -22,9 +22,9 @@ export function HeroBlock({
   backgroundImage = "/gallery/flyer.jpg",
   badges = ["Besenreine Übergabe", "Festpreisgarantie", "Kostenlose Besichtigung"],
   phoneLabel = "Kostenloses Angebot anfordern",
-  whatsappLabel = "WhatsApp (0176...)",
-  phoneUrl = "tel:+491728083459",
-  whatsappUrl = "https://wa.me/4917655122781",
+  whatsappLabel = "WhatsApp",
+  phoneUrl = "tel:01728083459",
+  whatsappUrl = "https://wa.me/491728083459",
 }: HeroProps) {
   return (
     <div className="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-[var(--dark)]">

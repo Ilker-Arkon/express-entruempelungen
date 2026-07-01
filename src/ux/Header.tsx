@@ -40,7 +40,6 @@ const DEFAULT_HEADER: Required<HeaderConfig> = {
   mainNavLinks: [
     { href: "/", label: "Startseite" },
     { href: "/#ablauf", label: "Ablauf" },
-    { href: "/#preise", label: "Preise" },
     { href: "/#faq", label: "FAQ" },
     { href: "/#kontakt", label: "Kontakt" },
   ],
