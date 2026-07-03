@@ -44,11 +44,11 @@ const DEFAULT_HEADER: Required<HeaderConfig> = {
     { href: "/#kontakt", label: "Kontakt" },
   ],
   serviceDropdownLinks: [
-    { href: "/#leistungen", label: "Wohnungsauflösung" },
-    { href: "/#leistungen", label: "Gewerbeentrümpelung" },
-    { href: "/#leistungen", label: "Kellerentrümpelung" },
-    { href: "/#leistungen", label: "Nachlassauflösung" },
-    { href: "/#leistungen", label: "Sperrmüll & Entsorgung" },
+    { href: "/entruempelung-nuernberg", label: "Entrümpelung Nürnberg" },
+    { href: "/wohnungsaufloesung-nuernberg", label: "Wohnungsauflösung Nürnberg" },
+    { href: "/gewerbeaufloesung-nuernberg", label: "Gewerbeentrümpelung" },
+    { href: "/nachlassaufloesung-nuernberg", label: "Nachlassauflösung" },
+    { href: "/sperrmuellentsorgung-nuernberg", label: "Sperrmüllentsorgung" },
   ],
 };
 
@@ -161,8 +161,7 @@ export function Header({ config }: { config?: HeaderConfig }) {
                 onMouseEnter={openDropdown}
                 onMouseLeave={closeDropdown}
               >
-                <Link
-                  href="/#leistungen"
+                <button
                   onClick={() => setDropdownOpen(!dropdownOpen)}
                   onFocus={openDropdown}
                   onBlur={(e) => {
@@ -176,7 +175,7 @@ export function Header({ config }: { config?: HeaderConfig }) {
                 >
                   Leistungen
                   <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${dropdownOpen ? "rotate-180" : ""}`} />
-                </Link>
+                </button>
                 <div
                   className={`absolute top-full left-0 mt-1 w-64 bg-white border border-zinc-200 rounded-xl shadow-xl transition-all duration-200 z-50 py-2 ${
                     dropdownOpen ? "opacity-100 visible" : "opacity-0 invisible"
@@ -260,9 +259,7 @@ export function Header({ config }: { config?: HeaderConfig }) {
                )}
 
                <div className="flex flex-col gap-2 pl-3 border-l-2 border-[var(--primary)] my-2">
-                 <Link href="/#leistungen" onClick={() => setMobileMenuOpen(false)} className="text-[12px] uppercase tracking-wider text-zinc-800 font-bold block mb-1 hover:text-[var(--primary)] transition-colors">
-                   LEISTUNGEN (ÜBERSICHT)
-                 </Link>
+                 <span className="text-[10px] uppercase tracking-wider text-zinc-400 font-bold block mb-1">Leistungen (Seiten)</span>
                  {c.serviceDropdownLinks.map((link) => (
                    <Link
                      key={link.href}

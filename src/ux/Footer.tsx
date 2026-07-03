@@ -43,11 +43,11 @@ const DEFAULT_FOOTER: Required<FooterConfig> = {
   vatId: "DE462122010",
   copyrightText: "Express Entrümpelungen & Wohnungsauflösungen. Alle Rechte vorbehalten.",
   serviceDropdownLinks: [
-    { href: "/#leistungen", label: "Wohnungsauflösung" },
-    { href: "/#leistungen", label: "Entrümpelung" },
-    { href: "/#leistungen", label: "Gewerbeauflösung" },
-    { href: "/#leistungen", label: "Nachlassauflösung" },
-    { href: "/#leistungen", label: "Sperrmüll & Entsorgung" },
+    { href: "/wohnungsaufloesung-nuernberg", label: "Wohnungsauflösung" },
+    { href: "/entruempelung-nuernberg", label: "Entrümpelung" },
+    { href: "/gewerbeaufloesung-nuernberg", label: "Gewerbeauflösung" },
+    { href: "/nachlassaufloesung-nuernberg", label: "Nachlassauflösung" },
+    { href: "/sperrmuellentsorgung-nuernberg", label: "Sperrmüllentsorgung" },
   ],
 };
 
