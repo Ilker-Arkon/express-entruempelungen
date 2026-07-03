@@ -161,7 +161,8 @@ export function Header({ config }: { config?: HeaderConfig }) {
                 onMouseEnter={openDropdown}
                 onMouseLeave={closeDropdown}
               >
-                <button
+                <Link
+                  href="/#leistungen"
                   onClick={() => setDropdownOpen(!dropdownOpen)}
                   onFocus={openDropdown}
                   onBlur={(e) => {
@@ -175,7 +176,7 @@ export function Header({ config }: { config?: HeaderConfig }) {
                 >
                   Leistungen
                   <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${dropdownOpen ? "rotate-180" : ""}`} />
-                </button>
+                </Link>
                 <div
                   className={`absolute top-full left-0 mt-1 w-64 bg-white border border-zinc-200 rounded-xl shadow-xl transition-all duration-200 z-50 py-2 ${
                     dropdownOpen ? "opacity-100 visible" : "opacity-0 invisible"
@@ -259,7 +260,9 @@ export function Header({ config }: { config?: HeaderConfig }) {
                )}
 
                <div className="flex flex-col gap-2 pl-3 border-l-2 border-[var(--primary)] my-2">
-                 <span className="text-[10px] uppercase tracking-wider text-zinc-400 font-bold block mb-1">Leistungen (Seiten)</span>
+                 <Link href="/#leistungen" onClick={() => setMobileMenuOpen(false)} className="text-[12px] uppercase tracking-wider text-zinc-800 font-bold block mb-1 hover:text-[var(--primary)] transition-colors">
+                   LEISTUNGEN (ÜBERSICHT)
+                 </Link>
                  {c.serviceDropdownLinks.map((link) => (
                    <Link
                      key={link.href}
