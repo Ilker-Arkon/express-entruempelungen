@@ -19,7 +19,7 @@ export interface HeroProps {
 export function HeroBlock({
   title = "Wir kümmern uns um das Chaos – Sie entspannen",
   subtitle = "Express Entrümpelungen: Besenreine Übergabe für Wohnungs- und Gewerbeauflösungen in Ihrer Nähe.",
-  backgroundImage = "/gallery/flyer.jpg",
+  backgroundImage = "/gallery/ohne hintergrund.png",
   badges = ["Besenreine Übergabe", "Festpreisgarantie", "Kostenlose Besichtigung"],
   phoneLabel = "Kostenloses Angebot anfordern",
   whatsappLabel = "WhatsApp",
@@ -100,7 +100,7 @@ export function HeroBlock({
         >
           <div className="relative rounded-2xl overflow-hidden shadow-2xl border-2 border-white/10">
             <Image
-              src={backgroundImage || "/gallery/flyer.jpg"}
+              src={backgroundImage || "/gallery/ohne hintergrund.png"}
               alt="Express Entrümpelungen Flyer"
               width={500}
               height={600}
