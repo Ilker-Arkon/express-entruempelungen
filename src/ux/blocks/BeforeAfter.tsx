@@ -20,8 +20,8 @@ export function BeforeAfterBlock({
   subtitle = "Überzeugen Sie sich selbst – echte Ergebnisse unserer Kunden",
   items = [
     {
-      beforeImage: "/gallery/before1.jpg",
-      afterImage: "/gallery/after1.jpg",
+      beforeImage: "/gallery/before1.jpeg",
+      afterImage: "/gallery/after1.jpeg",
       label: "Vorher / Nachher"
     }
   ]

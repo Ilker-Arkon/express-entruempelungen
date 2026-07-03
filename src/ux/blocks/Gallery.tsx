@@ -18,8 +18,8 @@ export function GalleryBlock({
   title = "Unsere Galerie",
   subtitle = "Einblicke in unsere Arbeit",
   images = [
-    { url: "/gallery/before1.jpg", alt: "Vorher – Entrümpelung" },
-    { url: "/gallery/after1.jpg", alt: "Nachher – Besenrein" },
+    { url: "/gallery/before1.jpeg", alt: "Vorher – Entrümpelung" },
+    { url: "/gallery/after1.jpeg", alt: "Nachher – Besenrein" },
     { url: "/gallery/flyer.jpeg", alt: "Flyer Express Entrümpelungen" },
   ]
 }: GalleryProps) {

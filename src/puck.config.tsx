@@ -137,7 +137,7 @@ export const config: Config<PuckConfigProps> = {
         title: "Unsere Ergebnisse",
         subtitle: "Sehen Sie selbst, wie wir Räume verwandeln",
         items: [
-          { beforeImage: "/gallery/before1.jpg", afterImage: "/gallery/after1.jpg", label: "Vorher / Nachher" }
+          { beforeImage: "/gallery/before1.jpeg", afterImage: "/gallery/after1.jpeg", label: "Vorher / Nachher" }
         ]
       },
       render: (props: any) => <BeforeAfterBlock {...props} />
@@ -334,8 +334,8 @@ export const config: Config<PuckConfigProps> = {
         title: "Unsere Galerie",
         subtitle: "Einblicke in unsere Arbeit",
         images: [
-          { url: "/gallery/before1.jpg", alt: "Vorher – Entrümpelung" },
-          { url: "/gallery/after1.jpg", alt: "Nachher – Besenrein" },
+          { url: "/gallery/before1.jpeg", alt: "Vorher – Entrümpelung" },
+          { url: "/gallery/after1.jpeg", alt: "Nachher – Besenrein" },
           { url: "/gallery/flyer.jpeg", alt: "Flyer Express Entrümpelungen" },
         ]
       },
