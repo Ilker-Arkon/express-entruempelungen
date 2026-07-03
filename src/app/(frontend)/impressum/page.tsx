@@ -15,7 +15,8 @@ export default function ImpressumPage() {
         <section>
           <h2 className="text-2xl font-bold mb-4 text-gray-900">Angaben gemäß § 5 TMG</h2>
           <p>
-            <strong>Express Entrümpelungen GbR</strong><br />
+            <strong>Ferit Uzun & Ahmet Onur Camaslioglu GbR</strong><br />
+            (Geschäftsbezeichnung: Express Entrümpelungen GbR)<br />
             Friesenstraße 25<br />
             90441 Nürnberg
           </p>
@@ -23,13 +24,16 @@ export default function ImpressumPage() {
 
         <section>
           <h2 className="text-2xl font-bold mb-4 text-gray-900">Vertreten durch:</h2>
-          <p>Ferit Uzun & Ahmet Onur Camaslioglu</p>
+          <p>
+            Ferit Uzun<br />
+            Ahmet Onur Camaslioglu
+          </p>
         </section>
 
         <section>
           <h2 className="text-2xl font-bold mb-4 text-gray-900">Kontakt</h2>
           <p>
-            Telefon: 0172 80 83 459 & 0178 55 12 27 81<br />
+            Telefon: 0172 80 83 459 oder 0178 55 12 27 81<br />
             E-Mail: info@express-entruempelungen.de
           </p>
         </section>
