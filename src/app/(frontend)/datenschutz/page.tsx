@@ -34,10 +34,11 @@ export default function DatenschutzPage() {
           <h3 className="text-xl font-bold mt-4 mb-2">Hinweis zur verantwortlichen Stelle</h3>
           <p>
             Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:<br /><br />
-            <strong>Express Entrümpelungen GbR</strong><br />
+             <strong>Ferit Uzun & Ahmet Onur Camaslioglu GbR</strong><br />
+            (Geschäftsbezeichnung: Express Entrümpelungen GbR)<br />
             Friesenstraße 25<br />
             90441 Nürnberg<br /><br />
-            Telefon: 0172 80 83 459 & 0178 55 12 27 81<br />
+            Telefon: 0172 80 83 459 & 0176 55 12 27 81<br />
             E-Mail: info@express-entruempelungen.de
           </p>
         </section>

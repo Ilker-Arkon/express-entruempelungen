@@ -33,7 +33,7 @@ export default function ImpressumPage() {
         <section>
           <h2 className="text-2xl font-bold mb-4 text-gray-900">Kontakt</h2>
           <p>
-            Telefon: 0172 80 83 459 oder 0178 55 12 27 81<br />
+            Telefon: 0172 80 83 459 oder 0176 55 12 27 81<br />
             E-Mail: info@express-entruempelungen.de
           </p>
         </section>

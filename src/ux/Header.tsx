@@ -281,9 +281,9 @@ export function Header({ config }: { config?: HeaderConfig }) {
                     <Phone className="w-5 h-5" />
                     FERIT (0172 80 83 459)
                   </a>
-                  <a href="tel:017855122781" className="flex justify-center items-center gap-2 px-5 py-3 bg-zinc-100 text-zinc-900 border border-zinc-200 rounded-full font-bold">
+                  <a href="tel:017655122781" className="flex justify-center items-center gap-2 px-5 py-3 bg-zinc-100 text-zinc-900 border border-zinc-200 rounded-full font-bold">
                     <Phone className="w-5 h-5" />
-                    ONUR (0178 55 12 27 81)
+                    ONUR (0176 55 12 27 81)
                   </a>
                 </div>
              </div>
@@ -315,9 +315,9 @@ export function Header({ config }: { config?: HeaderConfig }) {
                     <Phone className="w-4 h-4" /> FERIT (0172 80 83 459)
                   </button>
                 </a>
-                <a href="tel:017855122781" className="w-full">
+                <a href="tel:017655122781" className="w-full">
                   <button className="w-full py-3 bg-zinc-100 hover:bg-zinc-200 border border-zinc-300 text-zinc-900 rounded-xl font-bold tracking-wider text-sm transition-all flex items-center justify-center gap-2">
-                    <Phone className="w-4 h-4" /> ONUR (0178 55 12 27 81)
+                    <Phone className="w-4 h-4" /> ONUR (0176 55 12 27 81)
                   </button>
                 </a>
               </div>

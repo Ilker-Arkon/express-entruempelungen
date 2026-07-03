@@ -135,9 +135,9 @@ export function HeroBlock({
                     <Phone className="w-4 h-4" /> FERIT (0172 80 83 459)
                   </button>
                 </a>
-                <a href="tel:017855122781" className="w-full">
+                <a href="tel:017655122781" className="w-full">
                   <button className="w-full py-3 bg-white/10 hover:bg-white/20 border border-[var(--primary)]/30 text-white rounded-xl font-bold tracking-wider text-sm transition-all flex items-center justify-center gap-2">
-                    <Phone className="w-4 h-4" /> ONUR (0178 55 12 27 81)
+                    <Phone className="w-4 h-4" /> ONUR (0176 55 12 27 81)
                   </button>
                 </a>
               </div>
