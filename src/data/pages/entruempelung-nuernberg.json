@@ -1,82 +1,89 @@
 {
-    "content":  [
-                    {
-                        "type":  "Hero",
-                        "props":  {
-                                      "id":  "hero",
-                                      "title":  "Entrümpelung Nürnberg",
-                                      "subtitle":  "Ihre Profis für schnelle und diskrete Entrümpelungen in Nürnberg und Umgebung."
-                                  }
-                    },
-                    {
-                        "type":  "TrustBar",
-                        "props":  {
-                                      "id":  "trust"
-                                  }
-                    },
-                    {
-                        "type":  "Services",
-                        "props":  {
-                                      "id":  "services"
-                                  }
-                    },
-                    {
-                        "type":  "BeforeAfter",
-                        "props":  {
-                                      "id":  "beforeafter"
-                                  }
-                    },
-                    {
-                        "type":  "Timeline",
-                        "props":  {
-                                      "id":  "timeline"
-                                  }
-                    },
-                    {
-                        "type":  "PriceCalculator",
-                        "props":  {
-                                      "id":  "calculator"
-                                  }
-                    },
-                    {
-                        "type":  "Reviews",
-                        "props":  {
-                                      "id":  "reviews"
-                                  }
-                    },
-                    {
-                        "type":  "ServiceAreas",
-                        "props":  {
-                                      "id":  "areas"
-                                  }
-                    },
-                    {
-                        "type":  "FAQ",
-                        "props":  {
-                                      "id":  "faq"
-                                  }
-                    },
-                    {
-                        "type":  "Environment",
-                        "props":  {
-                                      "id":  "environment"
-                                  }
-                    },
-                    {
-                        "type":  "ContactHub",
-                        "props":  {
-                                      "id":  "contact"
-                                  }
-                    }
-                ],
-    "root":  {
-                 "props":  {
-                               "title":  "Entrümpelung Nürnberg",
-                               "seo":  {
-                                           "title":  "Entrümpelung Nürnberg | Express Entrümpelungen",
-                                           "description":  "Professionelle Entrümpelung in Nürnberg. Schnell, diskret \u0026 besenrein. Jetzt kostenlose Besichtigung vereinbaren!",
-                                           "canonical":  "https://www.express-entruempelungen.de/entruempelung-nuernberg"
-                                       }
-                           }
-             }
+  "content": [
+    {
+      "type": "Hero",
+      "props": {
+        "id": "hero",
+        "title": "Entrümpelung Nürnberg",
+        "subtitle": "Ihr Spezialist für schnelle, diskrete und besenreine Entrümpelungen in Nürnberg und im Großraum – mit Festpreisgarantie."
+      }
+    },
+    {
+      "type": "TrustBar",
+      "props": { "id": "trust" }
+    },
+    {
+      "type": "Services",
+      "props": {
+        "id": "leistungen",
+        "title": "Was wir bei der Entrümpelung übernehmen",
+        "subtitle": "Komplette Entrümpelung – von der Anfrage bis zur besenreinen Übergabe",
+        "services": [
+          { "title": "Wohnungsentrümpelung", "description": "Komplette Räumung von Wohnungen jeder Größe – Küche, Bad, Keller, Dachboden alles inklusive.", "icon": "Home", "link": "/#kontakt" },
+          { "title": "Keller & Dachboden", "description": "Wir befreien auch vollgestopfte Nebenräume zuverlässig und schnell.", "icon": "Package", "link": "/#kontakt" },
+          { "title": "Garagen & Lager", "description": "Garagen, Abstellräume und Lagerhallen räumen wir effizient und vollständig.", "icon": "Building2", "link": "/#kontakt" },
+          { "title": "Messie-Wohnungen", "description": "Diskrete und professionelle Entrümpelung von Extremfällen – auf Wunsch mit Desinfektion.", "icon": "Recycle", "link": "/#kontakt" },
+          { "title": "Wertanrechnung", "description": "Verwertbare Gegenstände werden fair bewertet und vom Preis abgezogen.", "icon": "Euro", "link": "/#kontakt" }
+        ]
+      }
+    },
+    {
+      "type": "Timeline",
+      "props": {
+        "id": "ablauf",
+        "title": "Ablauf einer Entrümpelung",
+        "steps": [
+          { "title": "Anfrage stellen", "description": "Anruf, WhatsApp oder Formular – wir antworten so schnell wie möglich.", "icon": "PhoneCall" },
+          { "title": "Kostenlose Besichtigung", "description": "Wir kommen zu Ihnen, schauen uns alles an und erstellen ein faires Angebot.", "icon": "ClipboardCheck" },
+          { "title": "Terminabsprache", "description": "Wir finden gemeinsam den passenden Termin – auch kurzfristig möglich.", "icon": "CalendarCheck" },
+          { "title": "Entrümpelung", "description": "Unser Team arbeitet schnell und professionell – Sie müssen nicht dabei sein.", "icon": "Truck" },
+          { "title": "Besenreine Übergabe", "description": "Die Räume werden besenrein übergeben – alles sauber und fertig.", "icon": "Sparkles" }
+        ]
+      }
+    },
+    {
+      "type": "BeforeAfter",
+      "props": { "id": "vorher-nachher" }
+    },
+    {
+      "type": "FAQ",
+      "props": {
+        "id": "faq",
+        "title": "FAQ: Entrümpelung Nürnberg",
+        "subtitle": "Antworten auf die häufigsten Fragen zur Entrümpelung",
+        "faqs": [
+          { "question": "Was kostet eine Entrümpelung in Nürnberg?", "answer": "Die Kosten hängen stark vom Umfang, der Größe und dem Füllgrad der Räume ab. Nach einer kostenlosen Besichtigung erhalten Sie von uns ein verbindliches Festpreisangebot. Einfache Kellerentrümpelungen beginnen schon ab ca. 250 €." },
+          { "question": "Wie schnell können Sie eine Entrümpelung durchführen?", "answer": "Sehr schnell! In Normalfällen beginnen wir innerhalb von 24–48 Stunden nach der Besichtigung. In Notfällen reagieren wir noch schneller – sprechen Sie uns direkt an." },
+          { "question": "Was passiert mit den entrümpelten Gegenständen?", "answer": "Gut erhaltene Möbel und Gegenstände werden bewertet und der Wert auf Ihren Preis angerechnet. Weiter verwertbare Dinge werden gespendet oder weiterverkauft. Alles andere wird umweltgerecht und sortenrein entsorgt." },
+          { "question": "Muss ich bei der Entrümpelung anwesend sein?", "answer": "Nein, das ist nicht erforderlich. Viele Kunden übergeben uns einfach den Schlüssel. Sie können die Räumung auch aus der Ferne beauftragen." },
+          { "question": "Entrümpeln Sie auch extreme Fälle wie Messie-Wohnungen?", "answer": "Ja. Unser Team ist für Extremfälle geschult und arbeitet diskret und respektvoll. Auf Wunsch bieten wir auch Desinfektion und Geruchsneutralisierung an." },
+          { "question": "Sind versteckte Kosten möglich?", "answer": "Nein. Wir arbeiten ausschließlich mit Festpreisen. Das vereinbarte Angebot ist verbindlich – keine Überraschungen am Ende." },
+          { "question": "Kümmern Sie sich um die Halteverbotszone?", "answer": "Ja, falls nötig, beantragen wir die Genehmigung für eine Halteverbotszone und stellen die Schilder auf – das ist bei uns im Service inklusive." },
+          { "question": "Sind Sie versichert?", "answer": "Ja, wir sind umfassend betriebshaftpflichtversichert. Im unwahrscheinlichen Fall eines Schadens am Gebäude oder Treppenhaus sind Sie vollständig abgesichert." }
+        ]
+      }
+    },
+    {
+      "type": "ServiceAreas",
+      "props": { "id": "gebiete" }
+    },
+    {
+      "type": "Environment",
+      "props": { "id": "umwelt" }
+    },
+    {
+      "type": "ContactHub",
+      "props": { "id": "kontakt" }
+    }
+  ],
+  "root": {
+    "props": {
+      "title": "Entrümpelung Nürnberg",
+      "seo": {
+        "title": "Entrümpelung Nürnberg | Express Entrümpelungen – schnell, diskret, Festpreis",
+        "description": "Professionelle Entrümpelung in Nürnberg zum Festpreis. Schnell, diskret, besenrein. Keller, Wohnung, Dachboden, Garage – alles inklusive. Jetzt anfragen!",
+        "canonical": "https://www.express-entruempelungen.de/entruempelung-nuernberg"
+      }
+    }
+  }
 }

@@ -1,82 +1,88 @@
 {
-    "content":  [
-                    {
-                        "type":  "Hero",
-                        "props":  {
-                                      "id":  "hero",
-                                      "title":  "Gewerbeauflösung Nürnberg",
-                                      "subtitle":  "Professionelle Räumung von Büros, Hallen, Lagern und Gewerbeflächen zum Festpreis."
-                                  }
-                    },
-                    {
-                        "type":  "TrustBar",
-                        "props":  {
-                                      "id":  "trust"
-                                  }
-                    },
-                    {
-                        "type":  "Services",
-                        "props":  {
-                                      "id":  "services"
-                                  }
-                    },
-                    {
-                        "type":  "BeforeAfter",
-                        "props":  {
-                                      "id":  "beforeafter"
-                                  }
-                    },
-                    {
-                        "type":  "Timeline",
-                        "props":  {
-                                      "id":  "timeline"
-                                  }
-                    },
-                    {
-                        "type":  "PriceCalculator",
-                        "props":  {
-                                      "id":  "calculator"
-                                  }
-                    },
-                    {
-                        "type":  "Reviews",
-                        "props":  {
-                                      "id":  "reviews"
-                                  }
-                    },
-                    {
-                        "type":  "ServiceAreas",
-                        "props":  {
-                                      "id":  "areas"
-                                  }
-                    },
-                    {
-                        "type":  "FAQ",
-                        "props":  {
-                                      "id":  "faq"
-                                  }
-                    },
-                    {
-                        "type":  "Environment",
-                        "props":  {
-                                      "id":  "environment"
-                                  }
-                    },
-                    {
-                        "type":  "ContactHub",
-                        "props":  {
-                                      "id":  "contact"
-                                  }
-                    }
-                ],
-    "root":  {
-                 "props":  {
-                               "title":  "Gewerbeauflösung Nürnberg",
-                               "seo":  {
-                                           "title":  "Gewerbeauflösung Nürnberg | Express Entrümpelungen",
-                                           "description":  "Professionelle Gewerbeauflösung & Firmenauflösung in Nürnberg. Schnell, zuverlässig & besenrein. Jetzt unverbindliches Angebot anfordern!",
-                                           "canonical":  "https://www.express-entruempelungen.de/gewerbeaufloesung-nuernberg"
-                                       }
-                           }
-             }
+  "content": [
+    {
+      "type": "Hero",
+      "props": {
+        "id": "hero",
+        "title": "Gewerbeauflösung Nürnberg",
+        "subtitle": "Diskrete und professionelle Räumung von Büros, Lagern, Betrieben und Gewerbeflächen – schnell und zum Festpreis in Nürnberg."
+      }
+    },
+    {
+      "type": "TrustBar",
+      "props": { "id": "trust" }
+    },
+    {
+      "type": "Services",
+      "props": {
+        "id": "leistungen",
+        "title": "Gewerbeauflösung – unsere Leistungen",
+        "subtitle": "Gewerbliche Räumungen erfordern Erfahrung, Diskretion und Effizienz",
+        "services": [
+          { "title": "Büroauflösung", "description": "Schreibtische, Regale, Akten, IT-Equipment – wir räumen Büroflächen jeder Größe komplett.", "icon": "Building2", "link": "/#kontakt" },
+          { "title": "Lager & Produktion", "description": "Lagerbestände, Maschinen, Paletten – wir räumen Produktions- und Lagerhallen effizient.", "icon": "Package", "link": "/#kontakt" },
+          { "title": "Aktenvernichtung", "description": "Datenschutzkonforme Aktenvernichtung auf Wunsch – DSGVO-konform mit Nachweis.", "icon": "Recycle", "link": "/#kontakt" },
+          { "title": "Außerhalb der Geschäftszeiten", "description": "Wir arbeiten auch abends, nachts oder am Wochenende – für minimale Betriebsunterbrechung.", "icon": "Bird", "link": "/#kontakt" },
+          { "title": "Wertanrechnung", "description": "Gut erhaltene Büromöbel oder Geräte rechnen wir fair auf den Preis an.", "icon": "Euro", "link": "/#kontakt" }
+        ]
+      }
+    },
+    {
+      "type": "Timeline",
+      "props": {
+        "id": "ablauf",
+        "title": "Ablauf einer Gewerbeauflösung",
+        "steps": [
+          { "title": "Kontaktaufnahme", "description": "Rufen Sie uns an oder schreiben Sie uns – wir reagieren so schnell wie möglich.", "icon": "PhoneCall" },
+          { "title": "Besichtigung der Gewerbefläche", "description": "Wir kommen zu Ihnen, analysieren den Umfang und erstellen ein maßgeschneidertes Angebot.", "icon": "ClipboardCheck" },
+          { "title": "Individueller Zeitplan", "description": "Wir planen die Räumung um Ihren Betrieb – auch außerhalb der Geschäftszeiten.", "icon": "CalendarCheck" },
+          { "title": "Professionelle Räumung", "description": "Unser Team räumt schnell, diskret und ohne Ausfallzeiten für Ihren Betrieb.", "icon": "Truck" },
+          { "title": "Besenreine Übergabe", "description": "Die Flächen werden besenrein übergeben – bereit für den nächsten Mieter oder Umbau.", "icon": "Sparkles" }
+        ]
+      }
+    },
+    {
+      "type": "BeforeAfter",
+      "props": { "id": "vorher-nachher" }
+    },
+    {
+      "type": "FAQ",
+      "props": {
+        "id": "faq",
+        "title": "FAQ: Gewerbeauflösung Nürnberg",
+        "subtitle": "Antworten auf die häufigsten Fragen zur Gewerbeentrümpelung",
+        "faqs": [
+          { "question": "Was kostet eine Gewerbeauflösung in Nürnberg?", "answer": "Die Kosten hängen von der Größe der Fläche, dem Inventar und dem Aufwand ab. Nach einer kostenlosen Besichtigung erhalten Sie ein verbindliches Festpreisangebot ohne versteckte Kosten." },
+          { "question": "Können Sie auch außerhalb der Geschäftszeiten arbeiten?", "answer": "Ja, wir sind flexibel. Wir können abends, nachts, am Wochenende oder an Feiertagen arbeiten – damit Ihr laufender Betrieb so wenig wie möglich gestört wird." },
+          { "question": "Bieten Sie datenschutzkonforme Aktenvernichtung an?", "answer": "Ja, auf Wunsch vernichten wir Akten und sensible Unterlagen DSGVO-konform mit einem entsprechenden Nachweis (Vernichtungsprotokoll)." },
+          { "question": "Räumen Sie auch große Lagerhallen und Produktionsstätten?", "answer": "Ja, wir haben die Kapazität und Erfahrung für Großobjekte. Unsere Teams können auch große Flächen effizient und schnell räumen." },
+          { "question": "Was passiert mit gut erhaltenen Büromöbeln oder Geräten?", "answer": "Gut erhaltene Büromöbel, Regale, IT-Equipment oder Maschinen werden bewertet und der Wert von Ihrem Preis abgezogen. Das reduziert Ihre Kosten erheblich." },
+          { "question": "Sind Sie für eventuelle Schäden versichert?", "answer": "Selbstverständlich. Wir sind vollständig betriebshaftpflichtversichert. Im unwahrscheinlichen Fall eines Schadens sind Sie als Auftraggeber abgesichert." },
+          { "question": "Wie schnell können Sie starten?", "answer": "Nach der Besichtigung können wir in der Regel innerhalb von 24–48 Stunden mit der Räumung beginnen. In dringenden Fällen reagieren wir noch schneller." }
+        ]
+      }
+    },
+    {
+      "type": "ServiceAreas",
+      "props": { "id": "gebiete" }
+    },
+    {
+      "type": "Environment",
+      "props": { "id": "umwelt" }
+    },
+    {
+      "type": "ContactHub",
+      "props": { "id": "kontakt" }
+    }
+  ],
+  "root": {
+    "props": {
+      "title": "Gewerbeauflösung Nürnberg",
+      "seo": {
+        "title": "Gewerbeauflösung Nürnberg | Express Entrümpelungen – diskret & zum Festpreis",
+        "description": "Gewerbeentrümpelung in Nürnberg: Büros, Lager, Betriebe schnell & diskret räumen lassen. Mit Festpreisgarantie & Aktenvernichtung. Jetzt Angebot anfordern!",
+        "canonical": "https://www.express-entruempelungen.de/gewerbeaufloesung-nuernberg"
+      }
+    }
+  }
 }

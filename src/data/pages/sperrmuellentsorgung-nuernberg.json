@@ -1,82 +1,88 @@
 {
-    "content":  [
-                    {
-                        "type":  "Hero",
-                        "props":  {
-                                      "id":  "hero",
-                                      "title":  "Sperrmüllentsorgung Nürnberg",
-                                      "subtitle":  "Schnelle und fachgerechte Entsorgung von Sperrmüll, Möbeln und Altlasten zum fairen Festpreis."
-                                  }
-                    },
-                    {
-                        "type":  "TrustBar",
-                        "props":  {
-                                      "id":  "trust"
-                                  }
-                    },
-                    {
-                        "type":  "Services",
-                        "props":  {
-                                      "id":  "services"
-                                  }
-                    },
-                    {
-                        "type":  "BeforeAfter",
-                        "props":  {
-                                      "id":  "beforeafter"
-                                  }
-                    },
-                    {
-                        "type":  "Timeline",
-                        "props":  {
-                                      "id":  "timeline"
-                                  }
-                    },
-                    {
-                        "type":  "PriceCalculator",
-                        "props":  {
-                                      "id":  "calculator"
-                                  }
-                    },
-                    {
-                        "type":  "Reviews",
-                        "props":  {
-                                      "id":  "reviews"
-                                  }
-                    },
-                    {
-                        "type":  "ServiceAreas",
-                        "props":  {
-                                      "id":  "areas"
-                                  }
-                    },
-                    {
-                        "type":  "FAQ",
-                        "props":  {
-                                      "id":  "faq"
-                                  }
-                    },
-                    {
-                        "type":  "Environment",
-                        "props":  {
-                                      "id":  "environment"
-                                  }
-                    },
-                    {
-                        "type":  "ContactHub",
-                        "props":  {
-                                      "id":  "contact"
-                                  }
-                    }
-                ],
-    "root":  {
-                 "props":  {
-                               "title":  "Sperrmüllentsorgung Nürnberg",
-                               "seo":  {
-                                           "title":  "Sperrmüllentsorgung Nürnberg | Express Entrümpelungen",
-                                           "description":  "Sperrmüllentsorgung in Nürnberg & Umgebung. Schnelle Abholung, fachgerechte Entsorgung & transparente Preise. Jetzt anrufen!",
-                                           "canonical":  "https://www.express-entruempelungen.de/sperrmuellentsorgung-nuernberg"
-                                       }
-                           }
-             }
+  "content": [
+    {
+      "type": "Hero",
+      "props": {
+        "id": "hero",
+        "title": "Sperrmüllentsorgung Nürnberg",
+        "subtitle": "Schnelle, umweltgerechte Sperrmüllentsorgung in Nürnberg – Einzelstücke oder ganze Räumungen, zum Festpreis."
+      }
+    },
+    {
+      "type": "TrustBar",
+      "props": { "id": "trust" }
+    },
+    {
+      "type": "Services",
+      "props": {
+        "id": "leistungen",
+        "title": "Was wir bei der Sperrmüllentsorgung übernehmen",
+        "subtitle": "Von einzelnen Möbelstücken bis zur kompletten Haushaltsauflösung",
+        "services": [
+          { "title": "Sperrige Einzelstücke", "description": "Sofa, Kühlschrank, Matratze – wir holen einzelne Sperrmüllstücke direkt bei Ihnen ab.", "icon": "Home", "link": "/#kontakt" },
+          { "title": "Komplette Wohnungsräumung", "description": "Wir übernehmen die komplette Räumung inklusive Sperrmüllentsorgung zum Festpreis.", "icon": "Building2", "link": "/#kontakt" },
+          { "title": "Elektroschrott & Sondermüll", "description": "Elektrogeräte, Farben, Chemikalien – wir entsorgen auch Sondermüll fachgerecht.", "icon": "Recycle", "link": "/#kontakt" },
+          { "title": "Umweltfreundliche Trennung", "description": "Sortenreine Trennung und umweltgerechte Entsorgung bei zertifizierten Recyclinghöfen.", "icon": "Bird", "link": "/#kontakt" },
+          { "title": "Schnelle Abholung", "description": "Oft schon am nächsten Tag – wir kommen zu Ihnen und nehmen alles mit.", "icon": "Package", "link": "/#kontakt" }
+        ]
+      }
+    },
+    {
+      "type": "Timeline",
+      "props": {
+        "id": "ablauf",
+        "title": "So läuft die Sperrmüllentsorgung ab",
+        "steps": [
+          { "title": "Anfrage stellen", "description": "Anruf oder WhatsApp – beschreiben Sie kurz, was entsorgt werden soll.", "icon": "PhoneCall" },
+          { "title": "Preisangebot", "description": "Wir nennen Ihnen einen Preis – bei größeren Mengen kommen wir vorher kurz vorbei.", "icon": "ClipboardCheck" },
+          { "title": "Termin vereinbaren", "description": "Wir einigen uns auf einen Wunschtermin – oft schon am nächsten Tag möglich.", "icon": "CalendarCheck" },
+          { "title": "Abholung & Transport", "description": "Unser Team kommt pünktlich, trägt alles raus und lädt es auf – kein Aufwand für Sie.", "icon": "Truck" },
+          { "title": "Fachgerechte Entsorgung", "description": "Alle Materialien werden sortiert und umweltgerecht entsorgt.", "icon": "Sparkles" }
+        ]
+      }
+    },
+    {
+      "type": "BeforeAfter",
+      "props": { "id": "vorher-nachher" }
+    },
+    {
+      "type": "FAQ",
+      "props": {
+        "id": "faq",
+        "title": "FAQ: Sperrmüllentsorgung Nürnberg",
+        "subtitle": "Antworten auf die häufigsten Fragen zur Sperrmüllentsorgung",
+        "faqs": [
+          { "question": "Was kostet die Sperrmüllentsorgung in Nürnberg?", "answer": "Die Kosten richten sich nach Art und Menge der Gegenstände sowie dem Aufwand beim Transport. Ein einzelnes Möbelstück beginnt ab ca. 49 €. Für größere Mengen erstellen wir gerne ein kostenloses Angebot." },
+          { "question": "Welche Gegenstände nehmen Sie als Sperrmüll mit?", "answer": "Wir nehmen nahezu alles mit: Sofas, Schränke, Betten, Matratzen, Kühlschränke, Waschmaschinen, Elektroschrott, Fahrräder, Kinderspielzeug und vieles mehr." },
+          { "question": "Können Sie auch Elektroschrott und Sondermüll entsorgen?", "answer": "Ja, wir entsorgen Elektrogeräte, Farben, Lacke und andere Sondermüllarten fachgerecht und rechtssicher – gemäß den geltenden Entsorgungsvorschriften." },
+          { "question": "Muss ich den Sperrmüll schon nach draußen stellen?", "answer": "Nein, unser Team trägt alles aus der Wohnung, dem Keller oder dem Dachboden hinaus. Sie müssen nichts vorbereiten oder selbst tragen." },
+          { "question": "Wie schnell können Sie den Sperrmüll abholen?", "answer": "Sehr schnell! In vielen Fällen bereits am nächsten Tag. Bei dringenden Anfragen versuchen wir auch noch am selben Tag zu helfen." },
+          { "question": "Entsorgen Sie auch auf umweltfreundliche Weise?", "answer": "Ja, Nachhaltigkeit ist uns wichtig. Wir trennen alle Materialien sortenrein und entsorgen bei zertifizierten Recyclinghöfen in der Region. Gut erhaltene Gegenstände werden gespendet oder weiterverwertet." },
+          { "question": "Was ist der Unterschied zwischen Sperrmüll und Entrümpelung?", "answer": "Sperrmüll bezeichnet meist einzelne große Gegenstände. Eine Entrümpelung umfasst die komplette Räumung einer Wohnung oder eines Raumes. Wir bieten beides an – auch kombiniert." }
+        ]
+      }
+    },
+    {
+      "type": "ServiceAreas",
+      "props": { "id": "gebiete" }
+    },
+    {
+      "type": "Environment",
+      "props": { "id": "umwelt" }
+    },
+    {
+      "type": "ContactHub",
+      "props": { "id": "kontakt" }
+    }
+  ],
+  "root": {
+    "props": {
+      "title": "Sperrmüllentsorgung Nürnberg",
+      "seo": {
+        "title": "Sperrmüllentsorgung Nürnberg | Express Entrümpelungen – schnell & günstig",
+        "description": "Sperrmüllentsorgung in Nürnberg – schnell, günstig und umweltfreundlich. Einzelstücke & komplette Räumungen. Festpreis, keine versteckten Kosten. Jetzt anfragen!",
+        "canonical": "https://www.express-entruempelungen.de/sperrmuellentsorgung-nuernberg"
+      }
+    }
+  }
 }
