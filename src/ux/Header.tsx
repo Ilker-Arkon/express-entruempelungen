@@ -44,11 +44,11 @@ const DEFAULT_HEADER: Required<HeaderConfig> = {
     { href: "/#kontakt", label: "Kontakt" },
   ],
   serviceDropdownLinks: [
-    { href: "/entruempelung-nuernberg", label: "Entrümpelung Nürnberg" },
-    { href: "/wohnungsaufloesung-nuernberg", label: "Wohnungsauflösung Nürnberg" },
-    { href: "/gewerbeaufloesung-nuernberg", label: "Gewerbeentrümpelung" },
-    { href: "/nachlassaufloesung-nuernberg", label: "Nachlassauflösung" },
-    { href: "/sperrmuellentsorgung-nuernberg", label: "Sperrmüllentsorgung" },
+    { href: "/#leistungen", label: "Wohnungsauflösung" },
+    { href: "/#leistungen", label: "Gewerbeentrümpelung" },
+    { href: "/#leistungen", label: "Kellerentrümpelung" },
+    { href: "/#leistungen", label: "Nachlassauflösung" },
+    { href: "/#leistungen", label: "Sperrmüll & Entsorgung" },
   ],
 };
 
