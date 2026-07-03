@@ -20,7 +20,7 @@ export function GalleryBlock({
   images = [
     { url: "/gallery/before1.jpg", alt: "Vorher – Entrümpelung" },
     { url: "/gallery/after1.jpg", alt: "Nachher – Besenrein" },
-    { url: "/gallery/flyer.jpg", alt: "Flyer Express Entrümpelungen" },
+    { url: "/gallery/flyer.jpeg", alt: "Flyer Express Entrümpelungen" },
   ]
 }: GalleryProps) {
   return (
