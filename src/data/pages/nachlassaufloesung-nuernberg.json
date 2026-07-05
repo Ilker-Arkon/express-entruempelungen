@@ -21,7 +21,6 @@
         "services": [
           { "title": "Komplette Haushaltsauflösung", "description": "Wir räumen die gesamte Wohnung oder das Haus des Verstorbenen – sorgfältig und diskret.", "icon": "Home", "link": "/#kontakt" },
           { "title": "Prüfung auf Wertsachen", "description": "Wir prüfen sorgfältig auf Wertsachen, Dokumente und Erbstücke – nichts geht verloren.", "icon": "Bird", "link": "/#kontakt" },
-          { "title": "Wertanrechnung", "description": "Verwertbare Möbel und Gegenstände werden fair bewertet und Ihr Preis entsprechend reduziert.", "icon": "Euro", "link": "/#kontakt" },
           { "title": "Koordination mit Angehörigen", "description": "Wir arbeiten eng mit Erben, Nachlassverwaltern und Betreuern zusammen.", "icon": "Building2", "link": "/#kontakt" },
           { "title": "Besenreine Übergabe", "description": "Die Immobilie wird besenrein übergeben – bereit für Vermieter oder Verkauf.", "icon": "Recycle", "link": "/#kontakt" }
         ]
@@ -52,7 +51,7 @@
         "title": "FAQ: Nachlassauflösung Nürnberg",
         "subtitle": "Häufige Fragen rund um die Nachlassauflösung nach einem Todesfall",
         "faqs": [
-          { "question": "Was kostet eine Nachlassauflösung in Nürnberg?", "answer": "Die Kosten richten sich nach Größe, Füllgrad und Zustand der Immobilie. Nach einer kostenlosen Besichtigung erhalten Sie ein verbindliches Festpreisangebot. Durch Wertanrechnung können die Kosten erheblich sinken – in manchen Fällen erheblich reduziert werden." },
+          { "question": "Wie erhalte ich ein Angebot für eine Nachlassauflösung?", "answer": "Rufen Sie uns einfach an oder schreiben Sie uns – wir nehmen uns Zeit für Sie. Wir vereinbaren einen kostenlosen Besichtigungstermin und besprechen alles persönlich." },
           { "question": "Wer muss die Nachlassauflösung bezahlen?", "answer": "In der Regel tragen die Erben die Kosten. Die Rechnung kann oft aus dem Nachlass finanziert werden und ist steuerlich absetzbar. Sprechen Sie uns an – wir finden gemeinsam eine Lösung." },
           { "question": "Wie gehen Sie mit persönlichen Gegenständen und Erinnerungsstücken um?", "answer": "Sehr sorgfältig. Wir prüfen alles auf Wertsachen, persönliche Dokumente und Erbstücke. Nichts wird voreilig entsorgt. Sie entscheiden, was behalten, was gespendet und was entsorgt wird." },
           { "question": "Können Sie auch unter Zeitdruck eine Nachlassauflösung durchführen?", "answer": "Ja, wir wissen, dass Wohnungen schnell geräumt werden müssen – wegen Kündigungsfristen oder Erbschaft. Wir können oft innerhalb von 24–48 Stunden nach der Besichtigung starten." },
@@ -80,7 +79,7 @@
       "title": "Nachlassauflösung Nürnberg",
       "seo": {
         "title": "Nachlassauflösung Nürnberg | Express Entrümpelungen – einfühlsam & diskret",
-        "description": "Nachlassauflösung in Nürnberg nach Todesfall – einfühlsam, diskret, besenrein. Wertanrechnung möglich. Festpreisgarantie. Jetzt kostenlose Besichtigung vereinbaren!",
+        "description": "Nachlassauflösung in Nürnberg nach Todesfall – einfühlsam, diskret, besenrein. Festpreisgarantie. Jetzt kostenlose Besichtigung vereinbaren!",
         "canonical": "https://www.express-entruempelungen.de/nachlassaufloesung-nuernberg"
       }
     }

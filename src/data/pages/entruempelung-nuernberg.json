@@ -22,8 +22,7 @@
           { "title": "Wohnungsentrümpelung", "description": "Komplette Räumung von Wohnungen jeder Größe – Küche, Bad, Keller, Dachboden alles inklusive.", "icon": "Home", "link": "/#kontakt" },
           { "title": "Keller & Dachboden", "description": "Wir befreien auch vollgestopfte Nebenräume zuverlässig und schnell.", "icon": "Package", "link": "/#kontakt" },
           { "title": "Garagen & Lager", "description": "Garagen, Abstellräume und Lagerhallen räumen wir effizient und vollständig.", "icon": "Building2", "link": "/#kontakt" },
-          { "title": "Messie-Wohnungen", "description": "Diskrete und professionelle Entrümpelung von Extremfällen – auf Wunsch mit Desinfektion.", "icon": "Recycle", "link": "/#kontakt" },
-          { "title": "Wertanrechnung", "description": "Verwertbare Gegenstände werden fair bewertet und vom Preis abgezogen.", "icon": "Euro", "link": "/#kontakt" }
+          { "title": "Messie-Wohnungen", "description": "Diskrete und professionelle Entrümpelung von Extremfällen – auf Wunsch mit Desinfektion.", "icon": "Recycle", "link": "/#kontakt" }
         ]
       }
     },
@@ -52,9 +51,9 @@
         "title": "FAQ: Entrümpelung Nürnberg",
         "subtitle": "Antworten auf die häufigsten Fragen zur Entrümpelung",
         "faqs": [
-          { "question": "Was kostet eine Entrümpelung in Nürnberg?", "answer": "Die Kosten hängen stark vom Umfang, der Größe und dem Füllgrad der Räume ab. Nach einer kostenlosen Besichtigung erhalten Sie von uns ein verbindliches Festpreisangebot." },
+          { "question": "Wie erhalte ich ein Angebot für eine Entrümpelung?", "answer": "Rufen Sie uns einfach an oder schreiben Sie uns per WhatsApp. Wir vereinbaren dann einen kostenlosen Besichtigungstermin vor Ort und besprechen alles persönlich mit Ihnen." },
           { "question": "Wie schnell können Sie eine Entrümpelung durchführen?", "answer": "Sehr schnell! In Normalfällen beginnen wir innerhalb von 24–48 Stunden nach der Besichtigung. In Notfällen reagieren wir noch schneller – sprechen Sie uns direkt an." },
-          { "question": "Was passiert mit den entrümpelten Gegenständen?", "answer": "Gut erhaltene Möbel und Gegenstände werden bewertet und der Wert auf Ihren Preis angerechnet. Weiter verwertbare Dinge werden gespendet oder weiterverkauft. Alles andere wird umweltgerecht und sortenrein entsorgt." },
+          { "question": "Was passiert mit den entrümpelten Gegenständen?", "answer": "Gut erhaltene Dinge werden gespendet oder weiterverkauft. Alles andere wird umweltgerecht und sortenrein entsorgt." },
           { "question": "Muss ich bei der Entrümpelung anwesend sein?", "answer": "Nein, das ist nicht erforderlich. Viele Kunden übergeben uns einfach den Schlüssel. Sie können die Räumung auch aus der Ferne beauftragen." },
           { "question": "Entrümpeln Sie auch extreme Fälle wie Messie-Wohnungen?", "answer": "Ja. Unser Team ist für Extremfälle geschult und arbeitet diskret und respektvoll. Auf Wunsch bieten wir auch Desinfektion und Geruchsneutralisierung an." },
           { "question": "Sind versteckte Kosten möglich?", "answer": "Nein. Wir arbeiten ausschließlich mit Festpreisen. Das vereinbarte Angebot ist verbindlich – keine Überraschungen am Ende." },

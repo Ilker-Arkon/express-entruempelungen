@@ -22,8 +22,7 @@
           { "title": "Büroauflösung", "description": "Schreibtische, Regale, Akten, IT-Equipment – wir räumen Büroflächen jeder Größe komplett.", "icon": "Building2", "link": "/#kontakt" },
           { "title": "Lager & Produktion", "description": "Lagerbestände, Maschinen, Paletten – wir räumen Produktions- und Lagerhallen effizient.", "icon": "Package", "link": "/#kontakt" },
           { "title": "Aktenvernichtung", "description": "Datenschutzkonforme Aktenvernichtung auf Wunsch – DSGVO-konform mit Nachweis.", "icon": "Recycle", "link": "/#kontakt" },
-          { "title": "Außerhalb der Geschäftszeiten", "description": "Wir arbeiten auch abends, nachts oder am Wochenende – für minimale Betriebsunterbrechung.", "icon": "Bird", "link": "/#kontakt" },
-          { "title": "Wertanrechnung", "description": "Gut erhaltene Büromöbel oder Geräte rechnen wir fair auf den Preis an.", "icon": "Euro", "link": "/#kontakt" }
+          { "title": "Außerhalb der Geschäftszeiten", "description": "Wir arbeiten auch abends, nachts oder am Wochenende – für minimale Betriebsunterbrechung.", "icon": "Bird", "link": "/#kontakt" }
         ]
       }
     },
@@ -52,11 +51,11 @@
         "title": "FAQ: Gewerbeauflösung Nürnberg",
         "subtitle": "Antworten auf die häufigsten Fragen zur Gewerbeentrümpelung",
         "faqs": [
-          { "question": "Was kostet eine Gewerbeauflösung in Nürnberg?", "answer": "Die Kosten hängen von der Größe der Fläche, dem Inventar und dem Aufwand ab. Nach einer kostenlosen Besichtigung erhalten Sie ein verbindliches Festpreisangebot ohne versteckte Kosten." },
+          { "question": "Wie erhalte ich ein Angebot für eine Gewerbeauflösung?", "answer": "Rufen Sie uns einfach an oder schreiben Sie uns. Wir vereinbaren einen kostenlosen Besichtigungstermin der Gewerbefläche und besprechen alles persönlich mit Ihnen." },
           { "question": "Können Sie auch außerhalb der Geschäftszeiten arbeiten?", "answer": "Ja, wir sind flexibel. Wir können abends, nachts, am Wochenende oder an Feiertagen arbeiten – damit Ihr laufender Betrieb so wenig wie möglich gestört wird." },
           { "question": "Bieten Sie datenschutzkonforme Aktenvernichtung an?", "answer": "Ja, auf Wunsch vernichten wir Akten und sensible Unterlagen DSGVO-konform mit einem entsprechenden Nachweis (Vernichtungsprotokoll)." },
           { "question": "Räumen Sie auch große Lagerhallen und Produktionsstätten?", "answer": "Ja, wir haben die Kapazität und Erfahrung für Großobjekte. Unsere Teams können auch große Flächen effizient und schnell räumen." },
-          { "question": "Was passiert mit gut erhaltenen Büromöbeln oder Geräten?", "answer": "Gut erhaltene Büromöbel, Regale, IT-Equipment oder Maschinen werden bewertet und der Wert von Ihrem Preis abgezogen. Das reduziert Ihre Kosten erheblich." },
+          { "question": "Was passiert mit gut erhaltenen Büromöbeln oder Geräten?", "answer": "Gut erhaltene Gegenstände werden gespendet oder fachgerecht entsorgt. Alles wird sortenrein und umweltfreundlich abgewickelt." },
           { "question": "Sind Sie für eventuelle Schäden versichert?", "answer": "Selbstverständlich. Wir sind vollständig betriebshaftpflichtversichert. Im unwahrscheinlichen Fall eines Schadens sind Sie als Auftraggeber abgesichert." },
           { "question": "Wie schnell können Sie starten?", "answer": "Nach der Besichtigung können wir in der Regel innerhalb von 24–48 Stunden mit der Räumung beginnen. In dringenden Fällen reagieren wir noch schneller." }
         ]

@@ -38,8 +38,9 @@ export function HeroBlock({
         {/* Left: Text */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
           className="max-w-3xl text-center lg:text-left lg:w-[55%]"
         >
           {/* Title */}
@@ -57,8 +58,9 @@ export function HeroBlock({
               <motion.div
                 key={i}
                 initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 1.0 + i * 0.2, duration: 0.4 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1, duration: 0.3 }}
                 className="flex items-center gap-2 bg-white/10 backdrop-blur-md px-4 py-2 rounded-full border border-white/20 text-white shadow-card"
               >
                 <CheckCircle2 className="w-5 h-5 text-[var(--primary)]" />
@@ -79,23 +81,24 @@ export function HeroBlock({
               {phoneLabel}
             </motion.button>
 
-            <motion.a
+            <a
               href={whatsappUrl}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="flex items-center justify-center gap-3 bg-[var(--success)] hover:bg-[#20bd5a] text-white px-8 py-4 rounded-full font-bold text-lg transition-colors shadow-card group"
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center justify-center gap-3 bg-[var(--success)] hover:bg-[#20bd5a] text-white px-8 py-4 rounded-full font-bold text-lg transition-colors shadow-card"
             >
               <MessageCircle className="w-6 h-6" />
               {whatsappLabel}
-            </motion.a>
+            </a>
           </div>
         </motion.div>
 
         {/* Right: Flyer-Bild */}
         <motion.div
           initial={{ opacity: 0, x: 40 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.1 }}
           className="lg:w-[40%] flex justify-center lg:justify-end"
         >
           <div className="relative rounded-2xl overflow-hidden shadow-2xl border-2 border-white/10">

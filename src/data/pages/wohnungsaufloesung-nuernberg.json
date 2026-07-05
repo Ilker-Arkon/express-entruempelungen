@@ -21,7 +21,6 @@
         "services": [
           { "title": "Komplette Räumung", "description": "Wir räumen jedes Zimmer vollständig: Küche, Bad, Keller, Dachboden – alles inklusive.", "icon": "Home", "link": "/#kontakt" },
           { "title": "Möbel & Hausrat", "description": "Alle Möbel, Teppiche und Gegenstände werden fachgerecht entfernt und entsorgt oder verwertet.", "icon": "Package", "link": "/#kontakt" },
-          { "title": "Wertanrechnung", "description": "Verwertbare Gegenstände rechnen wir fair auf den Gesamtpreis an – das spart Ihnen bares Geld.", "icon": "Euro", "link": "/#kontakt" },
           { "title": "Besenreine Übergabe", "description": "Sie erhalten die Wohnung garantiert besenrein – bereit zur direkten Übergabe an den Vermieter.", "icon": "Building2", "link": "/#kontakt" },
           { "title": "Nachlassauflösung", "description": "Einfühlsame Abwicklung nach Todesfall, diskret und in Abstimmung mit den Angehörigen.", "icon": "Bird", "link": "/#kontakt" }
         ]
@@ -52,12 +51,12 @@
         "title": "FAQ: Wohnungsauflösung Nürnberg",
         "subtitle": "Die häufigsten Fragen rund um die Wohnungsauflösung",
         "faqs": [
-          { "question": "Was kostet eine Wohnungsauflösung in Nürnberg?", "answer": "Die Kosten hängen von Größe, Füllgrad und Lage der Wohnung ab. Nach einer kostenlosen Besichtigung erhalten Sie von uns ein verbindliches Festpreisangebot ohne versteckte Kosten." },
+          { "question": "Wie erhalte ich ein Angebot für eine Wohnungsauflösung?", "answer": "Rufen Sie uns einfach an oder schreiben Sie uns per WhatsApp. Wir vereinbaren einen kostenlosen Besichtigungstermin und besprechen alles persönlich mit Ihnen." },
           { "question": "Wer bezahlt die Wohnungsauflösung nach einem Todesfall?", "answer": "In der Regel übernehmen die Erben die Kosten. Manchmal kann ein Teil der Kosten über Nachlass-Mittel finanziert werden. Wir stellen Ihnen eine ordentliche Rechnung aus, die steuerlich absetzbar sein kann. Sprechen Sie uns an – wir finden gemeinsam eine Lösung." },
           { "question": "Wie schnell können Sie eine Wohnungsauflösung durchführen?", "answer": "Sehr schnell! Nach der Besichtigung können wir die Räumung oft innerhalb von 24–48 Stunden beginnen. In dringenden Fällen (Wohnungsrückgabe, Todesfall) handeln wir noch schneller." },
           { "question": "Muss ich bei der Wohnungsauflösung anwesend sein?", "answer": "Nein, das ist nicht notwendig. Viele unserer Kunden übergeben uns einfach den Schlüssel. Wir arbeiten zuverlässig und diskret. Sie können die fertige Wohnung danach abnehmen." },
           { "question": "Werden auch Keller und Dachboden mitgeräumt?", "answer": "Ja, wir räumen die gesamte Immobilie – inklusive aller Nebenräume wie Keller, Dachboden, Abstellraum und Garage. Das alles ist im Preis inbegriffen, sofern vorher besprochen." },
-          { "question": "Was passiert mit dem Hausrat und den Möbeln?", "answer": "Verwertbare Gegenstände werden von uns bewertet und der Wert auf Ihren Preis angerechnet. Gut erhaltene Dinge werden gespendet oder weiterverkauft. Der Rest wird fachgerecht und umweltfreundlich entsorgt." },
+          { "question": "Was passiert mit dem Hausrat und den Möbeln?", "answer": "Gut erhaltene Dinge werden gespendet oder weiterverkauft. Der Rest wird fachgerecht und umweltfreundlich entsorgt." },
           { "question": "Sind Sie auch für Messie-Wohnungen zuständig?", "answer": "Ja. Wir führen auch Extremfälle diskret, respektvoll und professionell durch. Auf Wunsch bieten wir zusätzlich Desinfektions- und Geruchsneutralisierungs-Services an." },
           { "question": "Wie bekomme ich ein kostenloses Angebot?", "answer": "Rufen Sie uns einfach an (0172 80 83 459), schreiben Sie uns per WhatsApp oder nutzen Sie unser Kontaktformular. Wir vereinbaren einen Besichtigungstermin und Sie erhalten noch am selben Tag Ihr Festpreisangebot." }
         ]
@@ -81,7 +80,7 @@
       "title": "Wohnungsauflösung Nürnberg",
       "seo": {
         "title": "Wohnungsauflösung Nürnberg | Express Entrümpelungen – Festpreis & besenrein",
-        "description": "Professionelle Wohnungsauflösung in Nürnberg zum Festpreis. Besenreine Übergabe, Wertanrechnung, Nachlassauflösung. Jetzt kostenlose Besichtigung vereinbaren!",
+        "description": "Professionelle Wohnungsauflösung in Nürnberg. Besenreine Übergabe, Nachlassauflösung, Diskret und zuverlässig. Jetzt kostenlose Besichtigung vereinbaren!",
         "canonical": "https://www.express-entruempelungen.de/wohnungsaufloesung-nuernberg"
       }
     }

@@ -31,12 +31,6 @@
       }
     },
     {
-      "type": "PriceCalculator",
-      "props": {
-        "id": "preise"
-      }
-    },
-    {
       "type": "Reviews",
       "props": {
         "id": "reviews"

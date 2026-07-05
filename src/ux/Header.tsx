@@ -122,9 +122,12 @@ export function Header({ config }: { config?: HeaderConfig }) {
         </div>
       </div>
 
+      {/* Sticky Wrapper: Header + Mobile Dropdown together so mobile menu sticks with header */}
+      <div className="sticky top-0 z-50">
+
       {/* Main Header */}
-      <header className="w-full bg-white border-b border-zinc-200 sticky top-0 z-50 shadow-sm">
-        <div className="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+      <header className="w-full bg-white border-b border-zinc-200 shadow-sm">
+        <div className="max-w-7xl mx-auto px-6 h-24 flex justify-between items-center">
 
           {/* Logo Section */}
           <Link href="/" className="flex items-center gap-3 group">
@@ -134,7 +137,7 @@ export function Header({ config }: { config?: HeaderConfig }) {
               width={96}
               height={96}
               priority
-              className="w-24 h-24 object-contain group-hover:scale-105 transition-transform translate-y-1"
+              className="w-24 h-24 object-contain group-hover:scale-105 transition-transform"
             />
             <div className="flex flex-col pt-1">
               <span className="font-heading font-black text-2xl bg-gradient-to-r from-[var(--dark)] via-[var(--dark-secondary)] to-zinc-400 text-transparent bg-clip-text leading-none tracking-tight">
@@ -290,6 +293,8 @@ export function Header({ config }: { config?: HeaderConfig }) {
            </motion.div>
         )}
       </AnimatePresence>
+
+      </div> {/* end sticky wrapper */}
 
       <AnimatePresence>
         {isPhoneModalOpen && (

@@ -15,13 +15,13 @@ const iconMap: Record<string, React.ReactNode> = {
 
 const rueckseitenTexte: Record<string, string> = {
   Wohnungsauflösung:
-    "Wir räumen die gesamte Wohnung – von der Küche bis zum Keller. Möbel, Hausrat und Teppiche werden fachgerecht entfernt. Sie erhalten die Räume garantiert besenrein. Entsorgungskosten sind im Festpreis enthalten.",
+    "Wir räumen die gesamte Wohnung – von der Küche bis zum Keller. Möbel, Hausrat und Teppiche werden fachgerecht entfernt. Sie erhalten die Räume garantiert besenrein und sauber.",
   Gewerbeentrümpelung:
     "Büromöbel, Akten, Lagerbestände oder Maschinen – wir räumen Gewerbeflächen jeder Größe. Diskret und oft außerhalb der Geschäftszeiten. Inkl. datenschutzkonformer Aktenvernichtung auf Wunsch.",
   Kellerentrümpelung:
     "Keller, Dachboden, Abstellraum: Wir befreien Ihre Nebenräume von jahrelang angesammeltem Ballast. Auch bei schwer zugänglichen Räumen mit engen Treppenhäusern.",
   Nachlassauflösung:
-    "Einfühlsame Haushaltsauflösung nach Todesfall. Wir prüfen auf Wertsachen, dokumentieren und rechnen an. Diskrete Abwicklung in enger Abstimmung mit Angehörigen und Nachlassverwaltern.",
+    "Einfühlsame Haushaltsauflösung nach Todesfall. Wir prüfen sorgfältig auf Erbstücke und persönliche Gegenstände und sichern alles für die Angehörigen. Diskrete Abwicklung in enger Abstimmung mit Angehörigen und Nachlassverwaltern.",
   "Sperrmüll & Entsorgung":
     "Sperrige Einzelstücke, Elektroschrott oder Grünschnitt: Wir holen ab und entsorgen umweltgerecht inkl. sortenreiner Trennung.",
 };

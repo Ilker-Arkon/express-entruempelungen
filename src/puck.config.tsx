@@ -114,7 +114,6 @@ export const config: Config<PuckConfigProps> = {
           { title: "Kellerentrümpelung", description: "Befreiung von Nebenräumen von angesammeltem Ballast.", icon: "Package", link: "/entruempelung-nuernberg" },
           { title: "Nachlassauflösung", description: "Einfühlsame und diskrete Abwicklung von Nachlässen.", icon: "Bird", link: "/nachlassaufloesung-nuernberg" },
           { title: "Sperrmüll & Entsorgung", description: "Fachgerechte Trennung und umweltfreundliche Entsorgung.", icon: "Recycle", link: "/sperrmuellentsorgung-nuernberg" },
-          { title: "Wertstoffankauf", description: "Wertanrechnung auf den Endpreis bei verwertbaren Gegenständen.", icon: "Euro", link: "/#kontakt" },
         ]
       },
       render: (props: any) => <ServicesBlock {...props} />
