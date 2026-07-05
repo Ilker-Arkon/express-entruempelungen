@@ -85,15 +85,15 @@ export function BeforeAfterBlock({
               transition={{ delay: index * 0.1, duration: 0.5 }}
               className="flex flex-col gap-4 w-full"
             >
-              <div className="rounded-2xl overflow-hidden shadow-card border border-gray-200 aspect-[3/4] bg-zinc-100 relative">
+              <div className="rounded-2xl overflow-hidden shadow-card border border-gray-200 aspect-video bg-zinc-100 relative">
                 {mounted ? (
                   <ReactCompareSlider
-                    itemOne={<ReactCompareSliderImage src={item.beforeImage} alt="Vorher" style={{ objectFit: 'cover' }} />}
-                    itemTwo={<ReactCompareSliderImage src={item.afterImage} alt="Nachher" style={{ objectFit: 'cover' }} />}
-                    className="aspect-[3/4] w-full h-full object-cover"
+                    itemOne={<ReactCompareSliderImage src={item.beforeImage} alt="Vorher" />}
+                    itemTwo={<ReactCompareSliderImage src={item.afterImage} alt="Nachher" />}
+                    className="aspect-video w-full h-full object-cover"
                   />
                 ) : (
-                  <Image src={item.beforeImage} alt="Vorher" width={600} height={800} className="aspect-[3/4] w-full h-full object-cover" />
+                  <Image src={item.beforeImage} alt="Vorher" width={800} height={450} className="aspect-video w-full h-full object-cover" />
                 )}
               </div>
               <p className="text-center font-heading font-semibold text-gray-800">
