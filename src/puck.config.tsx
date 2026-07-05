@@ -136,9 +136,10 @@ export const config: Config<PuckConfigProps> = {
         title: "Unsere Ergebnisse",
         subtitle: "Sehen Sie selbst, wie wir Räume verwandeln",
         items: [
-          { beforeImage: "/gallery/before1.jpeg", afterImage: "/gallery/after1.jpeg", label: "Küche & Wohnbereich" },
-          { beforeImage: "/gallery/before2.jpeg", afterImage: "/gallery/after2.jpeg", label: "Flur & Eingangsbereich" },
-          { beforeImage: "/gallery/before3.jpeg", afterImage: "/gallery/after3.jpeg", label: "Wohnzimmer & Lager" }
+          { beforeImage: "/gallery/before1.jpeg", afterImage: "/gallery/after1.jpeg", label: "Projekt 1" },
+          { beforeImage: "/gallery/before2.jpeg", afterImage: "/gallery/after2.jpeg", label: "Projekt 2" },
+          { beforeImage: "/gallery/before3.jpeg", afterImage: "/gallery/after3.jpeg", label: "Projekt 3" },
+          { beforeImage: "/gallery/before4.jpeg", afterImage: "/gallery/after4.jpeg", label: "Projekt 4" }
         ]
       },
       render: (props: any) => <BeforeAfterBlock {...props} />

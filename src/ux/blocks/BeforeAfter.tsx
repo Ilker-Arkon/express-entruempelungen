@@ -57,7 +57,7 @@ export function BeforeAfterBlock({
         <div className={`grid gap-8 justify-center ${
           items.length === 1 
             ? "grid-cols-1 max-w-3xl mx-auto" 
-            : items.length === 2 
+            : items.length === 2 || items.length === 4
               ? "grid-cols-1 md:grid-cols-2 max-w-6xl mx-auto" 
               : "grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto"
         }`}>
