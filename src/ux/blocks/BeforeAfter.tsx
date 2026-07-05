@@ -88,8 +88,8 @@ export function BeforeAfterBlock({
               <div className="rounded-2xl overflow-hidden shadow-card border border-gray-200 aspect-video bg-zinc-100 relative">
                 {mounted ? (
                   <ReactCompareSlider
-                    itemOne={<ReactCompareSliderImage src={item.beforeImage} alt="Vorher" style={{ objectFit: 'cover' }} />}
-                    itemTwo={<ReactCompareSliderImage src={item.afterImage} alt="Nachher" style={{ objectFit: 'cover' }} />}
+                    itemOne={<ReactCompareSliderImage src={item.beforeImage} alt="Vorher" />}
+                    itemTwo={<ReactCompareSliderImage src={item.afterImage} alt="Nachher" />}
                     className="aspect-video w-full h-full object-cover"
                   />
                 ) : (
