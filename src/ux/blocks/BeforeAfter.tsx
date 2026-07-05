@@ -54,15 +54,21 @@ export function BeforeAfterBlock({
           </motion.p>
         </div>
 
-        <div className="flex justify-center">
+        <div className={`grid gap-8 justify-center ${
+          items.length === 1 
+            ? "grid-cols-1 max-w-3xl mx-auto" 
+            : items.length === 2 
+              ? "grid-cols-1 md:grid-cols-2 max-w-6xl mx-auto" 
+              : "grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto"
+        }`}>
           {items.map((item, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, margin: "-100px" }}
-              transition={{ delay: index * 0.2, duration: 0.6 }}
-              className="flex flex-col gap-4 w-full max-w-3xl"
+              transition={{ delay: index * 0.1, duration: 0.5 }}
+              className="flex flex-col gap-4 w-full"
             >
               <div className="rounded-2xl overflow-hidden shadow-card border border-gray-200 aspect-video bg-zinc-100 relative">
                 {mounted ? (
