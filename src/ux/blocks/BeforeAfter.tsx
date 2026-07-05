@@ -22,7 +22,22 @@ export function BeforeAfterBlock({
     {
       beforeImage: "/gallery/before1.jpeg",
       afterImage: "/gallery/after1.jpeg",
-      label: "Vorher / Nachher"
+      label: "Projekt 1"
+    },
+    {
+      beforeImage: "/gallery/before2.jpeg",
+      afterImage: "/gallery/after2.jpeg",
+      label: "Projekt 2"
+    },
+    {
+      beforeImage: "/gallery/before3.jpeg",
+      afterImage: "/gallery/after3.jpeg",
+      label: "Projekt 3"
+    },
+    {
+      beforeImage: "/gallery/before4.jpeg",
+      afterImage: "/gallery/after4.jpeg",
+      label: "Projekt 4"
     }
   ]
 }: BeforeAfterProps) {
