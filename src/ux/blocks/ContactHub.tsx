@@ -84,12 +84,14 @@ export function ContactHubBlock({
             viewport={{ once: true }}
             className="group relative bg-white/5 border border-white/10 rounded-3xl p-8 flex flex-col items-center text-center shadow-xl hover:bg-white/10 transition-all duration-300"
           >
-            <div className="w-16 h-16 bg-[var(--primary)]/10 border border-[var(--primary)]/20 rounded-2xl flex items-center justify-center mb-6 transition-all duration-300 group-hover:bg-[var(--primary)]/20">
-              <PhoneCall className="w-7 h-7 text-[var(--primary)]" />
+            <div className="flex flex-col items-center justify-center my-auto">
+              <div className="w-16 h-16 bg-[var(--primary)]/10 border border-[var(--primary)]/20 rounded-2xl flex items-center justify-center mb-6 transition-all duration-300 group-hover:bg-[var(--primary)]/20">
+                <PhoneCall className="w-7 h-7 text-[var(--primary)]" />
+              </div>
+              
+              <h3 className="text-2xl font-bold text-white mb-2 font-heading tracking-wide">Direktanruf</h3>
+              <p className="text-gray-400 text-sm mb-6 leading-relaxed">Wir sind für Sie erreichbar.<br/>Wählen Sie Ihren Ansprechpartner:</p>
             </div>
-            
-            <h3 className="text-2xl font-bold text-white mb-2 font-heading tracking-wide">Direktanruf</h3>
-            <p className="text-gray-400 text-sm mb-8 flex-grow leading-relaxed">Wir sind für Sie erreichbar.<br/>Wählen Sie Ihren Ansprechpartner:</p>
             
             <div className="w-full mt-auto flex flex-col gap-3">
               <a href="tel:01728083459" className="w-full">
@@ -120,12 +122,14 @@ export function ContactHubBlock({
               </div>
             </div>
             
-            <div className="w-16 h-16 bg-[var(--primary)]/10 border border-[var(--primary)]/20 rounded-2xl flex items-center justify-center mb-6 transition-all duration-300 group-hover:bg-[var(--primary)]/20">
-              <MessageCircle className="w-7 h-7 text-[var(--primary)]" />
+            <div className="flex flex-col items-center justify-center my-auto">
+              <div className="w-16 h-16 bg-[var(--primary)]/10 border border-[var(--primary)]/20 rounded-2xl flex items-center justify-center mb-6 transition-all duration-300 group-hover:bg-[var(--primary)]/20">
+                <MessageCircle className="w-7 h-7 text-[var(--primary)]" />
+              </div>
+              
+              <h3 className="text-2xl font-bold text-white mb-2 font-heading tracking-wide">WhatsApp</h3>
+              <p className="text-gray-400 text-sm mb-6 leading-relaxed">Schreiben Sie uns unkompliziert.<br/>Wir antworten so schnell wie möglich!</p>
             </div>
-            
-            <h3 className="text-2xl font-bold text-white mb-2 font-heading tracking-wide">WhatsApp</h3>
-            <p className="text-gray-400 text-sm mb-8 flex-grow leading-relaxed">Schreiben Sie uns unkompliziert.<br/>Wir antworten so schnell wie möglich!</p>
             
             <a href={whatsappLink} target="_blank" rel="noreferrer" className="w-full mt-auto">
               <button className="w-full py-4 bg-[var(--primary)] hover:bg-[var(--primary-dark)] text-[#0D1B4B] rounded-xl font-bold tracking-wider text-sm transition-all flex items-center justify-center gap-2">
