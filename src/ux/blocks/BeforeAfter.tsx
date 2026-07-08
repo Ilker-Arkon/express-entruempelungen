@@ -16,7 +16,7 @@ export interface BeforeAfterProps {
 }
 
 export function BeforeAfterBlock({
-  title = "",
+  title = "Echte Ergebnisse unserer Kunden",
   subtitle = "",
   items = [
     {
@@ -55,13 +55,16 @@ export function BeforeAfterBlock({
 
       <div className="container mx-auto px-6 relative z-10">
         {(title || subtitle) && (
-          <div className="text-center mb-16">
+          <div className="text-center mb-16 relative">
+            {/* Dekorativer Accent */}
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-4 w-32 h-1 bg-gradient-to-r from-transparent via-[var(--primary)] to-transparent opacity-80" />
+            
             {title && (
               <motion.h2 
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="text-3xl md:text-5xl font-heading font-bold text-white mb-4 drop-shadow-md"
+                className="text-3xl md:text-5xl font-heading font-black tracking-wide text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-400 drop-shadow-2xl uppercase"
               >
                 {title}
               </motion.h2>
