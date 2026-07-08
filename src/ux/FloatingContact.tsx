@@ -28,7 +28,7 @@ export function FloatingContact({ config }: { config?: FloatingContactConfig }) 
           href={whatsappUrl}
           target="_blank"
           rel="noreferrer"
-          aria-label="WhatsApp senden"
+          aria-label="WhatsApp Nachricht senden"
           className="w-14 h-14 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-lg hover:bg-[#20bd5a] transition-colors"
         >
           <MessageCircle className="w-7 h-7" />

@@ -22,7 +22,11 @@ export const viewport: Viewport = {
 
 export async function generateMetadata(): Promise<Metadata> {
   const config = await getSiteConfig();
+  const domainUrl = "https://www.express-entruempelungen.de";
+  const ogImageUrl = `${domainUrl}${config.logoPath || '/gallery/logo.png'}`;
+
   return {
+    metadataBase: new URL(domainUrl),
     title: {
       default: config.seoTitle,
       template: "%s | Express Entrümpelungen",
@@ -44,6 +48,20 @@ export async function generateMetadata(): Promise<Metadata> {
       description: config.seoOgDescription,
       locale: "de_DE",
       type: "website",
+      images: [
+        {
+          url: ogImageUrl,
+          width: 512,
+          height: 512,
+          alt: config.logoAlt || "Express Entrümpelungen Logo",
+        }
+      ],
+    },
+    twitter: {
+      card: "summary",
+      title: config.seoOgTitle,
+      description: config.seoOgDescription,
+      images: [ogImageUrl],
     },
   };
 }
