@@ -52,10 +52,10 @@ export function ServicesBlock({
 }: ServicesProps) {
   const [flippedIndex, setFlippedIndex] = useState<number | null>(null);
 
-  // Auto-flip zurück nach 5 Sekunden
+  // Auto-flip zurück nach 10 Sekunden
   useEffect(() => {
     if (flippedIndex === null) return;
-    const timer = setTimeout(() => setFlippedIndex(null), 5000);
+    const timer = setTimeout(() => setFlippedIndex(null), 10000);
     return () => clearTimeout(timer);
   }, [flippedIndex]);
 
