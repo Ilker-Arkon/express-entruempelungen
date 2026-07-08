@@ -16,8 +16,8 @@ export interface BeforeAfterProps {
 }
 
 export function BeforeAfterBlock({
-  title = "Vorher / Nachher",
-  subtitle = "Überzeugen Sie sich selbst – echte Ergebnisse unserer Kunden",
+  title = "",
+  subtitle = "",
   items = [
     {
       beforeImage: "/gallery/before1.jpeg",
@@ -54,25 +54,31 @@ export function BeforeAfterBlock({
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-[var(--primary)]/5 blur-[150px] rounded-full pointer-events-none z-0" />
 
       <div className="container mx-auto px-6 relative z-10">
-        <div className="text-center mb-16">
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-3xl md:text-5xl font-heading font-bold text-white mb-4 drop-shadow-md"
-          >
-            {title}
-          </motion.h2>
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="text-lg text-gray-400 font-body"
-          >
-            {subtitle}
-          </motion.p>
-        </div>
+        {(title || subtitle) && (
+          <div className="text-center mb-16">
+            {title && (
+              <motion.h2 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="text-3xl md:text-5xl font-heading font-bold text-white mb-4 drop-shadow-md"
+              >
+                {title}
+              </motion.h2>
+            )}
+            {subtitle && (
+              <motion.p 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+                className="text-lg text-gray-400 font-body"
+              >
+                {subtitle}
+              </motion.p>
+            )}
+          </div>
+        )}
 
         <div className={`grid gap-8 justify-center ${
           items.length === 1 
