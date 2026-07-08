@@ -175,10 +175,10 @@ export function ContactHubBlock({
                     className="w-full px-4 py-3 bg-black/40 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-[var(--primary)] transition-colors disabled:opacity-50 text-sm appearance-none"
                     onChange={(e) => setFormData({ ...formData, time: e.target.value })}
                   >
-                    <option value="" disabled className="text-gray-500">Wunschzeit (optional)</option>
-                    <option value="Vormittags" className="text-black">Vormittags</option>
-                    <option value="Nachmittags" className="text-black">Nachmittags</option>
-                    <option value="Keine Präferenz" className="text-black">Keine Präferenz</option>
+                    <option value="" disabled className="bg-gray-900 text-gray-400">Wunschzeit (optional)</option>
+                    <option value="Vormittags" className="bg-gray-900 text-white">Vormittags</option>
+                    <option value="Nachmittags" className="bg-gray-900 text-white">Nachmittags</option>
+                    <option value="Keine Präferenz" className="bg-gray-900 text-white">Keine Präferenz</option>
                   </select>
                 </>
               )}
