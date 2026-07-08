@@ -15,7 +15,7 @@ export function ContactHubBlock({
   phone = "0172 80 83 459",
   whatsappMsg = "Hallo, ich interessiere mich für eine Entrümpelung...",
 }: ContactHubProps) {
-  const [formData, setFormData] = useState({ name: "", phone: "", time: "" });
+  const [formData, setFormData] = useState({ name: "", phone: "", email: "", time: "" });
   const [formState, setFormState] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const formRef = useRef<HTMLFormElement>(null);
 
@@ -38,13 +38,14 @@ export function ContactHubBlock({
         body: JSON.stringify({
           name: formData.name.trim(),
           phone: formData.phone.trim(),
+          email: formData.email.trim(),
           time: formData.time || "Keine Präferenz",
         }),
       });
 
       if (response.ok) {
         setFormState("success");
-        setFormData({ name: "", phone: "", time: "" });
+        setFormData({ name: "", phone: "", email: "", time: "" });
         setTimeout(() => setFormState("idle"), 5000);
       } else {
         setFormState("error");
@@ -168,6 +169,14 @@ export function ContactHubBlock({
                     disabled={formState === "submitting"}
                     className="w-full px-4 py-3 bg-black/40 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-[var(--primary)] transition-colors disabled:opacity-50 text-sm"
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                  />
+                  <input
+                    type="email"
+                    placeholder="E-Mail-Adresse (optional)"
+                    value={formData.email}
+                    disabled={formState === "submitting"}
+                    className="w-full px-4 py-3 bg-black/40 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-[var(--primary)] transition-colors disabled:opacity-50 text-sm"
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   />
                   <select
                     value={formData.time}
