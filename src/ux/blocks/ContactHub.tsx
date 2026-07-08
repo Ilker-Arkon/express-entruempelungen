@@ -172,7 +172,7 @@ export function ContactHubBlock({
                   />
                   <input
                     type="email"
-                    placeholder="E-Mail-Adresse (optional)"
+                    placeholder="E-Mail (für Bestätigung)"
                     value={formData.email}
                     disabled={formState === "submitting"}
                     className="w-full px-4 py-3 bg-black/40 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-[var(--primary)] transition-colors disabled:opacity-50 text-sm"
