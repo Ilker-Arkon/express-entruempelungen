@@ -56,7 +56,7 @@ export const config: Config<PuckConfigProps> = {
       },
       defaultProps: {
         title: "Wir kümmern uns – Sie entspannen",
-        subtitle: "Express Entrümpelungen: Besenreine Übergabe für Wohnungs- und Gewerbeauflösungen in Ihrer Nähe.",
+        subtitle: "Express Entrümpelungen: Besenreine Übergabe für Haus-, Wohnungs- und Gewerbeauflösungen in Ihrer Nähe.",
         backgroundImage: "",
         badges: [{text: "Besenreine Übergabe"}, {text: "Festpreisgarantie"}, {text: "Kostenlose Besichtigung"}],
         phoneLabel: "0172 80 83 459",

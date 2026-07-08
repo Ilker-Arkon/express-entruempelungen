@@ -18,7 +18,7 @@ export interface HeroProps {
 
 export function HeroBlock({
   title = "Wir kümmern uns um das Chaos – Sie entspannen",
-  subtitle = "Express Entrümpelungen: Besenreine Übergabe für Wohnungs- und Gewerbeauflösungen in Ihrer Nähe.",
+  subtitle = "Express Entrümpelungen: Besenreine Übergabe für Haus-, Wohnungs- und Gewerbeauflösungen in Ihrer Nähe.",
   backgroundImage = "/gallery/flyer.jpeg",
   badges = ["Besenreine Übergabe", "Festpreisgarantie", "Kostenlose Besichtigung"],
   phoneLabel = "Kostenloses Angebot anfordern",
