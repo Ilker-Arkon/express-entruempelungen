@@ -30,21 +30,31 @@ export async function POST(request: Request) {
       })
     });
 
-    const data = await response.json();
+    const dataText = await response.text();
+    let data;
+    try {
+      data = JSON.parse(dataText);
+    } catch (jsonError) {
+      console.error("Web3Forms returned non-JSON response:", dataText);
+      return NextResponse.json(
+        { error: `E-Mail-Dienst hat keine gültige Antwort gesendet (Status ${response.status}).` },
+        { status: response.status }
+      );
+    }
 
     if (response.ok && data.success) {
       return NextResponse.json({ success: true, message: "Rückruf wird vorbereitet." });
     } else {
       console.error("Web3Forms API error:", data);
       return NextResponse.json(
-        { error: data.message || "Fehler bei der Übermittlung." },
+        { error: data.message || "Fehler bei der Übermittlung durch Web3Forms." },
         { status: response.status }
       );
     }
-  } catch (error) {
+  } catch (error: any) {
     console.error("Callback API proxy error:", error);
     return NextResponse.json(
-      { error: "Ein unerwarteter Fehler ist aufgetreten." },
+      { error: `Server-Fehler: ${error?.message || "Unbekannt"}` },
       { status: 500 }
     );
   }
