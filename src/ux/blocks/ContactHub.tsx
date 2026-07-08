@@ -182,7 +182,7 @@ export function ContactHubBlock({
 
               {formState === "error" && (
                 <p className="text-red-400 text-xs py-1">
-                  Bitte füllen Sie alle Felder aus.
+                  Ein Fehler ist aufgetreten. Bitte rufen Sie uns direkt an.
                 </p>
               )}
 
