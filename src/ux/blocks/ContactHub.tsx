@@ -15,7 +15,7 @@ export function ContactHubBlock({
   phone = "0172 80 83 459",
   whatsappMsg = "Hallo, ich interessiere mich für eine Entrümpelung...",
 }: ContactHubProps) {
-  const [formData, setFormData] = useState({ name: "", phone: "", time: "", date: "" });
+  const [formData, setFormData] = useState({ name: "", phone: "", time: "" });
   const [formState, setFormState] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const formRef = useRef<HTMLFormElement>(null);
 
@@ -39,13 +39,12 @@ export function ContactHubBlock({
           name: formData.name.trim(),
           phone: formData.phone.trim(),
           time: formData.time || "Keine Präferenz",
-          date: formData.date || "Keine Präferenz",
         }),
       });
 
       if (response.ok) {
         setFormState("success");
-        setFormData({ name: "", phone: "", time: "", date: "" });
+        setFormData({ name: "", phone: "", time: "" });
         setTimeout(() => setFormState("idle"), 5000);
       } else {
         setFormState("error");
@@ -170,24 +169,17 @@ export function ContactHubBlock({
                     className="w-full px-4 py-3 bg-black/40 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-[var(--primary)] transition-colors disabled:opacity-50 text-sm"
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                   />
-                  <div className="flex gap-3">
-                    <input
-                      type="text"
-                      placeholder="Wunschdatum (optional)"
-                      value={formData.date}
-                      disabled={formState === "submitting"}
-                      className="w-1/2 px-4 py-3 bg-black/40 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-[var(--primary)] transition-colors disabled:opacity-50 text-sm"
-                      onChange={(e) => setFormData({ ...formData, date: e.target.value })}
-                    />
-                    <input
-                      type="text"
-                      placeholder="Wunschzeit (optional)"
-                      value={formData.time}
-                      disabled={formState === "submitting"}
-                      className="w-1/2 px-4 py-3 bg-black/40 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-[var(--primary)] transition-colors disabled:opacity-50 text-sm"
-                      onChange={(e) => setFormData({ ...formData, time: e.target.value })}
-                    />
-                  </div>
+                  <select
+                    value={formData.time}
+                    disabled={formState === "submitting"}
+                    className="w-full px-4 py-3 bg-black/40 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-[var(--primary)] transition-colors disabled:opacity-50 text-sm appearance-none"
+                    onChange={(e) => setFormData({ ...formData, time: e.target.value })}
+                  >
+                    <option value="" disabled className="text-gray-500">Wunschzeit (optional)</option>
+                    <option value="Vormittags" className="text-black">Vormittags</option>
+                    <option value="Nachmittags" className="text-black">Nachmittags</option>
+                    <option value="Keine Präferenz" className="text-black">Keine Präferenz</option>
+                  </select>
                 </>
               )}
 

@@ -4,7 +4,7 @@ import nodemailer from "nodemailer";
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { name, phone, time, date } = body;
+    const { name, phone, time } = body;
 
     if (!name || !phone) {
       return NextResponse.json(
@@ -47,14 +47,10 @@ export async function POST(request: Request) {
               <td style="padding: 10px; color: #1a1a1a;">${phone}</td>
             </tr>
             <tr>
-              <td style="padding: 10px; font-weight: bold; color: #555;">Wunschdatum:</td>
-              <td style="padding: 10px; color: #1a1a1a;">${date || "Keine Präferenz"}</td>
-            </tr>
-            <tr style="background: #fff;">
               <td style="padding: 10px; font-weight: bold; color: #555;">Wunschzeit:</td>
               <td style="padding: 10px; color: #1a1a1a;">${time || "Keine Präferenz"}</td>
             </tr>
-            <tr>
+            <tr style="background: #fff;">
               <td style="padding: 10px; font-weight: bold; color: #555;">Eingang am:</td>
               <td style="padding: 10px; color: #1a1a1a;">${datum}</td>
             </tr>
@@ -64,7 +60,7 @@ export async function POST(request: Request) {
           </p>
         </div>
       `,
-      text: `Neue Rückrufanfrage\n\nName: ${name}\nTelefonnummer: ${phone}\nWunschdatum: ${date || "Keine Präferenz"}\nWunschzeit: ${time || "Keine Präferenz"}\nEingang am: ${datum}`,
+      text: `Neue Rückrufanfrage\n\nName: ${name}\nTelefonnummer: ${phone}\nWunschzeit: ${time || "Keine Präferenz"}\nEingang am: ${datum}`,
     });
 
     return NextResponse.json({ success: true, message: "Rückruf wird vorbereitet." });
