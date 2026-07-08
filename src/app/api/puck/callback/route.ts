@@ -67,6 +67,26 @@ export async function POST(request: Request) {
       text: `Neue Rückrufanfrage\n\nName: ${name}\nTelefonnummer: ${phone}\nE-Mail: ${email || "Nicht angegeben"}\nWunschzeit: ${time || "Keine Präferenz"}\nEingang am: ${datum}`,
     });
 
+    if (email) {
+      await transporter.sendMail({
+        from: `"Express Entrümpelungen" <${process.env.SMTP_USER}>`,
+        to: email,
+        subject: "Vielen Dank für Ihre Anfrage bei Express Entrümpelungen",
+        html: `
+          <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; color: #333;">
+            <p>Hallo ${name},</p>
+            <p>vielen Dank für Ihre Rückrufanfrage! Wir haben Ihre Daten erhalten und werden uns schnellstmöglich bei Ihnen melden.</p>
+            <p><strong>Ihre übermittelten Daten:</strong><br/>
+            Telefonnummer: ${phone}<br/>
+            Wunschzeit: ${time || "Keine Präferenz"}</p>
+            <p>Mit freundlichen Grüßen,<br/>
+            <strong>Ihr Team von Express Entrümpelungen</strong></p>
+          </div>
+        `,
+        text: `Hallo ${name},\n\nvielen Dank für Ihre Rückrufanfrage! Wir haben Ihre Daten erhalten und werden uns schnellstmöglich bei Ihnen melden.\n\nIhre übermittelten Daten:\nTelefonnummer: ${phone}\nWunschzeit: ${time || "Keine Präferenz"}\n\nMit freundlichen Grüßen,\nIhr Team von Express Entrümpelungen`,
+      });
+    }
+
     return NextResponse.json({ success: true, message: "Rückruf wird vorbereitet." });
   } catch (error: any) {
     console.error("Callback API Fehler:", error);
