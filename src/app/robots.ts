@@ -5,7 +5,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: '*',
       allow: '/',
-      disallow: ['/edit/', '/api/', '/impressum', '/datenschutz'],
+      disallow: ['/edit/', '/api/', '/impressum', '/datenschutz', '/agb'],
     },
     sitemap: 'https://www.express-entruempelungen.de/sitemap.xml',
   };
