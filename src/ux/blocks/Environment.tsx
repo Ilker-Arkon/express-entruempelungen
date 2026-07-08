@@ -51,6 +51,7 @@ export function EnvironmentBlock({
           fill 
           className="object-cover"
           quality={70}
+          unoptimized
         />
       </div>
 

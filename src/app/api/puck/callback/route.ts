@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import nodemailer from "nodemailer";
 
 export async function POST(request: Request) {
   try {
@@ -12,51 +13,61 @@ export async function POST(request: Request) {
       );
     }
 
-    // Server-seitiger Proxy zu Web3Forms — umgeht Adblocker & CORS
-    // Wichtig: User-Agent muss gesetzt sein, sonst blockt Web3Forms die Server-IP als Bot
-    const response = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "Accept": "application/json",
-        "User-Agent": "Express-Entruempelungen/1.0"
+    // SMTP-Konfiguration aus Umgebungsvariablen
+    const transporter = nodemailer.createTransport({
+      host: process.env.SMTP_HOST || "mail.express-entruempelungen.de",
+      port: parseInt(process.env.SMTP_PORT || "465"),
+      secure: parseInt(process.env.SMTP_PORT || "465") === 465,
+      auth: {
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS,
       },
-      body: JSON.stringify({
-        access_key: "6e09b2ca-c1f9-42a5-9c6f-197b60f3ff43",
-        subject: "🚨 Neue Rückrufanfrage über die Webseite",
-        from_name: "Express Entrümpelungen",
-        Name: name,
-        Telefonnummer: phone,
-        Wunschzeit: time || "Keine Präferenz",
-        "Datum/Zeitpunkt": new Date().toLocaleString("de-DE")
-      })
     });
 
-    const dataText = await response.text();
-    let data;
-    try {
-      data = JSON.parse(dataText);
-    } catch {
-      console.error("Web3Forms returned non-JSON response:", dataText);
-      return NextResponse.json(
-        { error: `E-Mail-Dienst hat keine gültige Antwort gesendet (Status ${response.status}).` },
-        { status: response.status }
-      );
-    }
+    const datum = new Date().toLocaleString("de-DE", {
+      timeZone: "Europe/Berlin",
+    });
 
-    if (response.ok && data.success) {
-      return NextResponse.json({ success: true, message: "Rückruf wird vorbereitet." });
-    } else {
-      console.error("Web3Forms API error:", data);
-      return NextResponse.json(
-        { error: data.message || "Fehler bei der Übermittlung durch Web3Forms." },
-        { status: response.status }
-      );
-    }
+    await transporter.sendMail({
+      from: `"Express Entrümpelungen Website" <${process.env.SMTP_USER}>`,
+      to: process.env.CONTACT_RECEIVER || "info@express-entruempelungen.de",
+      subject: "🚨 Neue Rückrufanfrage über die Webseite",
+      html: `
+        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background: #f9f9f9; border-radius: 8px;">
+          <h2 style="color: #1a1a1a; border-bottom: 2px solid #e53e3e; padding-bottom: 10px;">
+            🚨 Neue Rückrufanfrage
+          </h2>
+          <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+            <tr>
+              <td style="padding: 10px; font-weight: bold; color: #555; width: 40%;">Name:</td>
+              <td style="padding: 10px; color: #1a1a1a;">${name}</td>
+            </tr>
+            <tr style="background: #fff;">
+              <td style="padding: 10px; font-weight: bold; color: #555;">Telefonnummer:</td>
+              <td style="padding: 10px; color: #1a1a1a;">${phone}</td>
+            </tr>
+            <tr>
+              <td style="padding: 10px; font-weight: bold; color: #555;">Wunschzeit:</td>
+              <td style="padding: 10px; color: #1a1a1a;">${time || "Keine Präferenz"}</td>
+            </tr>
+            <tr style="background: #fff;">
+              <td style="padding: 10px; font-weight: bold; color: #555;">Datum/Uhrzeit:</td>
+              <td style="padding: 10px; color: #1a1a1a;">${datum}</td>
+            </tr>
+          </table>
+          <p style="margin-top: 20px; font-size: 12px; color: #999;">
+            Diese E-Mail wurde automatisch von express-entruempelungen.de gesendet.
+          </p>
+        </div>
+      `,
+      text: `Neue Rückrufanfrage\n\nName: ${name}\nTelefonnummer: ${phone}\nWunschzeit: ${time || "Keine Präferenz"}\nDatum: ${datum}`,
+    });
+
+    return NextResponse.json({ success: true, message: "Rückruf wird vorbereitet." });
   } catch (error: any) {
-    console.error("Callback API proxy error:", error);
+    console.error("Callback API Fehler:", error);
     return NextResponse.json(
-      { error: `Server-Fehler: ${error?.message || "Unbekannt"}` },
+      { error: `Fehler beim Senden: ${error?.message || "Unbekannt"}` },
       { status: 500 }
     );
   }
