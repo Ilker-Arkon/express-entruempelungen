@@ -109,7 +109,7 @@ export const config: Config<PuckConfigProps> = {
         title: "Unsere Leistungen",
         subtitle: "Professionelle Lösungen für jede Herausforderung",
         services: [
-          { title: "Haus- und Wohnungsauflösungen", description: "Komplette Räumung von Wohnungen inkl. besenreiner Übergabe.", icon: "Home", link: "/wohnungsaufloesung-nuernberg" },
+          { title: "Haus- & Wohnungsauflösungen", description: "Komplette Räumung Ihrer Immobilie – inklusive fachgerechter Entsorgung und besenreiner Übergabe.", icon: "Home", link: "/wohnungsaufloesung-nuernberg" },
           { title: "Gewerbeentrümpelung", description: "Diskrete Räumung von Büros, Lagern und Betrieben.", icon: "Building2", link: "/gewerbeaufloesung-nuernberg" },
           { title: "Kellerentrümpelung", description: "Befreiung von Nebenräumen von angesammeltem Ballast.", icon: "Package", link: "/entruempelung-nuernberg" },
           { title: "Nachlassauflösung", description: "Einfühlsame und diskrete Abwicklung von Nachlässen.", icon: "Bird", link: "/nachlassaufloesung-nuernberg" },

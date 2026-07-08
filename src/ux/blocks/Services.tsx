@@ -14,7 +14,7 @@ const iconMap: Record<string, React.ReactNode> = {
 };
 
 const rueckseitenTexte: Record<string, string> = {
-  "Haus- und Wohnungsauflösungen":
+  "Haus- & Wohnungsauflösungen":
     "Wir räumen die gesamte Wohnung – von der Küche bis zum Keller. Möbel, Hausrat und Teppiche werden fachgerecht entfernt. Sie erhalten die Räume garantiert besenrein und sauber.",
   Gewerbeentrümpelung:
     "Büromöbel, Akten, Lagerbestände oder Maschinen – wir räumen Gewerbeflächen jeder Größe. Diskret und oft außerhalb der Geschäftszeiten. Inkl. datenschutzkonformer Aktenvernichtung auf Wunsch.",
@@ -43,7 +43,7 @@ export function ServicesBlock({
   title = "Unsere Leistungen",
   subtitle = "Professionelle Lösungen für jede Herausforderung",
   services = [
-    { title: "Haus- und Wohnungsauflösungen", description: "Komplette Räumung von Wohnungen inkl. besenreiner Übergabe.", icon: "Home", link: "/wohnungsaufloesung-nuernberg" },
+    { title: "Haus- & Wohnungsauflösungen", description: "Komplette Räumung Ihrer Immobilie – inklusive fachgerechter Entsorgung und besenreiner Übergabe.", icon: "Home", link: "/wohnungsaufloesung-nuernberg" },
     { title: "Gewerbeentrümpelung", description: "Diskrete Räumung von Büros, Lagern und Betrieben.", icon: "Building2", link: "/gewerbeaufloesung-nuernberg" },
     { title: "Kellerentrümpelung", description: "Befreiung von Nebenräumen von angesammeltem Ballast.", icon: "Package", link: "/entruempelung-nuernberg" },
     { title: "Nachlassauflösung", description: "Einfühlsame und diskrete Abwicklung von Nachlässen.", icon: "Bird", link: "/nachlassaufloesung-nuernberg" },
