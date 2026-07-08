@@ -31,21 +31,14 @@ export function ContactHubBlock({
     setFormState("submitting");
 
     try {
-      // Sende die Daten direkt an Web3Forms (umgeht Vercel-IP-Sperren)
-      const response = await fetch("https://api.web3forms.com/submit", {
+      // Server-seitiger Proxy vermeidet Adblocker/CORS-Probleme
+      const response = await fetch("/api/puck/callback", {
         method: "POST",
-        headers: { 
-          "Content-Type": "application/json",
-          "Accept": "application/json"
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          access_key: "6e09b2ca-c1f9-42a5-9c6f-197b60f3ff43",
-          subject: "🚨 Neue Rückrufanfrage über die Webseite",
-          from_name: "Express Entrümpelungen",
-          Name: formData.name.trim(),
-          Telefonnummer: formData.phone.trim(),
-          "Wunschzeit": formData.time || "Keine Präferenz",
-          "Datum/Zeitpunkt": new Date().toLocaleString("de-DE")
+          name: formData.name.trim(),
+          phone: formData.phone.trim(),
+          time: formData.time || "Keine Präferenz",
         }),
       });
 
