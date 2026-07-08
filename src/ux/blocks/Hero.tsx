@@ -70,14 +70,14 @@ export function HeroBlock({
           </div>
 
           {/* CTAs */}
-          <div className="flex flex-col sm:flex-row flex-wrap justify-center lg:justify-start gap-6">
+          <div className="flex flex-col sm:flex-row flex-wrap justify-center lg:justify-start gap-4">
             <motion.button
               onClick={() => setIsPhoneModalOpen(true)}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="flex items-center justify-center gap-3 bg-[var(--primary)] hover:bg-[var(--primary-dark)] text-[#0D1B4B] px-8 py-4 rounded-full font-bold text-lg transition-colors shadow-button"
+              className="flex items-center justify-center gap-2 bg-[var(--primary)] hover:bg-[var(--primary-dark)] text-[#0D1B4B] px-6 py-3.5 rounded-full font-bold text-base md:text-sm lg:text-base transition-colors shadow-button"
             >
-              <Phone className="w-6 h-6" />
+              <Phone className="w-5 h-5" />
               {phoneLabel}
             </motion.button>
 
@@ -85,17 +85,17 @@ export function HeroBlock({
               href={whatsappUrl}
               target="_blank"
               rel="noreferrer"
-              className="flex items-center justify-center gap-3 bg-[var(--success)] hover:bg-[#20bd5a] text-white px-8 py-4 rounded-full font-bold text-lg transition-colors shadow-card"
+              className="flex items-center justify-center gap-2 bg-[var(--success)] hover:bg-[#20bd5a] text-white px-6 py-3.5 rounded-full font-bold text-base md:text-sm lg:text-base transition-colors shadow-card"
             >
-              <MessageCircle className="w-6 h-6" />
+              <MessageCircle className="w-5 h-5" />
               {whatsappLabel}
             </a>
 
             <a
               href="mailto:info@express-entruempelungen.de"
-              className="flex items-center justify-center gap-3 bg-white/10 hover:bg-white/20 border border-white/20 text-white px-8 py-4 rounded-full font-bold text-lg transition-colors shadow-card"
+              className="flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 text-white px-6 py-3.5 rounded-full font-bold text-base md:text-sm lg:text-base transition-colors shadow-card"
             >
-              <Mail className="w-6 h-6" />
+              <Mail className="w-5 h-5" />
               E-Mail
             </a>
           </div>
