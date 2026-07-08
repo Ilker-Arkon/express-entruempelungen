@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { CheckCircle2, Phone, MessageCircle } from "lucide-react";
+import { CheckCircle2, Phone, MessageCircle, Mail } from "lucide-react";
 
 export interface HeroProps {
   title?: string;
@@ -70,7 +70,7 @@ export function HeroBlock({
           </div>
 
           {/* CTAs */}
-          <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-6">
+          <div className="flex flex-col sm:flex-row flex-wrap justify-center lg:justify-start gap-6">
             <motion.button
               onClick={() => setIsPhoneModalOpen(true)}
               whileHover={{ scale: 1.05 }}
@@ -89,6 +89,14 @@ export function HeroBlock({
             >
               <MessageCircle className="w-6 h-6" />
               {whatsappLabel}
+            </a>
+
+            <a
+              href="mailto:info@express-entruempelungen.de"
+              className="flex items-center justify-center gap-3 bg-white/10 hover:bg-white/20 border border-white/20 text-white px-8 py-4 rounded-full font-bold text-lg transition-colors shadow-card"
+            >
+              <Mail className="w-6 h-6" />
+              E-Mail
             </a>
           </div>
         </motion.div>

@@ -216,14 +216,6 @@ export function Header({ config }: { config?: HeaderConfig }) {
                 <Phone className="w-4 h-4 text-[var(--primary)]" />
                 Jetzt anrufen
               </button>
-              
-              <a
-                href="mailto:info@express-entruempelungen.de"
-                className="flex items-center gap-2 px-5 py-2.5 bg-zinc-100 hover:bg-zinc-200 text-zinc-900 border border-zinc-200 rounded-full font-bold transition-all hover:shadow-lg"
-              >
-                <Mail className="w-4 h-4 text-[var(--primary)]" />
-                E-Mail
-              </a>
 
              {/* Admin Dropdown - Only visible in development mode */}
              {process.env.NODE_ENV === 'development' && (
