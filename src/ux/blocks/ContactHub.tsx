@@ -31,20 +31,17 @@ export function ContactHubBlock({
     setFormState("submitting");
 
     try {
-      // Sende die Daten direkt an Web3Forms, damit der Kunde eine E-Mail erhält
-      const response = await fetch("https://api.web3forms.com/submit", {
+      // Sende die Daten an unseren API-Proxy, der sie an Web3Forms weiterleitet (verhindert Adblocker-Blockaden)
+      const response = await fetch("/api/puck/callback", {
         method: "POST",
         headers: { 
           "Content-Type": "application/json",
           "Accept": "application/json"
         },
         body: JSON.stringify({
-          access_key: "6e09b2ca-c1f9-42a5-9c6f-197b60f3ff43",
-          subject: "🚨 Neue Rückrufanfrage über die Webseite",
-          from_name: "Express Entrümpelungen",
-          Name: formData.name.trim(),
-          Telefonnummer: formData.phone.trim(),
-          "Datum/Zeitpunkt": new Date().toLocaleString("de-DE")
+          name: formData.name.trim(),
+          phone: formData.phone.trim(),
+          time: formData.time || "Keine Präferenz",
         }),
       });
 
