@@ -17,7 +17,7 @@ export default function DatenschutzPage() {
 
         <h1 className="text-4xl font-heading font-black mb-2">Datenschutzerklärung</h1>
         <p className="text-gray-500 text-sm mb-10">
-          Gemäß Art. 13 und 14 Datenschutz-Grundverordnung (DSGVO) – Stand: Juli 2025
+          Gemäß Art. 13 und 14 Datenschutz-Grundverordnung (DSGVO) – Stand: Juli 2026
         </p>
 
         <div className="divide-y divide-gray-100">
@@ -32,7 +32,7 @@ export default function DatenschutzPage() {
               Friesenstraße 25<br />
               90441 Nürnberg<br />
               Deutschland<br /><br />
-              Telefon: <a href="tel:+4917280833459" className="text-[var(--primary)] hover:underline">0172 80 83 459</a><br />
+              Telefon: <a href="tel:+491728083459" className="text-[var(--primary)] hover:underline">0172 80 83 459</a><br />
               Telefon: <a href="tel:+4917655122781" className="text-[var(--primary)] hover:underline">0176 55 12 27 81</a><br />
               E-Mail: <a href="mailto:info@express-entruempelungen.de" className="text-[var(--primary)] hover:underline">info@express-entruempelungen.de</a>
             </p>
@@ -258,7 +258,7 @@ export default function DatenschutzPage() {
 
         </div>
 
-        <p className="text-gray-400 text-xs mt-10">Stand: Juli 2025 – Diese Datenschutzerklärung wird bei Bedarf aktualisiert.</p>
+        <p className="text-gray-400 text-xs mt-10">Stand: Juli 2026 – Diese Datenschutzerklärung wird bei Bedarf aktualisiert.</p>
       </div>
     </div>
   );

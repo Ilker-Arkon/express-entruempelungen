@@ -44,7 +44,7 @@ export default function ImpressumPage() {
           <section className={`${sectionClass} py-6`}>
             <h2 className={h2Class}>Kontakt</h2>
             <p className={pClass}>
-              Telefon: <a href="tel:+4917280833459" className="text-[var(--primary)] hover:underline">0172 80 83 459</a><br />
+              Telefon: <a href="tel:+491728083459" className="text-[var(--primary)] hover:underline">0172 80 83 459</a><br />
               Telefon: <a href="tel:+4917655122781" className="text-[var(--primary)] hover:underline">0176 55 12 27 81</a><br />
               E-Mail: <a href="mailto:info@express-entruempelungen.de" className="text-[var(--primary)] hover:underline">info@express-entruempelungen.de</a><br />
               Website: <a href="https://www.express-entruempelungen.de" className="text-[var(--primary)] hover:underline">www.express-entruempelungen.de</a>
@@ -143,7 +143,7 @@ export default function ImpressumPage() {
 
         </div>
 
-        <p className="text-gray-400 text-xs mt-10">Stand: Juli 2025</p>
+        <p className="text-gray-400 text-xs mt-10">Stand: Juli 2026</p>
       </div>
     </div>
   );

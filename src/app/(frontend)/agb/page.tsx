@@ -19,7 +19,7 @@ export default function AgbPage() {
           Allgemeine Geschäftsbedingungen (AGB)
         </h1>
         <p className="text-gray-500 text-sm mb-10">
-          der Ferit Uzun &amp; Ahmet Onur Camaslioglu GbR (Express Entrümpelungen GbR) – Stand: Juli 2025
+          der Ferit Uzun &amp; Ahmet Onur Camaslioglu GbR (Express Entrümpelungen GbR) – Stand: Juli 2026
         </p>
 
         <div className="divide-y divide-gray-100">
@@ -225,7 +225,7 @@ export default function AgbPage() {
         </div>
 
         <p className="text-gray-400 text-xs mt-10">
-          Stand: Juli 2025 – Diese AGB werden bei Bedarf aktualisiert und ersetzen alle vorherigen Fassungen.
+          Stand: Juli 2026 – Diese AGB werden bei Bedarf aktualisiert und ersetzen alle vorherigen Fassungen.
         </p>
       </div>
     </div>
