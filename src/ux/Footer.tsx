@@ -150,9 +150,9 @@ export function Footer({ config }: { config?: FooterConfig }) {
               </li>
               <li className="flex items-start gap-3">
                 <Phone className="w-5 h-5 text-[var(--primary)] shrink-0 mt-0.5" />
-                <div>
-                  <a href={`tel:${c.phonePrimary}`} className="block hover:text-white transition-colors">{c.phonePrimaryDisplay}</a>
-                  {c.phoneSecondary && <a href={`tel:${c.phoneSecondary}`} className="block hover:text-white transition-colors">{c.phoneSecondaryDisplay || c.phoneSecondary}</a>}
+                <div className="flex flex-col gap-1">
+                  <a href={`tel:${c.phonePrimary}`} className="block hover:text-[var(--primary)] transition-colors"><strong className="text-white font-medium">Ferit:</strong> {c.phonePrimaryDisplay}</a>
+                  {c.phoneSecondary && <a href={`tel:${c.phoneSecondary}`} className="block hover:text-[var(--primary)] transition-colors"><strong className="text-white font-medium">Onur:</strong> {c.phoneSecondaryDisplay || c.phoneSecondary}</a>}
                 </div>
               </li>
               <li className="flex items-start gap-3">
@@ -192,30 +192,30 @@ export function Footer({ config }: { config?: FooterConfig }) {
 
       {/* Bottom Bar */}
       <div className="border-t border-zinc-800/50 bg-black/20">
-        <div className="container mx-auto px-6 py-6 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="container mx-auto px-6 py-6 flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="text-center md:text-left flex-1">
             &copy; {new Date().getFullYear()} {c.copyrightText}
           </div>
           
           <div className="flex justify-center gap-6 items-center">
-            <span className="text-sm text-zinc-400">Folgen Sie uns:</span>
+            <span className="text-sm text-zinc-400 font-medium">Folgen Sie uns:</span>
             <div className="flex gap-4">
-              <a href="https://www.instagram.com/expressentruempelungen?utm_source=qr" target="_blank" rel="noreferrer" className="hover:scale-110 transition-transform" aria-label="Instagram">
-                 <InstagramColorIcon className="w-7 h-7" />
+              <a href="https://www.instagram.com/expressentruempelungen?utm_source=qr" target="_blank" rel="noreferrer" className="hover:scale-125 hover:-translate-y-1 transition-all duration-300" aria-label="Instagram">
+                 <InstagramColorIcon className="w-8 h-8 drop-shadow-md" />
               </a>
               <a 
                 href="#" 
                 onClick={(e) => { e.preventDefault(); setIsTiktokModalOpen(true); }} 
-                className="hover:scale-110 transition-transform text-white hover:text-[#00f2ea]" 
+                className="hover:scale-125 hover:-translate-y-1 transition-all duration-300 text-white hover:text-[#00f2ea]" 
                 aria-label="TikTok"
               >
-                 <TiktokIcon className="w-7 h-7" />
+                 <TiktokIcon className="w-8 h-8 drop-shadow-md" />
               </a>
             </div>
           </div>
 
-          <div className="text-center md:text-right text-zinc-300 flex-1">
-            USt-IdNr.: {c.vatId}
+          <div className="flex-1 hidden md:block">
+            {/* Leerer Platzhalter für perfekte Zentrierung */}
           </div>
         </div>
       </div>
