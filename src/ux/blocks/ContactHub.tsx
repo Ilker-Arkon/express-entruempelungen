@@ -133,7 +133,7 @@ export function ContactHubBlock({
             
             <a href={whatsappLink} target="_blank" rel="noreferrer" className="w-full mt-auto">
               <button className="w-full py-4 bg-[var(--primary)] hover:bg-[var(--primary-dark)] text-[#0D1B4B] rounded-xl font-bold tracking-wider text-sm transition-all flex items-center justify-center gap-2">
-                <MessageCircle className="w-4 h-4" /> WHATSAPP NACHRICHT SENDEN
+                WHATSAPP NACHRICHT SENDEN
               </button>
             </a>
           </motion.div>
