@@ -1,6 +1,23 @@
 import Link from "next/link";
 import Image from "next/image";
-import { MapPin, Phone, Mail, Clock, CheckCircle2, ArrowRight, Instagram } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, CheckCircle2, ArrowRight } from "lucide-react";
+
+const InstagramIcon = ({ className }: { className?: string }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={className}
+  >
+    <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+  </svg>
+);
 
 export interface FooterConfig {
   companyName?: string;
@@ -93,7 +110,7 @@ export function Footer({ config }: { config?: FooterConfig }) {
             {/* Social Media */}
             <div className="flex gap-4">
               <a href="https://www.instagram.com/expressentruempelungen?utm_source=qr" target="_blank" rel="noreferrer" className="bg-white/10 hover:bg-[var(--primary)] text-white hover:text-[#0D1B4B] p-2.5 rounded-full transition-colors flex items-center gap-2">
-                <Instagram className="w-5 h-5" />
+                <InstagramIcon className="w-5 h-5" />
                 <span className="font-semibold text-sm">Folgen Sie uns</span>
               </a>
             </div>
