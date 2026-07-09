@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { MapPin, Phone, Mail, Clock, CheckCircle2, ArrowRight } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, CheckCircle2, ArrowRight, Instagram } from "lucide-react";
 
 export interface FooterConfig {
   companyName?: string;
@@ -88,6 +88,14 @@ export function Footer({ config }: { config?: FooterConfig }) {
                 <CheckCircle2 className="w-4 h-4 text-[var(--primary)]" />
                 <span>Festpreisgarantie</span>
               </div>
+            </div>
+
+            {/* Social Media */}
+            <div className="flex gap-4">
+              <a href="https://www.instagram.com/expressentruempelungen?utm_source=qr" target="_blank" rel="noreferrer" className="bg-white/10 hover:bg-[var(--primary)] text-white hover:text-[#0D1B4B] p-2.5 rounded-full transition-colors flex items-center gap-2">
+                <Instagram className="w-5 h-5" />
+                <span className="font-semibold text-sm">Folgen Sie uns</span>
+              </a>
             </div>
           </div>
 
