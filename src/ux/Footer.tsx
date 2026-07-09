@@ -214,8 +214,11 @@ export function Footer({ config }: { config?: FooterConfig }) {
             </div>
           </div>
 
-          <div className="flex-1 hidden md:block">
-            {/* Leerer Platzhalter für perfekte Zentrierung */}
+          <div className="flex-1 hidden md:flex justify-end items-center gap-2 text-xs">
+            <span className="text-zinc-500">Webdesign & Entwicklung von</span>
+            <a href="https://arkondigicomtech.de/" target="_blank" rel="noreferrer" className="hover:scale-105 transition-transform">
+               <strong className="text-white font-heading tracking-widest text-sm">ARKON<span className="text-[var(--primary)]">DIGICOMTECH</span></strong>
+            </a>
           </div>
         </div>
       </div>
