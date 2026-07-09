@@ -277,21 +277,6 @@ export function Header({ config }: { config?: HeaderConfig }) {
 
            {/* Mobile Menu & Social */}
            <div className="lg:hidden flex items-center gap-4">
-             {/* Social Icons Mobile */}
-             <div className="flex items-center gap-3">
-                <a href="https://www.instagram.com/expressentruempelungen?utm_source=qr" target="_blank" rel="noreferrer" className="hover:scale-110 transition-transform" aria-label="Instagram">
-                   <InstagramColorIcon className="w-6 h-6" />
-                </a>
-                <a 
-                  href="#" 
-                  onClick={(e) => { e.preventDefault(); setIsTiktokModalOpen(true); }} 
-                  className="hover:scale-110 transition-transform text-[var(--dark)] hover:text-[#00f2ea]" 
-                  aria-label="TikTok"
-                >
-                   <TiktokIcon className="w-6 h-6" />
-                </a>
-             </div>
-
              <button
                className="p-2 text-zinc-600"
                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
