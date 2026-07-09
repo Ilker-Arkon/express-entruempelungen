@@ -2,20 +2,21 @@ import Link from "next/link";
 import Image from "next/image";
 import { MapPin, Phone, Mail, Clock, CheckCircle2, ArrowRight } from "lucide-react";
 
-const InstagramIcon = ({ className }: { className?: string }) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    className={className}
-  >
-    <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
-    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+const InstagramColorIcon = ({ className }: { className?: string }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" className={className}>
+    <defs>
+      <linearGradient id="ig-grad" x1="0%" y1="100%" x2="100%" y2="0%">
+        <stop offset="0%" stopColor="#f09433" />
+        <stop offset="25%" stopColor="#e6683c" />
+        <stop offset="50%" stopColor="#dc2743" />
+        <stop offset="75%" stopColor="#cc2366" />
+        <stop offset="100%" stopColor="#bc1888" />
+      </linearGradient>
+    </defs>
+    <rect width="1000" height="1000" rx="225" ry="225" fill="url(#ig-grad)" />
+    <path fill="#ffffff" d="M325,200 h350 c69.035,0 125,55.965 125,125 v350 c0,69.035 -55.965,125 -125,125 h-350 c-69.035,0 -125,-55.965 -125,-125 v-350 c0,-69.035 55.965,-125 125,-125 z m0,75 c-27.614,0 -50,22.386 -50,50 v350 c0,27.614 22.386,50 50,50 h350 c27.614,0 50,-22.386 50,-50 v-350 c0,-27.614 -22.386,-50 -50,-50 h-350 z" />
+    <path fill="#ffffff" d="M500,340 c-88.366,0 -160,71.634 -160,160 c0,88.366 71.634,160 160,160 c88.366,0 160,-71.634 160,-160 c0,-88.366 -71.634,-160 -160,-160 z m0,75 c46.944,0 85,38.056 85,85 c0,46.944 -38.056,85 -85,85 c-46.944,0 -85,-38.056 -85,-85 c0,-46.944 38.056,-85 85,-85 z" />
+    <circle fill="#ffffff" cx="675" cy="325" r="35" />
   </svg>
 );
 
@@ -106,14 +107,6 @@ export function Footer({ config }: { config?: FooterConfig }) {
                 <span>Festpreisgarantie</span>
               </div>
             </div>
-
-            {/* Social Media */}
-            <div className="flex gap-4">
-              <a href="https://www.instagram.com/expressentruempelungen?utm_source=qr" target="_blank" rel="noreferrer" className="bg-white/10 hover:bg-[var(--primary)] text-white hover:text-[#0D1B4B] p-2.5 rounded-full transition-colors flex items-center gap-2">
-                <InstagramIcon className="w-5 h-5" />
-                <span className="font-semibold text-sm">Folgen Sie uns</span>
-              </a>
-            </div>
           </div>
 
           {/* Column 2: Quick Links */}
@@ -188,10 +181,18 @@ export function Footer({ config }: { config?: FooterConfig }) {
       {/* Bottom Bar */}
       <div className="border-t border-zinc-800/50 bg-black/20">
         <div className="container mx-auto px-6 py-6 flex flex-col md:flex-row justify-between items-center gap-4">
-          <div className="text-center md:text-left">
+          <div className="text-center md:text-left flex-1">
             &copy; {new Date().getFullYear()} {c.copyrightText}
           </div>
-          <div className="text-center md:text-right text-zinc-300">
+          
+          <div className="flex justify-center gap-4 items-center">
+            <span className="text-sm text-zinc-400">Folgen Sie uns:</span>
+            <a href="https://www.instagram.com/expressentruempelungen?utm_source=qr" target="_blank" rel="noreferrer" className="hover:scale-110 transition-transform" aria-label="Instagram">
+               <InstagramColorIcon className="w-7 h-7" />
+            </a>
+          </div>
+
+          <div className="text-center md:text-right text-zinc-300 flex-1">
             USt-IdNr.: {c.vatId}
           </div>
         </div>
