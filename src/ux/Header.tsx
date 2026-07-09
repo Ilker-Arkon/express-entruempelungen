@@ -6,6 +6,30 @@ import Image from "next/image";
 import { Edit, Menu, X, Phone, Mail, MapPin, CheckCircle2, ChevronDown, Wrench } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
+const InstagramColorIcon = ({ className }: { className?: string }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" className={className}>
+    <defs>
+      <linearGradient id="ig-grad" x1="0%" y1="100%" x2="100%" y2="0%">
+        <stop offset="0%" stopColor="#f09433" />
+        <stop offset="25%" stopColor="#e6683c" />
+        <stop offset="50%" stopColor="#dc2743" />
+        <stop offset="75%" stopColor="#cc2366" />
+        <stop offset="100%" stopColor="#bc1888" />
+      </linearGradient>
+    </defs>
+    <rect width="1000" height="1000" rx="225" ry="225" fill="url(#ig-grad)" />
+    <path fill="#ffffff" d="M325,200 h350 c69.035,0 125,55.965 125,125 v350 c0,69.035 -55.965,125 -125,125 h-350 c-69.035,0 -125,-55.965 -125,-125 v-350 c0,-69.035 55.965,-125 125,-125 z m0,75 c-27.614,0 -50,22.386 -50,50 v350 c0,27.614 22.386,50 50,50 h350 c27.614,0 50,-22.386 50,-50 v-350 c0,-27.614 -22.386,-50 -50,-50 h-350 z" />
+    <path fill="#ffffff" d="M500,340 c-88.366,0 -160,71.634 -160,160 c0,88.366 71.634,160 160,160 c88.366,0 160,-71.634 160,-160 c0,-88.366 -71.634,-160 -160,-160 z m0,75 c46.944,0 85,38.056 85,85 c0,46.944 -38.056,85 -85,85 c-46.944,0 -85,-38.056 -85,-85 c0,-46.944 38.056,-85 85,-85 z" />
+    <circle fill="#ffffff" cx="675" cy="325" r="35" />
+  </svg>
+);
+
+const TiktokIcon = ({ className }: { className?: string }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" className={className} fill="currentColor">
+    <path d="M448 209.9a210.1 210.1 0 0 1 -122.8-39.3V349.4A162.6 162.6 0 1 1 185 188.3V278.2a74.6 74.6 0 1 0 52.2 71.2V0l88 0a121.2 121.2 0 0 0 1.9 22.2h0A122.2 122.2 0 0 0 381 102.4a121.4 121.4 0 0 0 67 20.1z"/>
+  </svg>
+);
+
 export interface HeaderConfig {
   companyName?: string;
   companySubtitle?: string;
@@ -57,6 +81,7 @@ export function Header({ config }: { config?: HeaderConfig }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [isPhoneModalOpen, setIsPhoneModalOpen] = useState(false);
+  const [isTiktokModalOpen, setIsTiktokModalOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const closeTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -207,7 +232,7 @@ export function Header({ config }: { config?: HeaderConfig }) {
             ))}
           </nav>
 
-           {/* CTA & Admin */}
+           {/* CTA & Admin & Social */}
            <div className="hidden lg:flex items-center gap-4">
               <button
                 onClick={() => setIsPhoneModalOpen(true)}
@@ -216,6 +241,21 @@ export function Header({ config }: { config?: HeaderConfig }) {
                 <Phone className="w-4 h-4 text-[var(--primary)]" />
                 Jetzt anrufen
               </button>
+
+              {/* Social Icons Desktop */}
+              <div className="flex items-center gap-3 ml-2 border-l border-zinc-200 pl-4 py-1">
+                <a href="https://www.instagram.com/expressentruempelungen?utm_source=qr" target="_blank" rel="noreferrer" className="hover:scale-125 hover:-translate-y-1 transition-all duration-300" aria-label="Instagram">
+                   <InstagramColorIcon className="w-6 h-6 drop-shadow-sm" />
+                </a>
+                <a 
+                  href="#" 
+                  onClick={(e) => { e.preventDefault(); setIsTiktokModalOpen(true); }} 
+                  className="hover:scale-125 hover:-translate-y-1 transition-all duration-300 text-[var(--dark)] hover:text-[#00f2ea]" 
+                  aria-label="TikTok"
+                >
+                   <TiktokIcon className="w-6 h-6 drop-shadow-sm" />
+                </a>
+              </div>
 
              {/* Admin Dropdown - Only visible in development mode */}
              {process.env.NODE_ENV === 'development' && (
@@ -235,15 +275,32 @@ export function Header({ config }: { config?: HeaderConfig }) {
              )}
            </div>
 
-           {/* Mobile Menu Toggle */}
-           <button
-             className="lg:hidden p-2 text-zinc-600"
-             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-             aria-expanded={mobileMenuOpen}
-             aria-label={mobileMenuOpen ? "Menü schließen" : "Menü öffnen"}
-           >
-             {mobileMenuOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
-           </button>
+           {/* Mobile Menu & Social */}
+           <div className="lg:hidden flex items-center gap-4">
+             {/* Social Icons Mobile */}
+             <div className="flex items-center gap-3">
+                <a href="https://www.instagram.com/expressentruempelungen?utm_source=qr" target="_blank" rel="noreferrer" className="hover:scale-110 transition-transform" aria-label="Instagram">
+                   <InstagramColorIcon className="w-6 h-6" />
+                </a>
+                <a 
+                  href="#" 
+                  onClick={(e) => { e.preventDefault(); setIsTiktokModalOpen(true); }} 
+                  className="hover:scale-110 transition-transform text-[var(--dark)] hover:text-[#00f2ea]" 
+                  aria-label="TikTok"
+                >
+                   <TiktokIcon className="w-6 h-6" />
+                </a>
+             </div>
+
+             <button
+               className="p-2 text-zinc-600"
+               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+               aria-expanded={mobileMenuOpen}
+               aria-label={mobileMenuOpen ? "Menü schließen" : "Menü öffnen"}
+             >
+               {mobileMenuOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
+             </button>
+           </div>
          </div>
        </header>
 
@@ -331,6 +388,47 @@ export function Header({ config }: { config?: HeaderConfig }) {
                 className="mt-6 w-full text-center text-sm text-zinc-500 hover:text-zinc-900 transition-colors"
               >
                 Abbrechen
+              </button>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* TikTok Coming Soon Modal */}
+      <AnimatePresence>
+        {isTiktokModalOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/70 backdrop-blur-sm p-4"
+            onClick={() => setIsTiktokModalOpen(false)}
+          >
+            <motion.div
+              initial={{ scale: 0.95, y: 20 }}
+              animate={{ scale: 1, y: 0 }}
+              exit={{ scale: 0.95, y: 20 }}
+              className="bg-[var(--dark)] border border-[var(--primary)]/30 p-8 rounded-3xl max-w-sm w-full shadow-2xl text-center relative"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="flex justify-center mb-6">
+                <Image
+                  src={c.logoPath || "/gallery/logo.png"}
+                  alt={c.logoAlt || "Logo"}
+                  width={64}
+                  height={64}
+                  className="w-16 h-16 object-contain bg-white rounded-xl p-2 shadow-lg"
+                />
+              </div>
+              <h3 className="text-2xl font-heading font-black text-white mb-2">In Bearbeitung!</h3>
+              <p className="text-gray-300 text-sm mb-6 leading-relaxed">
+                Unser TikTok-Kanal wird gerade vorbereitet und ist sehr bald für Sie da. Freuen Sie sich auf spannende Vorher-Nachher Videos!
+              </p>
+              <button 
+                onClick={() => setIsTiktokModalOpen(false)}
+                className="w-full py-3 bg-[var(--primary)] hover:bg-[var(--primary-dark)] text-[#0D1B4B] rounded-xl font-bold tracking-wider text-sm transition-all"
+              >
+                Alles klar
               </button>
             </motion.div>
           </motion.div>
