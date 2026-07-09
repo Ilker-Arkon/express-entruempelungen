@@ -1,8 +1,10 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { MapPin, Phone, Mail, Clock, CheckCircle2, ArrowRight } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const InstagramColorIcon = ({ className }: { className?: string }) => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" className={className}>
@@ -79,6 +81,8 @@ const DEFAULT_FOOTER: Required<FooterConfig> = {
 
 export function Footer({ config }: { config?: FooterConfig }) {
   const c = { ...DEFAULT_FOOTER, ...config };
+  const [isTiktokModalOpen, setIsTiktokModalOpen] = useState(false);
+
   return (
     <footer className="bg-[var(--dark)] border-t border-zinc-800 pt-20 pb-10 text-zinc-400 text-sm font-body relative overflow-hidden">
       
@@ -201,7 +205,7 @@ export function Footer({ config }: { config?: FooterConfig }) {
               </a>
               <a 
                 href="#" 
-                onClick={(e) => { e.preventDefault(); alert("Kommt bald!"); }} 
+                onClick={(e) => { e.preventDefault(); setIsTiktokModalOpen(true); }} 
                 className="hover:scale-110 transition-transform text-white hover:text-[#00f2ea]" 
                 aria-label="TikTok"
               >
@@ -215,6 +219,46 @@ export function Footer({ config }: { config?: FooterConfig }) {
           </div>
         </div>
       </div>
+
+      <AnimatePresence>
+        {isTiktokModalOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/70 backdrop-blur-sm p-4"
+            onClick={() => setIsTiktokModalOpen(false)}
+          >
+            <motion.div
+              initial={{ scale: 0.95, y: 20 }}
+              animate={{ scale: 1, y: 0 }}
+              exit={{ scale: 0.95, y: 20 }}
+              className="bg-[var(--dark)] border border-[var(--primary)]/30 p-8 rounded-3xl max-w-sm w-full shadow-2xl text-center relative"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="flex justify-center mb-6">
+                <Image
+                  src={c.logoPath || "/gallery/logo.png"}
+                  alt={c.logoAlt || "Logo"}
+                  width={64}
+                  height={64}
+                  className="w-16 h-16 object-contain bg-white rounded-xl p-2 shadow-lg"
+                />
+              </div>
+              <h3 className="text-2xl font-heading font-black text-white mb-2">In Bearbeitung!</h3>
+              <p className="text-gray-300 text-sm mb-6 leading-relaxed">
+                Unser TikTok-Kanal wird gerade vorbereitet und ist sehr bald für Sie da. Freuen Sie sich auf spannende Vorher-Nachher Videos!
+              </p>
+              <button 
+                onClick={() => setIsTiktokModalOpen(false)}
+                className="w-full py-3 bg-[var(--primary)] hover:bg-[var(--primary-dark)] text-[#0D1B4B] rounded-xl font-bold tracking-wider text-sm transition-all"
+              >
+                Alles klar
+              </button>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </footer>
   );
 }
